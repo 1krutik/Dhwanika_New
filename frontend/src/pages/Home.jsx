@@ -16,9 +16,9 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar />
-      <SearchBar />
-      <Carousel />
+            <SearchBar/>
+
+      {/* <Carousel /> */}
       
 
       {/* WhatsApp Icon */}
@@ -33,10 +33,9 @@ const Home = () => {
       </div>
 
       {/* PopupForm Component */}
-      <PopupForm show={showPopup} onClose={() => setShowPopup(false)} />
+    {/*<PopupForm show={showPopup} onClose={() => setShowPopup(false)} /> */}
 <TravelCards/>
 
-      <Footer />
     </div>
   );
 };
