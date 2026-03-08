@@ -24,7 +24,7 @@ const Navbar = () => {
 
         <ul className="hidden md:flex space-x-6 text-white font-medium items-center">
           <li><Link to="/about" className="hover:text-red-600">About Us</Link></li>
-<li><Link to="/visas" className="hover:text-red-600">Visas</Link></li>
+<li><Link to="/visas" className="hover:text-red-600">Visa Services</Link></li>
           <li
             className="relative cursor-pointer"
             onMouseEnter={() => setIsDropdownOpen(true)}
@@ -118,7 +118,7 @@ const Navbar = () => {
       {menuOpen && (
         <div className="md:hidden bg-white shadow px-4 pt-4 pb-6 space-y-4">
           <ul className="flex flex-col space-y-4 text-gray-700 font-medium">
-            <li><Link to="/visas" onClick={() => setMenuOpen(false)} className="hover:text-red-600">Visas</Link></li>
+            <li><Link to="/visas" onClick={() => setMenuOpen(false)} className="hover:text-red-600">Visa Services</Link></li>
             <li><Link to="/holidays" onClick={() => setMenuOpen(false)} className="hover:text-red-600">Holiday Packages</Link></li>
             <li><Link to="/blog" onClick={() => setMenuOpen(false)} className="hover:text-red-600">Blog</Link></li>
             <li><Link to="/contact" onClick={() => setMenuOpen(false)} className="hover:text-red-600">ContactUs</Link></li>
