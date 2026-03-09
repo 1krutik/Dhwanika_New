@@ -159,8 +159,20 @@ onChange={handleChange}
 
 <p className="text-sm">
 I have read and agree to the{" "}
-<span className="text-orange-500">Terms and Conditions</span> and{" "}
-<span className="text-orange-500">Privacy Policy</span>
+ <a
+                  href="/terms"
+                  className="text-orange-600 hover:underline"
+                  target="_blank"
+                >
+                  Terms and Conditions
+                </a>{" "} and{" "}
+ <a
+                  href="/privacy"
+                  className="text-orange-600 hover:underline"
+                  target="_blank"
+                >
+                  Privacy Policy
+                </a>{" "}
 </p>
 
 </div>
