@@ -11,6 +11,8 @@ import SearchBar from "./components/SearchBar";
 import Footer from "./components/Footer";
 import TermsConditions from "./pages/TermsConditions";
 import About from "./pages/About";
+import VisaServices from "./pages/VisaServices ";
+import InquiryForm from "./components/InquiryForm";
 
 function App() {
   useEffect(() => {
@@ -31,6 +33,7 @@ function App() {
       <Route path="/privacy" element={<PrivacyPolicy />} />
       <Route path="/about" element={<About/>} />
       <Route path="/terms" element={<TermsConditions />} />
+      <Route path="/visas" element={<InquiryForm />} />
     </Routes>
   <Footer/> 
         </> 

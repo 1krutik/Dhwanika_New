@@ -164,7 +164,7 @@ const VisaServices = () => {
                 I have read and <span className="font-semibold">agree</span> to
                 the{" "}
                 <a
-                  href="/terms-and-conditions"
+                  href="/terms"
                   className="text-blue-600 hover:underline"
                   target="_blank"
                 >
@@ -172,7 +172,7 @@ const VisaServices = () => {
                 </a>{" "}
                 and{" "}
                 <a
-                  href="/privacy-policy"
+                  href="/privacy"
                   className="text-blue-600 hover:underline"
                   target="_blank"
                 >
