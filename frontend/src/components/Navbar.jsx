@@ -44,7 +44,7 @@ const Navbar = () => {
             <li><Link to="/visas" onClick={() => setMenuOpen(false)} className="hover:text-red-600">Visa Services</Link></li>
             <li><Link to="/holidays" onClick={() => setMenuOpen(false)} className="hover:text-red-600">Holiday Packages</Link></li>
             <li><Link to="/blog" onClick={() => setMenuOpen(false)} className="hover:text-red-600">Blog</Link></li>
-            <li><Link to="/privacy" onClick={() => setMenuOpen(false)} className="hover:text-red-600">Privacy Policy</Link></li>
+            <li><Link to="/privacy" onClick={() => setMenuOpen(false)} className="hover:text-red-600">Privacy & Policy</Link></li>
           <li><Link to="/terms" onClick={() => setMenuOpen(false)} className="hover:text-red-600">Terms & Conditions</Link></li>
             <li><Link to="/contact" onClick={() => setMenuOpen(false)} className="hover:text-red-600">ContactUs</Link></li>
             <li><Link to="/login" onClick={() => setMenuOpen(false)} className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 text-center">Login</Link></li>
