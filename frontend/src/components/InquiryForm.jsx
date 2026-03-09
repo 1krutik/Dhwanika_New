@@ -29,8 +29,8 @@ return;
 }
 
 try{
-
-await fetch("http://localhost:5000/api/inquiry",{
+    
+await fetch("https://dhwanikaoverseas.onrender.com/api/inquiry",{
 method:"POST",
 headers:{
 "Content-Type":"application/json"
