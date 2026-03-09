@@ -38,7 +38,7 @@ headers:{
 body:JSON.stringify(formData)
 });
 
-alert("Form Submitted Successfully");
+alert(" 🎉 Thank You for Contacting Us! Form Submitted Successfully");
 
 setFormData({
 firstName:"",
