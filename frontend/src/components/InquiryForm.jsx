@@ -29,7 +29,7 @@ return;
 }
 
 try{
-    
+
 await fetch("https://dhwanikaoverseas.onrender.com/api/inquiry",{
 method:"POST",
 headers:{
@@ -136,9 +136,8 @@ value={formData.service}
 onChange={handleChange}
 className="w-full mt-2 border rounded-lg p-3"
 >
-
-<option>Tour Packages</option>
 <option>Visa Services</option>
+<option>Tour Packages</option>
 <option>Flight Booking</option>
 <option>Hotel Booking</option>
 
