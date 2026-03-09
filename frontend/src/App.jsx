@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import SearchBar from "./components/SearchBar";
 import Footer from "./components/Footer";
 import TermsConditions from "./pages/TermsConditions";
+import About from "./pages/About";
 
 function App() {
   useEffect(() => {
@@ -24,14 +25,14 @@ function App() {
 
   return (
     <>
-       <Navbar/>
+  <Navbar/>
     <Routes>    
       <Route path="/" element={<Home />} />
       <Route path="/privacy" element={<PrivacyPolicy />} />
-
-<Route path="/terms" element={<TermsConditions />} />
+      <Route path="/about" element={<About/>} />
+      <Route path="/terms" element={<TermsConditions />} />
     </Routes>
-    <Footer/> 
+  <Footer/> 
         </> 
 
   );

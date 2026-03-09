@@ -16,7 +16,7 @@ const Home = () => {
 
   return (
     <div>
-            <SearchBar/>
+            {/* <SearchBar/> */}
 
       {/* <Carousel /> */}
       

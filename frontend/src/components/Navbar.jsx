@@ -23,90 +23,13 @@ const Navbar = () => {
         </div>
 
         <ul className="hidden md:flex space-x-6 text-white font-medium items-center">
-          <li><Link to="/about" className="hover:text-red-600">About Us</Link></li>
+        
 <li><Link to="/visas" className="hover:text-red-600">Visa Services</Link></li>
-          <li
-            className="relative cursor-pointer"
-            onMouseEnter={() => setIsDropdownOpen(true)}
-            onMouseLeave={() => setIsDropdownOpen(false)}
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-          >
-            <span className="hover:text-red-600">Holiday Packages</span>
-            {isDropdownOpen && (
-              <div className="absolute left-0 top-full z-[999] bg-white text-black shadow-lg p-4 w-[900px]">
-                <div className="grid grid-cols-5 gap-6">
-                  {/* India */}
-                  <div>
-                    <h4 className="font-semibold mb-2 text-red-600">India</h4>
-                    <ul className="space-y-1 text-sm">
-                      <li>Kerala</li>
-                      <li>Gujarat</li>
-                      <li>Leh</li>
-                      <li>Himachal</li>
-                      <li>Uttarakhand</li>
-                      <li>Rajasthan</li>
-                      <li>Kashmir</li>
-                      <li>Goa</li>
-                      <li>Sikkim</li>
-                      <li>Andaman</li>
-                    </ul>
-                  </div>
-                  {/* Asia */}
-                  <div>
-                    <h4 className="font-semibold mb-2 text-red-600">Asia</h4>
-                    <ul className="space-y-1 text-sm">
-                      <li>Vietnam</li>
-                      <li>Bali</li>
-                      <li>Singapore</li>
-                      <li>Malaysia</li>
-                      <li>Thailand</li>
-                      <li>Maldives</li>
-                      <li>Sri Lanka</li>
-                    </ul>
-                  </div>
-                  {/* Europe */}
-                  <div>
-                    <h4 className="font-semibold mb-2 text-red-600">Europe</h4>
-                    <ul className="space-y-1 text-sm">
-                      <li>France</li>
-                      <li>Italy</li>
-                      <li>Germany</li>
-                      <li>Switzerland</li>
-                      <li>Greece</li>
-                      <li>Turkey</li>
-                    </ul>
-                  </div>
-                  {/* Middle East */}
-                  <div>
-                    <h4 className="font-semibold mb-2 text-red-600">Middle East</h4>
-                    <ul className="space-y-1 text-sm">
-                      <li>Dubai</li>
-                      <li>Israel - Jordan</li>
-                      <li>Oman</li>
-                      <li>Saudi Arabia</li>
-                      <li>Uzbekistan</li>
-                    </ul>
-                  </div>
-                  {/* Other Regions */}
-                  <div>
-                    <h4 className="font-semibold mb-2 text-red-600">Other Regions</h4>
-                    <ul className="space-y-1 text-sm">
-                      <li>USA</li>
-                      <li>Australia</li>
-                      <li>New Zealand</li>
-                      <li>South Africa</li>
-                      <li>Mauritius</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            )}
-          </li>
-
-            
+<li><Link to="/holidays" className="hover:text-red-600">Holiday Packages</Link></li>
+  
           <li><Link to="/flights" className="hover:text-red-600">Flights</Link></li>
-          <li><Link to="/privacy" className="hover:text-red-600">Privacy Policy</Link></li>
-          <li><Link to="/terms" className="hover:text-red-600">Terms & Conditions</Link></li>
+          
+          <li><Link to="/about" className="hover:text-red-600">About Us</Link></li>
         </ul>
 
         <div className="hidden md:block">
@@ -121,6 +44,8 @@ const Navbar = () => {
             <li><Link to="/visas" onClick={() => setMenuOpen(false)} className="hover:text-red-600">Visa Services</Link></li>
             <li><Link to="/holidays" onClick={() => setMenuOpen(false)} className="hover:text-red-600">Holiday Packages</Link></li>
             <li><Link to="/blog" onClick={() => setMenuOpen(false)} className="hover:text-red-600">Blog</Link></li>
+            <li><Link to="/privacy" onClick={() => setMenuOpen(false)} className="hover:text-red-600">Privacy Policy</Link></li>
+          <li><Link to="/terms" onClick={() => setMenuOpen(false)} className="hover:text-red-600">Terms & Conditions</Link></li>
             <li><Link to="/contact" onClick={() => setMenuOpen(false)} className="hover:text-red-600">ContactUs</Link></li>
             <li><Link to="/login" onClick={() => setMenuOpen(false)} className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 text-center">Login</Link></li>
           </ul>
