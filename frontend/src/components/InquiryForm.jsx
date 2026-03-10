@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function InquiryForm() {
 
@@ -158,24 +159,22 @@ onChange={handleChange}
 
 <p className="text-sm">
 I have read and agree to the{" "}
- <a
-                  href="/terms"
-                  className="text-orange-600 hover:underline"
-                  target="_blank"
-                >
-                  Terms and Conditions
-                </a>{" "} and{" "}
- <a
-                  href="/privacy"
-                  className="text-orange-600 hover:underline"
-                  target="_blank"
-                >
-                  Privacy Policy
-                </a>{" "}
+<Link
+to="/terms"
+className="text-orange-600 hover:underline"
+>
+Terms and Conditions
+</Link>{" "}
+and{" "}
+<Link
+to="/privacy"
+className="text-orange-600 hover:underline"
+>
+Privacy Policy
+</Link>
 </p>
 
 </div>
-
 {/* Button */}
 
 <button
