@@ -12,6 +12,7 @@ import About from "./pages/About";
 import VisaServices from "./pages/VisaServices ";
 import DestinationCard from "./components/DestinationCard";
 import TravelCards from "./pages/TravelCards";
+import Contact from "./pages/Contact";
 
 function App() {
   useEffect(() => {
@@ -36,6 +37,7 @@ function App() {
       <Route path="/terms" element={<TermsConditions />} />
       <Route path="/visas" element={<VisaServices />} />
       <Route path="/holidays" element={<TravelCards />} />
+      <Route path="/contact" element={<Contact />} />
 
     </Routes>
   <Footer/> 

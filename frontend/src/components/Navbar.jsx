@@ -30,6 +30,7 @@ const Navbar = () => {
           <li><Link to="/flights" className="hover:text-red-600">Flights</Link></li>
           
           <li><Link to="/about" className="hover:text-red-600">About Us</Link></li>
+          <li><Link to="/contact" className="hover:text-red-600">Contact Us</Link></li>
         </ul>
 
         <div className="hidden md:block">
