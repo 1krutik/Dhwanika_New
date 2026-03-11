@@ -10,6 +10,8 @@ import Footer from "./components/Footer";
 import TermsConditions from "./pages/TermsConditions";
 import About from "./pages/About";
 import VisaServices from "./pages/VisaServices ";
+import DestinationCard from "./components/DestinationCard";
+import TravelCards from "./pages/TravelCards";
 
 function App() {
   useEffect(() => {
@@ -26,11 +28,14 @@ function App() {
     <>
   <Navbar/>
     <Routes>    
+
+
       <Route path="/" element={<Home />} />
       <Route path="/privacy" element={<PrivacyPolicy />} />
       <Route path="/about" element={<About/>} />
       <Route path="/terms" element={<TermsConditions />} />
       <Route path="/visas" element={<VisaServices />} />
+      <Route path="/holidays" element={<TravelCards />} />
 
     </Routes>
   <Footer/> 

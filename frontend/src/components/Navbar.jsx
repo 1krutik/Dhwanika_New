@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <header data-aos="fade-up" className="bg-black shadow relative z-[100]">
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
-        <Link to="/" className="text-2xl font-bold text-red-600">
+        <Link to="/" className="">
           <img className='w-[70px] h-[70px] rounded-full' src="/logos/dhwanika.jpg" alt="Dhwanika Logo" />
         </Link>
 
