@@ -96,7 +96,7 @@ const visaData = [
     image: "https://images.unsplash.com/photo-1507699622108-4be3abd695ad",
     type: "Visitor Visa",
     valid: "90 Days",
-    fees: "₹9,500",
+    fees: "",
     docs: "Passport, Photo",
   },
   {
