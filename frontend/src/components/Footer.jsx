@@ -39,10 +39,10 @@ const Footer = () => {
         <div>
           <h4 className="font-semibold mb-3">Follow Us</h4>
           <ul className="space-y-2 text-sm text-gray-400">
-            <li><a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-red-500">Facebook</a></li>
+            <li><a href="https://www.facebook.com/people/Dhwanika-Overseas/61561458576630/" target="_blank" rel="noopener noreferrer" className="hover:text-red-500">Facebook</a></li>
             <li><a href="https://www.instagram.com/dhwanika_overseas/" target="_blank" rel="noopener noreferrer" className="hover:text-red-500">Instagram</a></li>
-            <li><a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-red-500">Twitter</a></li>
-            <li><a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-red-500">LinkedIn</a></li>
+            <li><a href="https://twitter.com/DhwanikaOverseas" target="_blank" rel="noopener noreferrer" className="hover:text-red-500">Twitter</a></li>
+            <li><a href="https://www.linkedin.com/company/dhwanika-overseas" target="_blank" rel="noopener noreferrer" className="hover:text-red-500">LinkedIn</a></li>
           </ul>
         </div>
 
