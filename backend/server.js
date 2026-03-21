@@ -2,7 +2,6 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 
-
 const app = express();
 
 app.use(cors());
@@ -38,4 +37,4 @@ app.post("/api/inquiry", async (req,res)=>{
 });
 app.listen(5000, ()=>{
   console.log("Server running on port 5000");
-});
+}); 
