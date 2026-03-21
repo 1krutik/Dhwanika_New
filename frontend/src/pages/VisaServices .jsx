@@ -8,7 +8,7 @@ const visaData = [
     image: "https://images.unsplash.com/photo-1528127269322-539801943592",
     type: "E-VISA",
     valid: "30 Days",
-    fees: "₹2,500",
+    fees: " ",
     docs: "Photo, Passport",
   },
   {
@@ -16,7 +16,7 @@ const visaData = [
     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
     type: "E-VISA",
     valid: "90 Days",
-    fees: "₹1,500",
+    fees: " ",
     docs: "Passport",
   },
   {
@@ -24,7 +24,7 @@ const visaData = [
     image: "https://images.unsplash.com/photo-1574611122955-5baa61496637",
     type: "E-VISA",
     valid: "180 Days",
-    fees: "₹1,200",
+    fees: " ",
     docs: "Passport, Photo",
   },
   {
@@ -32,7 +32,7 @@ const visaData = [
     image: "https://images.unsplash.com/photo-1597148543182-830ef7bbb904",
     type: "E-VISA",
     valid: "30 Days",
-    fees: "₹1,800",
+    fees: " ",
     docs: "Passport",
   },
   {
@@ -40,7 +40,7 @@ const visaData = [
     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
     type: "E-VISA",
     valid: "90 Days",
-    fees: "₹2,950",
+    fees: " ",
     docs: "Passport",
   },
   {
@@ -48,7 +48,7 @@ const visaData = [
     image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd",
     type: "E-VISA",
     valid: "30 Days",
-    fees: "₹2,000",
+    fees: " ",
     docs: "Passport",
   },
   {
@@ -56,7 +56,7 @@ const visaData = [
     image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c",
     type: "Tourist Visa",
     valid: "30 Days",
-    fees: "₹7,000",
+    fees: " ",
     docs: "Passport, Photo",
   },
   {
@@ -64,7 +64,7 @@ const visaData = [
     image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200",
     type: "E-VISA",
     valid: "60 Days",
-    fees: "₹4,500",
+    fees: " ",
     docs: "Passport",
   },
   {
@@ -72,7 +72,7 @@ const visaData = [
     image: "https://images.unsplash.com/photo-1572252009286-268acec5ca0a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     type: "E-VISA",
     valid: "30 Days",
-    fees: "₹3,500",
+    fees: " ",
     docs: "Passport, Photo",
   },
   {
@@ -80,7 +80,7 @@ const visaData = [
     image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
     type: "E-VISA",
     valid: "90 Days",
-    fees: "₹4,000",
+    fees: " ",
     docs: "Passport",
   },
   {
@@ -88,7 +88,7 @@ const visaData = [
     image: "https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?q=80&w=1333&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     type: "Visitor Visa",
     valid: "90 Days",
-    fees: "₹10,000",
+    fees: " ",
     docs: "Passport, Bank Statement",
   },
   {
@@ -104,7 +104,7 @@ const visaData = [
     image: "https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=1192&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     type: "Tourist Visa",
     valid: "30 Days",
-    fees: "₹3,000",
+    fees: "",
     docs: "Passport, Bank Proof",
   },
   {
@@ -112,7 +112,7 @@ const visaData = [
     image: "https://images.unsplash.com/photo-1549693578-d683be217e58",
     type: "Tourist Visa",
     valid: "90 Days",
-    fees: "₹4,500",
+    fees: "",
     docs: "Passport",
   },
   {
@@ -120,7 +120,7 @@ const visaData = [
     image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b",
     type: "Schengen Visa",
     valid: "90 Days",
-    fees: "₹7,500",
+    fees: " ",
     docs: "Passport, Insurance",
   },
   {
@@ -128,7 +128,7 @@ const visaData = [
     image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34",
     type: "Schengen Visa",
     valid: "90 Days",
-    fees: "₹7,500",
+    fees: " ",
     docs: "Passport",
   },
   {
@@ -136,7 +136,7 @@ const visaData = [
     image: "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9",
     type: "Schengen Visa",
     valid: "90 Days",
-    fees: "₹7,500",
+    fees: " ",
     docs: "Passport",
   },
   {
@@ -144,7 +144,7 @@ const visaData = [
     image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
     type: "Schengen Visa",
     valid: "90 Days",
-    fees: "₹8,000",
+    fees: " ",
     docs: "Passport",
   },
   {
@@ -152,7 +152,7 @@ const visaData = [
     image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
     type: "Visitor Visa",
     valid: "180 Days",
-    fees: "₹8,500",
+    fees: " ",
     docs: "Passport, Bank Proof",
   },
   {
@@ -160,7 +160,7 @@ const visaData = [
     image: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     type: "Tourist Visa",
     valid: "180 Days",
-    fees: "₹12,000",
+    fees: " ",
     docs: "Passport, Interview",
   }
 ];
