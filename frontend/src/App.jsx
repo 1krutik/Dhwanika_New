@@ -13,6 +13,7 @@ import VisaServices from "./pages/VisaServices ";
 import DestinationCard from "./components/DestinationCard";
 import TravelCards from "./pages/TravelCards";
 import Contact from "./pages/Contact";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   useEffect(() => {
@@ -28,6 +29,7 @@ function App() {
   return (
     <>
   <Navbar/>
+   <ScrollToTop/> 
     <Routes>    
  
 
