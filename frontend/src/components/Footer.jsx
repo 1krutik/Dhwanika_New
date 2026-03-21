@@ -29,9 +29,9 @@ const Footer = () => {
         <div>
           <h4 className="font-semibold mb-3">Tours</h4>
           <ul className="space-y-2 text-sm text-gray-400">
-            <li><Link to="/tours/domestic" className="hover:text-red-500">Domestic</Link></li>
-            <li><Link to="/tours/international" className="hover:text-red-500">International</Link></li>
-            <li><Link to="/plan-trip" className="hover:text-red-500">Plan a Trip</Link></li>
+            <li><Link to="/holidays" className="hover:text-red-500">Domestic</Link></li>
+            <li><Link to="/holidays" className="hover:text-red-500">International</Link></li>
+            <li><Link to="/visas" className="hover:text-red-500">Plan a Trip</Link></li>
           </ul>
         </div>
 
