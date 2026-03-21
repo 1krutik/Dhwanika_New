@@ -1,10 +1,6 @@
-import { useEffect, useState } from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import SearchBar from '../components/SearchBar';
-import Carousel from '../components/Carousel';
-import PopupForm from '../components/PopupForm'; // Add this line
-import TravelCards from './TravelCards';
+import { useEffect, useState } from "react";
+
+import TravelCards from "./TravelCards";
 
 const Home = () => {
   const [showPopup, setShowPopup] = useState(true);
@@ -16,10 +12,9 @@ const Home = () => {
 
   return (
     <div>
-            {/* <SearchBar/> */}
+      {/* <SearchBar/> */}
 
       {/* <Carousel /> */}
-      
 
       {/* WhatsApp Icon */}
       <div>
@@ -33,9 +28,8 @@ const Home = () => {
       </div>
 
       {/* PopupForm Component */}
-    {/*<PopupForm show={showPopup} onClose={() => setShowPopup(false)} /> */}
-<TravelCards/>
-
+      {/*<PopupForm show={showPopup} onClose={() => setShowPopup(false)} /> */}
+      <TravelCards />
     </div>
   );
 };
