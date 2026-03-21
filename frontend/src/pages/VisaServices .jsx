@@ -371,7 +371,7 @@ SUBMIT FORM
         <img
           src={item.image}
           alt={item.country} loading="lazy"
-          className="h-[330px] w-full object-cover group-hover:scale-110 transition duration-500"
+          className="h-[400px] w-full object-cover group-hover:scale-110 transition duration-500"
         />
 
         {/* OVERLAY */}
