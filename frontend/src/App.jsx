@@ -10,7 +10,6 @@ import Footer from "./components/Footer";
 import TermsConditions from "./pages/TermsConditions";
 import About from "./pages/About";
 import VisaServices from "./pages/VisaServices ";
-import DestinationCard from "./components/DestinationCard";
 import TravelCards from "./pages/TravelCards";
 import Contact from "./pages/Contact";
 import ScrollToTop from "./components/ScrollToTop";
