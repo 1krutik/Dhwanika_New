@@ -30,8 +30,6 @@ function App() {
   <Navbar/>
    <ScrollToTop/> 
     <Routes>    
- 
-
       <Route path="/" element={<Home />} />
       <Route path="/privacy" element={<PrivacyPolicy />} />
       <Route path="/about" element={<About/>} />
@@ -39,7 +37,6 @@ function App() {
       <Route path="/visas" element={<VisaServices />} />
       <Route path="/holidays" element={<TravelCards />} />
       <Route path="/contact" element={<Contact />} />
-
     </Routes>
   <Footer/> 
         </> 
