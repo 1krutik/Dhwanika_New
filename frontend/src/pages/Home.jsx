@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import TravelCards from "./TravelCards";
+import VisaServices from "./VisaServices ";
 
 const Home = () => {
   const [showPopup, setShowPopup] = useState(true);
@@ -29,7 +30,8 @@ const Home = () => {
 
       {/* PopupForm Component */}
       {/*<PopupForm show={showPopup} onClose={() => setShowPopup(false)} /> */}
-      <TravelCards />
+      {/* <TravelCards /> */}
+      <VisaServices />
     </div>
   );
 };

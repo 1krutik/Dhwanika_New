@@ -3,7 +3,7 @@ const destinations = [
   {
     name: "Bali",
     country: "Indonesia",
-    price: "₹53,000",
+    price: " ",
     image: "/images/Bali.jpg",
     duration: "6 Nights / 7 Days",
     description: "Tropical paradise with lush landscapes and beaches.",
@@ -11,7 +11,7 @@ const destinations = [
   {
     name: "Maldives",
     country: "Maldives",
-    price: "₹1,50,000",
+    price: " ",
     image: "/images/maldives.jpg",
     duration: "4 Nights / 5 Days",
     description: "Luxury overwater villas and crystal-clear waters.",
@@ -19,7 +19,7 @@ const destinations = [
   {
     name: "Dubai",
     country: "UAE",
-    price: "₹95,000",
+    price: "",
     image: "/images/dubai.jpg",
     duration: "4 Nights / 5 Days",
     description: "Modern city with desert safaris, shopping, and adventure.",
@@ -27,7 +27,7 @@ const destinations = [
   {
     name: "Mauritius",
     country: "Mauritius",
-    price: "₹70,000",
+    price: " ",
     image: "/images/mauritius.jpg",
     duration: "6 Nights / 7 Days",
     description: "Island retreat with coral reefs and mountains.",
@@ -35,7 +35,7 @@ const destinations = [
     {
     name: "Thailand",
     country: "Thailand",
-    price: "₹50,000",
+    price: " ",
     image: "/images/thailand.jpg",
     duration: "5 Nights / 6 Days",
     description: "Vibrant culture, beaches, and bustling markets.",
@@ -44,7 +44,7 @@ const destinations = [
     {
     name: "Sri Lanka",
     country: "Sri Lanka",
-    price: "₹40,000",
+    price: " ",
     image: "/images/srilanka.jpg",
     duration: "5 Nights / 6 Days",
     description: "Diverse landscapes, ancient ruins, and wildlife.",
@@ -53,7 +53,7 @@ const destinations = [
     {
     name: "Greece",
     country: "Greece",
-    price: "₹75,000",
+    price: " ",
     image: "/images/greece.jpg",
     duration: "6 Nights / 7 Days",
     description: "Ancient history, stunning islands, and Mediterranean cuisine.",
@@ -62,7 +62,7 @@ const destinations = [
     {
     name: "Italy",
     country: "Italy",
-    price: "₹85,000",
+    price: "  ",
     image: "/images/italy.jpg",
     duration: "7 Nights / 8 Days",
     description: "Rich history, art, culture, and world-renowned cuisine.",
@@ -71,7 +71,7 @@ const destinations = [
     {
     name: "Japan",
     country: "Japan",
-    price: "₹90,000",
+    price: " ",
     image: "/images/japan.jpg",
     duration: "7 Nights / 8 Days",
     description: "Blend of ancient traditions and cutting-edge technology.",
@@ -80,7 +80,7 @@ const destinations = [
     {
     name: "Australia",
     country: "Australia",
-    price: "₹95,000",
+    price: " ",
     image: "/images/australia.jpg",
     duration: "8 Nights / 9 Days",
     description: "Diverse landscapes, vibrant cities, and unique wildlife.",
@@ -89,7 +89,7 @@ const destinations = [
     {
     name: "New Zealand",
     country: "New Zealand",
-    price: "₹100,000",
+    price: " ",
     image: "/images/newzealand.jpg",
     duration: "8 Nights / 9 Days",
     description: "Breathtaking landscapes, adventure sports, and Maori culture.",
@@ -98,7 +98,7 @@ const destinations = [
     {
     name: "France",
     country: "France",
-    price: "₹80,000",
+    price: " ",
     image: "/images/france.jpg",
     duration: "6 Nights / 7 Days",
     description: "Iconic landmarks, art, culture, and world-class cuisine.",
@@ -107,7 +107,7 @@ const destinations = [
     {
     name: "Spain",
     country: "Spain",
-    price: "₹70,000",
+    price: " ",
     image: "/images/spain.jpg",
     duration: "6 Nights / 7 Days",
     description: "Vibrant culture, stunning architecture, and lively festivals.",
