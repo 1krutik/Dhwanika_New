@@ -63,7 +63,7 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink to="/contact" className={navLinkClass}>
-              Contact
+              Contact Us
             </NavLink>
           </li>
         </ul>
@@ -123,7 +123,7 @@ const Navbar = () => {
               onClick={() => setMenuOpen(false)}
               className={navLinkClass}
             >
-              Contact
+              Contact Us
             </NavLink>
           </div>
 
