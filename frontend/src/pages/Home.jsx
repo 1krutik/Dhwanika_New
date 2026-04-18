@@ -2,6 +2,7 @@ import { ArrowRight, BadgeCheck, Globe2, Headphones, ShieldCheck, Sparkles } fro
 import { Link } from "react-router-dom";
 import destinations from "../components/Destinations/data";
 import InquiryForm from "../components/InquiryForm";
+import VisaServices from "./VisaServices ";
 
 const stats = [
   { label: "Fast responses", value: "Under 30 min" },
@@ -39,8 +40,11 @@ const services = [
 export default function Home() {
   return (
     <div className="bg-ink-50">
+
+      <VisaServices/>
+
       {/* HERO */}
-      <section className="relative overflow-hidden bg-ink-950 text-white">
+      {/* <section className="relative overflow-hidden bg-ink-950 text-white">
         <div className="absolute inset-0 bg-hero-radial" />
         <div className="absolute inset-0 opacity-25">
           <div className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-brand-500 blur-3xl" />
@@ -108,10 +112,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* SERVICES */}
-      <section className="container-page py-14 sm:py-16" data-aos="fade-up">
+      {/* <section className="container-page py-14 sm:py-16" data-aos="fade-up">
         <div className="flex items-end justify-between gap-6">
           <div>
             <p className="text-sm font-bold text-brand-700">Services</p>
@@ -148,7 +152,7 @@ export default function Home() {
             );
           })}
         </div>
-      </section>
+      </section> */}
 
       {/* FEATURED PACKAGES */}
       <section className="container-page pb-14 sm:pb-16" data-aos="fade-up">
