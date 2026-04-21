@@ -9,10 +9,13 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import TermsConditions from "./pages/TermsConditions";
 import About from "./pages/About";
-import VisaServices from "./pages/VisaServices ";
+  // ✅ ADD THIS
 import TravelCards from "./pages/TravelCards";
 import Contact from "./pages/Contact";
 import ScrollToTop from "./components/ScrollToTop";
+import VisaServices from "./pages/VisaServices ";
+import VisaDetails from "./pages/VisaDetails";
+
 
 function App() {
   useEffect(() => {
@@ -27,20 +30,24 @@ function App() {
 
   return (
     <>
-  <Navbar/>
-   <ScrollToTop/> 
-    <Routes>    
-      <Route path="/" element={<Home />} />
-      <Route path="/privacy" element={<PrivacyPolicy />} />
-      <Route path="/about" element={<About/>} />
-      <Route path="/terms" element={<TermsConditions />} />
-      <Route path="/visas" element={<VisaServices />} />
-      <Route path="/holidays" element={<TravelCards />} />
-      <Route path="/contact" element={<Contact />} />
-    </Routes>
-  <Footer/> 
-        </> 
+      <Navbar />
+      <ScrollToTop />
 
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/terms" element={<TermsConditions />} />
+        <Route path="/visas" element={<VisaServices />} />
+        {/* ✅ THIS FIXES CLICKED VISA PAGE */}
+        <Route path="/visa/:slug" element={<VisaDetails />} />
+
+        <Route path="/holidays" element={<TravelCards />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+
+      <Footer />
+    </>
   );
 }
 

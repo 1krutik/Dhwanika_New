@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function VisaServices() {
+  const navigate = useNavigate();
+
   const visaData = [
   {
     country: "Vietnam",
+    slug: "vietnam",
     image: "https://images.unsplash.com/photo-1528127269322-539801943592",
     type: "E-VISA",
     valid: "30 Days",
@@ -13,6 +16,7 @@ export default function VisaServices() {
   },
   {
     country: "Thailand",
+    slug: "thailand",
     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
     type: "E-VISA",
     valid: "90 Days",
@@ -21,6 +25,7 @@ export default function VisaServices() {
   },
   {
     country: "Sri Lanka",
+    slug: "sri-lanka",
     image: "https://images.unsplash.com/photo-1574611122955-5baa61496637",
     type: "E-VISA",
     valid: "180 Days",
@@ -29,6 +34,7 @@ export default function VisaServices() {
   },
   {
     country: "Malaysia",
+    slug: "malaysia",
     image: "https://images.unsplash.com/photo-1597148543182-830ef7bbb904",
     type: "E-VISA",
     valid: "30 Days",
@@ -37,6 +43,7 @@ export default function VisaServices() {
   },
   {
     country: "Indonesia",
+    slug: "indonesia",
     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
     type: "E-VISA",
     valid: "90 Days",
@@ -45,6 +52,7 @@ export default function VisaServices() {
   },
   {
     country: "Singapore",
+    slug: "singapore",
     image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd",
     type: "E-VISA",
     valid: "30 Days",
@@ -53,6 +61,7 @@ export default function VisaServices() {
   },
   {
     country: "Dubai (UAE)",
+    slug: "dubai-uae",
     image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c",
     type: "Tourist Visa",
     valid: "30 Days",
@@ -61,6 +70,7 @@ export default function VisaServices() {
   },
   {
     country: "Turkey",
+    slug: "turkey",
     image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200",
     type: "E-VISA",
     valid: "60 Days",
@@ -69,8 +79,9 @@ export default function VisaServices() {
   },
   {
     country: "Egypt",
+    slug: "egypt",
     image:
-      "https://images.unsplash.com/photo-1572252009286-268acec5ca0a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1572252009286-268acec5ca0a?q=80&w=1170&auto=format&fit=crop",
     type: "E-VISA",
     valid: "30 Days",
     fees: "",
@@ -78,6 +89,7 @@ export default function VisaServices() {
   },
   {
     country: "Kenya",
+    slug: "kenya",
     image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
     type: "E-VISA",
     valid: "90 Days",
@@ -86,8 +98,9 @@ export default function VisaServices() {
   },
   {
     country: "Australia",
+    slug: "australia",
     image:
-      "https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?q=80&w=1333&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?q=80&w=1333&auto=format&fit=crop",
     type: "Visitor Visa",
     valid: "90 Days",
     fees: "",
@@ -95,6 +108,7 @@ export default function VisaServices() {
   },
   {
     country: "New Zealand",
+    slug: "new-zealand",
     image: "https://images.unsplash.com/photo-1507699622108-4be3abd695ad",
     type: "Visitor Visa",
     valid: "90 Days",
@@ -103,8 +117,9 @@ export default function VisaServices() {
   },
   {
     country: "Japan",
+    slug: "japan",
     image:
-      "https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=1192&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=1192&auto=format&fit=crop",
     type: "Tourist Visa",
     valid: "30 Days",
     fees: "",
@@ -112,6 +127,7 @@ export default function VisaServices() {
   },
   {
     country: "South Korea",
+    slug: "south-korea",
     image: "https://images.unsplash.com/photo-1549693578-d683be217e58",
     type: "Tourist Visa",
     valid: "90 Days",
@@ -120,6 +136,7 @@ export default function VisaServices() {
   },
   {
     country: "Germany",
+    slug: "germany",
     image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b",
     type: "Schengen Visa",
     valid: "90 Days",
@@ -128,6 +145,7 @@ export default function VisaServices() {
   },
   {
     country: "France",
+    slug: "france",
     image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34",
     type: "Schengen Visa",
     valid: "90 Days",
@@ -136,6 +154,7 @@ export default function VisaServices() {
   },
   {
     country: "Italy",
+    slug: "italy",
     image: "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9",
     type: "Schengen Visa",
     valid: "90 Days",
@@ -144,6 +163,7 @@ export default function VisaServices() {
   },
   {
     country: "Switzerland",
+    slug: "switzerland",
     image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
     type: "Schengen Visa",
     valid: "90 Days",
@@ -152,22 +172,25 @@ export default function VisaServices() {
   },
   {
     country: "Canada",
+    slug: "canada",
     image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
     type: "Visitor Visa",
     valid: "180 Days",
     fees: "",
-    docs: "Passport, Passport Photo, Bank Statement, Employment Proof, Invitation Letter (if any)",
+    docs: "Passport, Passport Photo, Bank Statement, Employment Proof",
   },
   {
     country: "USA",
+    slug: "usa",
     image:
-      "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=1170&auto=format&fit=crop",
     type: "Tourist Visa",
     valid: "180 Days",
     fees: "",
     docs: "Passport, DS-160 Form, Passport Photo, Bank Statement, Visa Interview",
   },
 ];
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -203,14 +226,14 @@ export default function VisaServices() {
         body: JSON.stringify(formData),
       });
 
-      alert(" 🎉 Thank You for Contacting Us! Form Submitted Successfully");
+      alert("🎉 Thank You for Contacting Us!");
 
       setFormData({
         firstName: "",
         lastName: "",
         email: "",
         phone: "",
-        service: "Tour Packages",
+        service: "Visa Services",
         agree: false,
       });
     } catch (err) {
@@ -220,8 +243,9 @@ export default function VisaServices() {
 
   return (
     <div className="bg-gray-100 py-4 px-4">
-     
-      <div className="">
+
+      {/* Popular Visa */}
+      <div>
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-blue-600">
           Popular Visa Destinations
         </h2>
@@ -230,7 +254,8 @@ export default function VisaServices() {
           {visaData.map((item, index) => (
             <div
               key={index}
-              className="relative rounded-3xl overflow-hidden group cursor-pointer "
+              onClick={() => navigate(`/visa/${item.slug}`)}
+              className="relative rounded-3xl overflow-hidden group cursor-pointer"
             >
               {/* IMAGE */}
               <img
@@ -241,7 +266,7 @@ export default function VisaServices() {
               />
 
               {/* OVERLAY */}
-              <div className="absolute inset-0  group-hover:bg-black/60 transition"></div>
+              <div className="absolute inset-0 group-hover:bg-black/60 transition"></div>
 
               {/* CONTENT */}
               <div className="absolute bottom-0 p-4 text-white w-full">
@@ -258,6 +283,10 @@ export default function VisaServices() {
                   <div className="text-xs mt-3 border-t border-white/30 pt-2">
                     <p className="opacity-80">Documents Needed:</p>
                     <p className="font-semibold">{item.docs}</p>
+
+                    <button className="mt-3 bg-white text-black w-full py-2 rounded-lg font-semibold">
+                      View Details
+                    </button>
                   </div>
                 </div>
               </div>
@@ -265,13 +294,14 @@ export default function VisaServices() {
           ))}
         </div>
       </div>
-       <div className="max-w-6xl mx-auto bg-white mt-8 shadow-lg rounded-lg p-8">
-          <h2 className="text-2xl font-bold mb-6 text-center">
-        Visa Inquiry Form
-        </h2>
-        <form onSubmit={handleSubmit} className="space-y-6 ">
-          {/* Name row */}
 
+      {/* Inquiry Form */}
+      <div className="max-w-6xl mx-auto bg-white mt-8 shadow-lg rounded-lg p-8">
+        <h2 className="text-2xl font-bold mb-6 text-center">
+          Visa Inquiry Form
+        </h2>
+
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <label className="font-semibold">First Name</label>
@@ -281,7 +311,7 @@ export default function VisaServices() {
                 value={formData.firstName}
                 onChange={handleChange}
                 placeholder="Enter Your First Name"
-                className="w-full mt-2 border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full mt-2 border rounded-lg p-3"
               />
             </div>
 
@@ -298,8 +328,6 @@ export default function VisaServices() {
             </div>
           </div>
 
-          {/* Email */}
-
           <div>
             <label className="font-semibold">Email</label>
             <input
@@ -311,8 +339,6 @@ export default function VisaServices() {
               className="w-full mt-2 border rounded-lg p-3"
             />
           </div>
-
-          {/* Phone */}
 
           <div>
             <label className="font-semibold">
@@ -328,12 +354,8 @@ export default function VisaServices() {
             />
           </div>
 
-          {/* Services */}
-
           <div>
-            <label className="font-semibold">
-              Services <span className="text-red-500">*</span>
-            </label>
+            <label className="font-semibold">Services</label>
 
             <select
               name="service"
@@ -348,8 +370,6 @@ export default function VisaServices() {
             </select>
           </div>
 
-          {/* Terms */}
-
           <div className="flex items-center gap-2">
             <input
               type="checkbox"
@@ -359,17 +379,16 @@ export default function VisaServices() {
             />
 
             <p className="text-sm">
-              I have read and agree to the{" "}
-              <Link to="/terms" className="text-orange-600 hover:underline">
-                Terms and Conditions
+              I agree to{" "}
+              <Link to="/terms" className="text-orange-600">
+                Terms
               </Link>{" "}
               and{" "}
-              <Link to="/privacy" className="text-orange-600 hover:underline">
+              <Link to="/privacy" className="text-orange-600">
                 Privacy Policy
               </Link>
             </p>
           </div>
-          {/* Button */}
 
           <button
             type="submit"
@@ -378,8 +397,6 @@ export default function VisaServices() {
             SUBMIT FORM
           </button>
         </form>
-
-        {/* VISA CARDS SECTION */}
       </div>
     </div>
   );
