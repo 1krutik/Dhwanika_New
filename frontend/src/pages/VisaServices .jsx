@@ -261,7 +261,7 @@ export default function VisaServices() {
               <img
                 src={item.image}
                 alt={item.country}
-                loading="lazy"
+                
                 className="h-[400px] w-full object-cover group-hover:scale-110 transition duration-500"
               />
 
