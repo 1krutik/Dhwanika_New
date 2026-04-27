@@ -172,11 +172,13 @@ export default function VisaDetails() {
   ];
 
   const formatSlug = (text) =>
-    text.toLowerCase().replace(/\s+/g, "-").replace(/[()]/g, "").replace(/[^a-z0-9-]/g, "");
+    text
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .replace(/[()]/g, "")
+      .replace(/[^a-z0-9-]/g, "");
 
-  const visa = visaData.find(
-    (item) => formatSlug(item.country) === slug
-  );
+  const visa = visaData.find((item) => formatSlug(item.country) === slug);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -185,15 +187,12 @@ export default function VisaDetails() {
 
   if (!visa) {
     return (
-      <div className="py-32 text-center text-4xl font-bold">
-        Visa Not Found
-      </div>
+      <div className="py-32 text-center text-4xl font-bold">Visa Not Found</div>
     );
   }
 
   return (
     <div className="bg-white">
-
       {/* HERO */}
       <div className="relative h-[520px]">
         <img
@@ -221,12 +220,9 @@ export default function VisaDetails() {
 
       {/* BODY */}
       <div className="max-w-7xl mx-auto px-4 py-16 grid lg:grid-cols-3 gap-10">
-
         {/* LEFT */}
         <div className="lg:col-span-2">
-
           <div className="grid md:grid-cols-2 gap-6">
-
             <div className="bg-gray-100 p-6 rounded-2xl">
               <p className="text-sm text-gray-500">Visa Type</p>
               <h3 className="text-2xl font-bold mt-2">{visa.type}</h3>
@@ -246,39 +242,28 @@ export default function VisaDetails() {
 
             <div className="bg-gray-100 p-6 rounded-2xl">
               <p className="text-sm text-gray-500">Processing</p>
-              <h3 className="text-2xl font-bold mt-2">
-                4 - 7 Working Days
-              </h3>
+              <h3 className="text-2xl font-bold mt-2">4 - 7 Working Days</h3>
             </div>
-
           </div>
 
           {/* DOCUMENTS */}
           <div className="mt-10 bg-blue-50 p-8 rounded-3xl">
-            <h2 className="text-3xl font-bold mb-6">
-              Required Documents
-            </h2>
+            <h2 className="text-3xl font-bold mb-6">Required Documents</h2>
 
             <div className="space-y-3">
               {visa.docs.split(",").map((doc, i) => (
-                <div
-                  key={i}
-                  className="bg-white p-4 rounded-xl shadow"
-                >
+                <div key={i} className="bg-white p-4 rounded-xl shadow">
                   ✔ {doc.trim()}
                 </div>
               ))}
             </div>
           </div>
-
         </div>
 
         {/* RIGHT */}
         <div>
           <div className="sticky top-28 bg-slate-900 text-white rounded-3xl p-8">
-            <h2 className="text-3xl font-bold mb-4">
-              Inquiry Form
-            </h2>
+            <h2 className="text-3xl font-bold mb-4">Inquiry Form</h2>
 
             <p className="mb-6 text-sm text-gray-300">
               Apply for {visa.country} visa now.
@@ -316,7 +301,6 @@ export default function VisaDetails() {
             </a>
           </div>
         </div>
-
       </div>
     </div>
   );

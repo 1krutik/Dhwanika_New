@@ -379,14 +379,15 @@ export default function VisaServices() {
             />
 
             <p className="text-sm">
-              I agree to{" "}
+              By Submitting the form, I agree to the{" "}
+                 <Link to="/privacy" className="text-orange-600">
+                Privacy Policy 
+              </Link> and Website{" "}
               <Link to="/terms" className="text-orange-600">
-                Terms
+                Terms of Use.
               </Link>{" "}
-              and{" "}
-              <Link to="/privacy" className="text-orange-600">
-                Privacy Policy
-              </Link>
+              
+           
             </p>
           </div>
 
