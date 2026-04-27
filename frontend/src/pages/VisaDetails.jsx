@@ -294,7 +294,7 @@ export default function VisaDetails() {
             </button>
 
             <a
-              href="https://wa.me/919327907744"
+              href="https://wa.me/917698551313"
               className="block text-center mt-4 bg-green-500 py-3 rounded-xl font-bold"
             >
               WhatsApp Now
