@@ -272,7 +272,7 @@ export default function Home() {
       </section>
 
       {/* WhatsApp FAB */}
-      <a
+      {/* <a
         target="_blank"
         rel="noreferrer"
         href="https://wa.me/917698551313"
@@ -280,7 +280,7 @@ export default function Home() {
         aria-label="Chat on WhatsApp"
       >
         <img className="h-6 w-6" src="/logos/whatsapp.png" alt="" loading="lazy" />
-      </a>
+      </a> */}
     </div>
   );
 }

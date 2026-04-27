@@ -183,8 +183,47 @@ export default function VisaDetails() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
+    email: "",
   });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
+    if (!formData.name || !formData.phone) {
+      alert("Please fill Name and Phone Number");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      await fetch("https://dhwanikaoverseas.onrender.com/api/inquiry", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          firstName: formData.name,
+          lastName: "",
+          email: formData.email,
+          phone: formData.phone,
+          service: `${visa.country} Visa`,
+        }),
+      });
+
+      alert("🎉 Inquiry Submitted Successfully");
+
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+      });
+    } catch (error) {
+      alert("Something went wrong");
+    }
+
+    setLoading(false);
+  };
+  const [loading, setLoading] = useState(false);
   if (!visa) {
     return (
       <div className="py-32 text-center text-4xl font-bold">Visa Not Found</div>
@@ -261,45 +300,63 @@ export default function VisaDetails() {
         </div>
 
         {/* RIGHT */}
-        <div>
-          <div className="sticky top-28 bg-slate-900 text-white rounded-3xl p-8">
-            <h2 className="text-3xl font-bold mb-4">Inquiry Form</h2>
+        <div className="sticky top-28 bg-white shadow-2xl rounded-3xl p-8 border">
+          <h2 className="text-3xl font-bold mb-2 text-slate-800">Apply Now</h2>
 
-            <p className="mb-6 text-sm text-gray-300">
-              Apply for {visa.country} visa now.
-            </p>
+          <p className="mb-6 text-sm text-gray-500">
+            Fill the form for {visa.country} Visa assistance.
+          </p>
 
+          <form onSubmit={handleSubmit}>
             <input
               type="text"
-              placeholder="Your Name"
+              required
+              placeholder="Full Name *"
               value={formData.name}
               onChange={(e) =>
                 setFormData({ ...formData, name: e.target.value })
               }
-              className="w-full p-3 rounded-xl text-black mb-4"
+              className="w-full border p-3 rounded-xl mb-4"
             />
 
             <input
               type="tel"
-              placeholder="Phone Number"
+              required
+              placeholder="Phone Number *"
               value={formData.phone}
               onChange={(e) =>
                 setFormData({ ...formData, phone: e.target.value })
               }
-              className="w-full p-3 rounded-xl text-black mb-4"
+              className="w-full border p-3 rounded-xl mb-4"
             />
 
-            <button className="w-full bg-yellow-400 text-black py-3 rounded-xl font-bold">
-              Submit Inquiry
+            <input
+              type="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
+              className="w-full border p-3 rounded-xl mb-4"
+            />
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white py-3 rounded-xl font-bold shadow-lg transition duration-300"
+            >
+              {loading ? "Submitting..." : "Submit Inquiry"}
             </button>
 
             <a
               href="https://wa.me/917698551313"
-              className="block text-center mt-4 bg-green-500 py-3 rounded-xl font-bold"
+              target="_blank"
+              rel="noreferrer"
+              className="block text-center mt-4 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold shadow-md transition duration-300"
             >
               WhatsApp Now
             </a>
-          </div>
+          </form>
         </div>
       </div>
     </div>

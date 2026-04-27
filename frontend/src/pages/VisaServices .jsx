@@ -5,191 +5,191 @@ export default function VisaServices() {
   const navigate = useNavigate();
 
   const visaData = [
-  {
-    country: "Vietnam",
-    slug: "vietnam",
-    image: "https://images.unsplash.com/photo-1528127269322-539801943592",
-    type: "E-VISA",
-    valid: "30 Days",
-    fees: "",
-    docs: "Passport, Passport Photo, Return Ticket, Hotel Booking",
-  },
-  {
-    country: "Thailand",
-    slug: "thailand",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-    type: "E-VISA",
-    valid: "90 Days",
-    fees: "",
-    docs: "Passport, Passport Photo, Return Ticket, Accommodation Proof",
-  },
-  {
-    country: "Sri Lanka",
-    slug: "sri-lanka",
-    image: "https://images.unsplash.com/photo-1574611122955-5baa61496637",
-    type: "E-VISA",
-    valid: "180 Days",
-    fees: "",
-    docs: "Passport, Passport Photo, Return Ticket, Travel Details",
-  },
-  {
-    country: "Malaysia",
-    slug: "malaysia",
-    image: "https://images.unsplash.com/photo-1597148543182-830ef7bbb904",
-    type: "E-VISA",
-    valid: "30 Days",
-    fees: "",
-    docs: "Passport, Passport Photo, Return Ticket, Hotel Booking",
-  },
-  {
-    country: "Indonesia",
-    slug: "indonesia",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-    type: "E-VISA",
-    valid: "90 Days",
-    fees: "",
-    docs: "Passport, Passport Photo, Return Ticket, Hotel Booking",
-  },
-  {
-    country: "Singapore",
-    slug: "singapore",
-    image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd",
-    type: "E-VISA",
-    valid: "30 Days",
-    fees: "",
-    docs: "Passport, Passport Photo, Return Ticket, Hotel Booking",
-  },
-  {
-    country: "Dubai (UAE)",
-    slug: "dubai-uae",
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c",
-    type: "Tourist Visa",
-    valid: "30 Days",
-    fees: "",
-    docs: "Passport, Passport Photo, Confirmed Ticket, Hotel Booking",
-  },
-  {
-    country: "Turkey",
-    slug: "turkey",
-    image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200",
-    type: "E-VISA",
-    valid: "60 Days",
-    fees: "",
-    docs: "Passport, Valid Visa/Residence Permit, Return Ticket",
-  },
-  {
-    country: "Egypt",
-    slug: "egypt",
-    image:
-      "https://images.unsplash.com/photo-1572252009286-268acec5ca0a?q=80&w=1170&auto=format&fit=crop",
-    type: "E-VISA",
-    valid: "30 Days",
-    fees: "",
-    docs: "Passport, Passport Photo, Travel Itinerary, Hotel Booking",
-  },
-  {
-    country: "Kenya",
-    slug: "kenya",
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
-    type: "E-VISA",
-    valid: "90 Days",
-    fees: "",
-    docs: "Passport, Passport Photo, Return Ticket, Yellow Fever Certificate",
-  },
-  {
-    country: "Australia",
-    slug: "australia",
-    image:
-      "https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?q=80&w=1333&auto=format&fit=crop",
-    type: "Visitor Visa",
-    valid: "90 Days",
-    fees: "",
-    docs: "Passport, Passport Photo, Bank Statement, Employment Proof, Travel Plan",
-  },
-  {
-    country: "New Zealand",
-    slug: "new-zealand",
-    image: "https://images.unsplash.com/photo-1507699622108-4be3abd695ad",
-    type: "Visitor Visa",
-    valid: "90 Days",
-    fees: "",
-    docs: "Passport, Passport Photo, Bank Statement, Return Ticket",
-  },
-  {
-    country: "Japan",
-    slug: "japan",
-    image:
-      "https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=1192&auto=format&fit=crop",
-    type: "Tourist Visa",
-    valid: "30 Days",
-    fees: "",
-    docs: "Passport, Passport Photo, Bank Statement, Flight Booking, Itinerary",
-  },
-  {
-    country: "South Korea",
-    slug: "south-korea",
-    image: "https://images.unsplash.com/photo-1549693578-d683be217e58",
-    type: "Tourist Visa",
-    valid: "90 Days",
-    fees: "",
-    docs: "Passport, Passport Photo, Bank Statement, Employment Proof",
-  },
-  {
-    country: "Germany",
-    slug: "germany",
-    image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b",
-    type: "Schengen Visa",
-    valid: "90 Days",
-    fees: "",
-    docs: "Passport, Passport Photo, Travel Insurance, Bank Statement, Hotel Booking",
-  },
-  {
-    country: "France",
-    slug: "france",
-    image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34",
-    type: "Schengen Visa",
-    valid: "90 Days",
-    fees: "",
-    docs: "Passport, Passport Photo, Travel Insurance, Bank Statement",
-  },
-  {
-    country: "Italy",
-    slug: "italy",
-    image: "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9",
-    type: "Schengen Visa",
-    valid: "90 Days",
-    fees: "",
-    docs: "Passport, Passport Photo, Travel Insurance, Hotel Booking",
-  },
-  {
-    country: "Switzerland",
-    slug: "switzerland",
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
-    type: "Schengen Visa",
-    valid: "90 Days",
-    fees: "",
-    docs: "Passport, Passport Photo, Travel Insurance, Bank Statement",
-  },
-  {
-    country: "Canada",
-    slug: "canada",
-    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
-    type: "Visitor Visa",
-    valid: "180 Days",
-    fees: "",
-    docs: "Passport, Passport Photo, Bank Statement, Employment Proof",
-  },
-  {
-    country: "USA",
-    slug: "usa",
-    image:
-      "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=1170&auto=format&fit=crop",
-    type: "Tourist Visa",
-    valid: "180 Days",
-    fees: "",
-    docs: "Passport, DS-160 Form, Passport Photo, Bank Statement, Visa Interview",
-  },
-];
+    {
+      country: "Vietnam",
+      slug: "vietnam",
+      image: "https://images.unsplash.com/photo-1528127269322-539801943592",
+      type: "E-VISA",
+      valid: "30 Days",
+      fees: "",
+      docs: "Passport, Passport Photo, Return Ticket, Hotel Booking",
+    },
+    {
+      country: "Thailand",
+      slug: "thailand",
+      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+      type: "E-VISA",
+      valid: "90 Days",
+      fees: "",
+      docs: "Passport, Passport Photo, Return Ticket, Accommodation Proof",
+    },
+    {
+      country: "Sri Lanka",
+      slug: "sri-lanka",
+      image: "https://images.unsplash.com/photo-1574611122955-5baa61496637",
+      type: "E-VISA",
+      valid: "180 Days",
+      fees: "",
+      docs: "Passport, Passport Photo, Return Ticket, Travel Details",
+    },
+    {
+      country: "Malaysia",
+      slug: "malaysia",
+      image: "https://images.unsplash.com/photo-1597148543182-830ef7bbb904",
+      type: "E-VISA",
+      valid: "30 Days",
+      fees: "",
+      docs: "Passport, Passport Photo, Return Ticket, Hotel Booking",
+    },
+    {
+      country: "Indonesia",
+      slug: "indonesia",
+      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+      type: "E-VISA",
+      valid: "90 Days",
+      fees: "",
+      docs: "Passport, Passport Photo, Return Ticket, Hotel Booking",
+    },
+    {
+      country: "Singapore",
+      slug: "singapore",
+      image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd",
+      type: "E-VISA",
+      valid: "30 Days",
+      fees: "",
+      docs: "Passport, Passport Photo, Return Ticket, Hotel Booking",
+    },
+    {
+      country: "Dubai (UAE)",
+      slug: "dubai-uae",
+      image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c",
+      type: "Tourist Visa",
+      valid: "30 Days",
+      fees: "",
+      docs: "Passport, Passport Photo, Confirmed Ticket, Hotel Booking",
+    },
+    {
+      country: "Turkey",
+      slug: "turkey",
+      image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200",
+      type: "E-VISA",
+      valid: "60 Days",
+      fees: "",
+      docs: "Passport, Valid Visa/Residence Permit, Return Ticket",
+    },
+    {
+      country: "Egypt",
+      slug: "egypt",
+      image:
+        "https://images.unsplash.com/photo-1572252009286-268acec5ca0a?q=80&w=1170&auto=format&fit=crop",
+      type: "E-VISA",
+      valid: "30 Days",
+      fees: "",
+      docs: "Passport, Passport Photo, Travel Itinerary, Hotel Booking",
+    },
+    {
+      country: "Kenya",
+      slug: "kenya",
+      image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+      type: "E-VISA",
+      valid: "90 Days",
+      fees: "",
+      docs: "Passport, Passport Photo, Return Ticket, Yellow Fever Certificate",
+    },
+    {
+      country: "Australia",
+      slug: "australia",
+      image:
+        "https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?q=80&w=1333&auto=format&fit=crop",
+      type: "Visitor Visa",
+      valid: "90 Days",
+      fees: "",
+      docs: "Passport, Passport Photo, Bank Statement, Employment Proof, Travel Plan",
+    },
+    {
+      country: "New Zealand",
+      slug: "new-zealand",
+      image: "https://images.unsplash.com/photo-1507699622108-4be3abd695ad",
+      type: "Visitor Visa",
+      valid: "90 Days",
+      fees: "",
+      docs: "Passport, Passport Photo, Bank Statement, Return Ticket",
+    },
+    {
+      country: "Japan",
+      slug: "japan",
+      image:
+        "https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=1192&auto=format&fit=crop",
+      type: "Tourist Visa",
+      valid: "30 Days",
+      fees: "",
+      docs: "Passport, Passport Photo, Bank Statement, Flight Booking, Itinerary",
+    },
+    {
+      country: "South Korea",
+      slug: "south-korea",
+      image: "https://images.unsplash.com/photo-1549693578-d683be217e58",
+      type: "Tourist Visa",
+      valid: "90 Days",
+      fees: "",
+      docs: "Passport, Passport Photo, Bank Statement, Employment Proof",
+    },
+    {
+      country: "Germany",
+      slug: "germany",
+      image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b",
+      type: "Schengen Visa",
+      valid: "90 Days",
+      fees: "",
+      docs: "Passport, Passport Photo, Travel Insurance, Bank Statement, Hotel Booking",
+    },
+    {
+      country: "France",
+      slug: "france",
+      image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34",
+      type: "Schengen Visa",
+      valid: "90 Days",
+      fees: "",
+      docs: "Passport, Passport Photo, Travel Insurance, Bank Statement",
+    },
+    {
+      country: "Italy",
+      slug: "italy",
+      image: "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9",
+      type: "Schengen Visa",
+      valid: "90 Days",
+      fees: "",
+      docs: "Passport, Passport Photo, Travel Insurance, Hotel Booking",
+    },
+    {
+      country: "Switzerland",
+      slug: "switzerland",
+      image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+      type: "Schengen Visa",
+      valid: "90 Days",
+      fees: "",
+      docs: "Passport, Passport Photo, Travel Insurance, Bank Statement",
+    },
+    {
+      country: "Canada",
+      slug: "canada",
+      image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+      type: "Visitor Visa",
+      valid: "180 Days",
+      fees: "",
+      docs: "Passport, Passport Photo, Bank Statement, Employment Proof",
+    },
+    {
+      country: "USA",
+      slug: "usa",
+      image:
+        "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=1170&auto=format&fit=crop",
+      type: "Tourist Visa",
+      valid: "180 Days",
+      fees: "",
+      docs: "Passport, DS-160 Form, Passport Photo, Bank Statement, Visa Interview",
+    },
+  ];
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -243,7 +243,6 @@ export default function VisaServices() {
 
   return (
     <div className="bg-gray-100 py-4 px-4">
-
       {/* Popular Visa */}
       <div>
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-blue-600">
@@ -261,7 +260,6 @@ export default function VisaServices() {
               <img
                 src={item.image}
                 alt={item.country}
-                
                 className="h-[400px] w-full object-cover group-hover:scale-110 transition duration-500"
               />
 
@@ -372,6 +370,7 @@ export default function VisaServices() {
 
           <div className="flex items-center gap-2">
             <input
+              className=""
               type="checkbox"
               name="agree"
               checked={formData.agree}
@@ -380,14 +379,13 @@ export default function VisaServices() {
 
             <p className="text-sm">
               By Submitting the form, I agree to the{" "}
-                 <Link to="/privacy" className="text-orange-600">
-                Privacy Policy 
-              </Link> and Website{" "}
-              <Link to="/terms" className="text-orange-600">
+              <Link to="/privacy" className="text-blue-600">
+                Privacy Policy
+              </Link>{" "}
+              and Website{" "}
+              <Link to="/terms" className="text-blue-600">
                 Terms of Use.
               </Link>{" "}
-              
-           
             </p>
           </div>
 
