@@ -341,21 +341,21 @@ export default function VisaDetails() {
             />
 
             <button
-              type="submit"
-              disabled={loading}
-              className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white py-3 rounded-xl font-bold shadow-lg transition duration-300"
-            >
-              {loading ? "Submitting..." : "Submit Inquiry"}
-            </button>
+  type="submit"
+  disabled={loading}
+  className="btn-primary w-full justify-center"
+>
+  {loading ? "Submitting..." : "Submit Inquiry"}
+</button>
 
-            <a
-              href="https://wa.me/917698551313"
-              target="_blank"
-              rel="noreferrer"
-              className="block text-center mt-4 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold shadow-md transition duration-300"
-            >
-              WhatsApp Now
-            </a>
+           <div><img src="Images/logos/whatsapp.jpg" alt="" /> <a
+  href="https://wa.me/917698551313"
+  target="_blank"
+  rel="noreferrer"
+  className="btn-primary mt-4 w-full justify-center flex"
+>
+  WhatsApp Now
+</a></div>
           </form>
         </div>
       </div>

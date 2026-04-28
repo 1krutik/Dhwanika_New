@@ -9,13 +9,12 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import TermsConditions from "./pages/TermsConditions";
 import About from "./pages/About";
-  // ✅ ADD THIS
+// ✅ ADD THIS
 import TravelCards from "./pages/TravelCards";
 import Contact from "./pages/Contact";
 import ScrollToTop from "./components/ScrollToTop";
 import VisaServices from "./pages/VisaServices ";
 import VisaDetails from "./pages/VisaDetails";
-
 
 function App() {
   useEffect(() => {
@@ -45,14 +44,19 @@ function App() {
         <Route path="/holidays" element={<TravelCards />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-        <a
+      <a
         target="_blank"
         rel="noreferrer"
         href="https://wa.me/917698551313"
         className="fixed bottom-4 right-4 z-50 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-soft ring-1 ring-ink-200 transition hover:-translate-y-0.5"
         aria-label="Chat on WhatsApp"
       >
-        <img className="h-6 w-6" src="/logos/whatsapp.png" alt="" loading="lazy" />
+        <img
+          className="h-6 w-6"
+          src="/logos/whatsapp.png"
+          alt=""
+          loading="lazy"
+        />
       </a>
 
       <Footer />
