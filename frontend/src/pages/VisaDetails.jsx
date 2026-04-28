@@ -190,7 +190,7 @@ export default function VisaDetails() {
 
     if (!formData.name || !formData.phone) {
       alert("Please fill Name and Phone Number");
-      return;
+      return; 
     }
 
     setLoading(true);
@@ -243,7 +243,7 @@ export default function VisaDetails() {
         <div className="absolute inset-0 bg-black/55"></div>
 
         <div className="absolute bottom-10 left-6 md:left-16 text-white">
-          <p className="text-yellow-400 tracking-[4px] uppercase text-sm">
+          <p className="text-white-400 tracking-[4px] uppercase text-sm">
             Dhwanika Overseas
           </p>
 
