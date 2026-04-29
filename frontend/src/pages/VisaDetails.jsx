@@ -190,7 +190,7 @@ export default function VisaDetails() {
 
     if (!formData.name || !formData.phone) {
       alert("Please fill Name and Phone Number");
-      return; 
+      return;
     }
 
     setLoading(true);
@@ -341,21 +341,24 @@ export default function VisaDetails() {
             />
 
             <button
-  type="submit"
-  disabled={loading}
-  className="btn-primary w-full justify-center"
->
-  {loading ? "Submitting..." : "Submit Inquiry"}
-</button>
+              type="submit"
+              disabled={loading}
+              className="btn-primary w-full justify-center"
+            >
+              {loading ? "Submitting..." : "Submit Inquiry"}
+            </button>
 
-           <div><img src="Images/logos/whatsapp.jpg" alt="" /> <a
-  href="https://wa.me/917698551313"
-  target="_blank"
-  rel="noreferrer"
-  className="btn-primary mt-4 w-full justify-center flex"
->
-  WhatsApp Now
-</a></div>
+            <div>
+              <img src="Images/logos/whatsapp.jpg" alt="" />{" "}
+              <a
+                href="https://wa.me/917698551313"
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary mt-4 w-full justify-center flex"
+              >
+                WhatsApp Now
+              </a>
+            </div>
           </form>
         </div>
       </div>
