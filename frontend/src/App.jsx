@@ -2,14 +2,12 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-
 import Home from "./pages/Home";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import TermsConditions from "./pages/TermsConditions";
 import About from "./pages/About";
-// ✅ ADD THIS
 import TravelCards from "./pages/TravelCards";
 import Contact from "./pages/Contact";
 import ScrollToTop from "./components/ScrollToTop";
