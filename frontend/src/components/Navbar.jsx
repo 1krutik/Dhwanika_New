@@ -75,7 +75,7 @@ const Navbar = () => {
             aria-label="Call Dhwanika Overseas"
           >
             <Phone size={16} />
-            +91 76985 51313
+            +91 63598 91313
           </a>
           <Link to="/contact" className="btn-primary">
             Book Now <ArrowRight size={16} />
