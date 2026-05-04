@@ -52,9 +52,9 @@ export default function Contact() {
                 </div>
                 <a
                   className="mt-2 block text-sm text-ink-600 hover:text-ink-900"
-                  href="tel:+917698551313"
+                  href="tel:+916359891313"
                 >
-                  +91 76985 51313
+                  +91 63598 91313
                 </a>
               </div>
 

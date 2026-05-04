@@ -42,20 +42,28 @@ function App() {
         <Route path="/holidays" element={<TravelCards />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+ 
       <a
-        target="_blank"
-        rel="noreferrer"
-        href="https://wa.me/916359891313"
-        className="fixed bottom-4 right-4 z-50 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-soft ring-1 ring-ink-200 transition hover:-translate-y-0.5"
-        aria-label="Chat on WhatsApp"
-      >
-        <img
-          className="h-6 w-6"
+  href="https://wa.me/916359891313?text=I want more information about your services."
+  target="_blank"
+  style={{
+    position: "fixed",
+    bottom: "20px",
+    right: "20px",
+    background: "white",
+    color: "white",
+    padding: "10px 10px",
+    borderRadius: "50px",
+    textDecoration: "none"
+  }}
+>
+<img
+          className="h-8 w-8"
           src="/logos/whatsapp.png"
           alt=""
           loading="lazy"
         />
-      </a>
+</a>
 
       <Footer />
     </>

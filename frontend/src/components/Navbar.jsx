@@ -24,7 +24,7 @@ const Navbar = () => {
       <nav className="container-page flex items-center justify-between py-3">
         <Link to="/" className="flex items-center gap-3">
           <img
-            className="h-10 w-10 rounded-xl ring-1 ring-white/10"
+            className="h-12 w-12 rounded-xl ring-1 ring-white/10"
             src="/logos/new-logo.png"
             alt="Dhwanika Overseas"
             loading="eager"
