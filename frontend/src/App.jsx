@@ -45,7 +45,7 @@ function App() {
       <a
         target="_blank"
         rel="noreferrer"
-        href="https://wa.me/917698551313"
+        href="https://wa.me/916359891313"
         className="fixed bottom-4 right-4 z-50 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-soft ring-1 ring-ink-200 transition hover:-translate-y-0.5"
         aria-label="Chat on WhatsApp"
       >

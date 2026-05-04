@@ -25,7 +25,7 @@ const Navbar = () => {
         <Link to="/" className="flex items-center gap-3">
           <img
             className="h-10 w-10 rounded-xl ring-1 ring-white/10"
-            src="/logos/favicon.jpg"
+            src="/logos/new-logo.png"
             alt="Dhwanika Overseas"
             loading="eager"
           />
@@ -88,7 +88,7 @@ const Navbar = () => {
         className={[
           "md:hidden",
           menuOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0",
-        ].join(" ")}
+        ].join(" ")}  
         aria-hidden={!menuOpen}
       >
         <div
