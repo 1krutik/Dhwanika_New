@@ -349,12 +349,12 @@ export default function VisaDetails() {
             </button>
 
             <div>
-              <img src="Images/logos/whatsapp.jpg" alt="" />{" "}
+             
               <a
-                href="https://wa.me/917698551313"
-                target="_blank"
+                 href="https://wa.me/916359891313?text=I want more information about your Visa services."
+  target="_blank"
                 rel="noreferrer"
-                className="btn-primary mt-4 w-full justify-center flex"
+                className="border-t-accent-500 mt-4 w-full justify-center flex"
               >
                 WhatsApp Now
               </a>
