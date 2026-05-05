@@ -348,16 +348,6 @@ export default function VisaDetails() {
               {loading ? "Submitting..." : "Submit Inquiry"}
             </button>
 
-            <div>
-              <a
-                href="https://wa.me/916359891313?text=I want more information about your Visa services."
-                target="_blank"
-                rel="noreferrer"
-                className="border-t-accent-500 mt-4 w-full justify-center flex"
-              >
-                WhatsApp Now
-              </a>
-            </div>
           </form>
         </div>
       </div>
