@@ -347,7 +347,6 @@ export default function VisaDetails() {
             >
               {loading ? "Submitting..." : "Submit Inquiry"}
             </button>
-
           </form>
         </div>
       </div>
