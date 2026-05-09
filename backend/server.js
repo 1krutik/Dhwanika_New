@@ -12,8 +12,8 @@ app.use(express.json());
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "visas@dhwanikaoverseas.in",
-    pass: "hodbnygtkfonjpwm"
+    user: "dhwanikaoverseas@gmail.com",
+    pass: "cgsejafinammuldd",
   }
 });
 mongoose
@@ -31,8 +31,8 @@ app.post("/api/inquiry", async (req, res) => {
     const { firstName, lastName, email, phone, service } = req.body;
 
     const mailOptions = {
-      from: "visas@dhwanikaoverseas.in",
-      to: "visas@dhwanikaoverseas.in", // where YOU receive inquiry
+      from: "dhwanikaoverseas@gmail.com",
+      to: "dhwanikaoverseas@gmail.com", // where YOU receive inquiry
       subject: "🔥 New Inquiry - Dhwanika Overseas",
       html: `
         <h2>New Inquiry Received</h2>
