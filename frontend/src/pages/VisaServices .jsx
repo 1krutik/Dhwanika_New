@@ -213,7 +213,7 @@ export default function VisaServices() {
     e.preventDefault();
 
     if (!formData.agree) {
-      alert("Please accept terms");
+      alert("Please accept terms and conditions.");
       return;
     }
 
