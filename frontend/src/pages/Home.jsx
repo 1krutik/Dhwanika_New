@@ -1,4 +1,11 @@
-import { ArrowRight, BadgeCheck, Globe2, Headphones, ShieldCheck, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  BadgeCheck,
+  Globe2,
+  Headphones,
+  ShieldCheck,
+  Sparkles,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import destinations from "../components/Destinations/data";
 import InquiryForm from "../components/InquiryForm";
@@ -40,8 +47,7 @@ const services = [
 export default function Home() {
   return (
     <div className="bg-ink-50">
-
-      <VisaServices/>
+      <VisaServices />
 
       {/* HERO */}
       {/* <section className="relative overflow-hidden bg-ink-950 text-white">
@@ -164,8 +170,8 @@ export default function Home() {
                 Best-selling destinations
               </h2>
               <p className="mt-3 max-w-2xl text-sm text-ink-600 sm:text-base">
-                Premium experiences curated for couples, families, and groups. Ask us
-                for a tailored itinerary.
+                Premium experiences curated for couples, families, and groups.
+                Ask us for a tailored itinerary.
               </p>
             </div>
             <Link to="/holidays" className="btn-primary">
@@ -175,7 +181,10 @@ export default function Home() {
 
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {destinations.slice(0, 8).map((d) => (
-              <div key={`${d.name}-${d.country}`} className="group overflow-hidden rounded-2xl ring-1 ring-ink-200">
+              <div
+                key={`${d.name}-${d.country}`}
+                className="group overflow-hidden rounded-2xl ring-1 ring-ink-200"
+              >
                 <div className="relative h-48 overflow-hidden">
                   <img
                     src={d.image}
@@ -195,7 +204,11 @@ export default function Home() {
                     {d.description}
                   </div>
                   <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-700">
-                    Get quote <ArrowRight size={16} className="transition group-hover:translate-x-0.5" />
+                    Get quote{" "}
+                    <ArrowRight
+                      size={16}
+                      className="transition group-hover:translate-x-0.5"
+                    />
                   </div>
                 </div>
               </div>
@@ -231,7 +244,10 @@ export default function Home() {
                   desc: "Clean UI, clean process, clean communication.",
                 },
               ].map((x) => (
-                <div key={x.title} className="rounded-2xl bg-ink-50 p-5 ring-1 ring-ink-200">
+                <div
+                  key={x.title}
+                  className="rounded-2xl bg-ink-50 p-5 ring-1 ring-ink-200"
+                >
                   <div className="text-base font-bold">{x.title}</div>
                   <div className="mt-2 text-sm leading-relaxed text-ink-600">
                     {x.desc}
@@ -259,28 +275,22 @@ export default function Home() {
                   name: "Family traveler",
                 },
               ].map((t) => (
-                <div key={t.name} className="rounded-2xl bg-ink-50 p-5 ring-1 ring-ink-200">
+                <div
+                  key={t.name}
+                  className="rounded-2xl bg-ink-50 p-5 ring-1 ring-ink-200"
+                >
                   <div className="text-sm leading-relaxed text-ink-700">
                     “{t.quote}”
                   </div>
-                  <div className="mt-3 text-sm font-bold text-ink-900">{t.name}</div>
+                  <div className="mt-3 text-sm font-bold text-ink-900">
+                    {t.name}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </div>
       </section>
-
-      {/* WhatsApp FAB */}
-      {/* <a
-        target="_blank"
-        rel="noreferrer"
-        href="https://wa.me/917698551313"
-        className="fixed bottom-4 right-4 z-50 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-soft ring-1 ring-ink-200 transition hover:-translate-y-0.5"
-        aria-label="Chat on WhatsApp"
-      >
-        <img className="h-6 w-6" src="/logos/whatsapp.png" alt="" loading="lazy" />
-      </a> */}
     </div>
   );
 }
