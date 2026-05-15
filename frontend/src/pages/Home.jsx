@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import destinations from "../components/Destinations/data";
 import InquiryForm from "../components/InquiryForm";
 import VisaServices from "./VisaServices ";
+import PartnersMarquee from "../components/PartnersMarquee";
 
 const stats = [
   { label: "Fast responses", value: "Under 30 min" },
@@ -48,7 +49,7 @@ export default function Home() {
   return (
     <div className="bg-ink-50">
       <VisaServices />
-
+<PartnersMarquee/> 
       {/* HERO */}
       {/* <section className="relative overflow-hidden bg-ink-950 text-white">
         <div className="absolute inset-0 bg-hero-radial" />
@@ -291,6 +292,17 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* WhatsApp FAB */}
+      {/* <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://wa.me/917698551313"
+        className="fixed bottom-4 right-4 z-50 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-soft ring-1 ring-ink-200 transition hover:-translate-y-0.5"
+        aria-label="Chat on WhatsApp"
+      >
+        <img className="h-6 w-6" src="/logos/whatsapp.png" alt="" loading="lazy" />
+      </a> */}
     </div>
   );
 }

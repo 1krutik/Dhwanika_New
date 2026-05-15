@@ -42,28 +42,28 @@ function App() {
         <Route path="/holidays" element={<TravelCards />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
- 
+
       <a
-  href="https://wa.me/916359891313?text=I want more information about your services."
-  target="_blank"
-  style={{
-    position: "fixed",
-    bottom: "20px",
-    right: "20px",
-    background: "white",
-    color: "white",
-    padding: "10px 10px",
-    borderRadius: "50px",
-    textDecoration: "none"
-  }}
->
-<img
+        href="https://wa.me/916359891313?text=I want more information about your services."
+        target="_blank"
+        style={{
+          position: "fixed",
+          bottom: "20px",
+          right: "20px",
+          background: "white",
+          color: "white",
+          padding: "10px 10px",
+          borderRadius: "50px",
+          textDecoration: "none",
+        }}
+      >
+        <img
           className="h-8 w-8"
           src="/logos/whatsapp.png"
           alt=""
           loading="lazy"
         />
-</a>
+      </a>
 
       <Footer />
     </>
