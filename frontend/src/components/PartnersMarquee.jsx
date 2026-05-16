@@ -1,14 +1,16 @@
 import { AlignVerticalJustifyStart } from "lucide-react";
 
 const logos = [
-  "https://cdn.worldvectorlogo.com/logos/emirates-airlines-1.svg",
+ 
   "https://digistore.co.in/wp-content/uploads/2024/07/YbgoLZ0vEO7TibbY.png",
     "https://cdn.worldvectorlogo.com/logos/etihad-airways-1.svg",
     "https://cdn.worldvectorlogo.com/logos/air-india-1.svg",
     "https://cdn.worldvectorlogo.com/logos/air-france-1.svg",
-    "https://cdn.worldvectorlogo.com/logos/klm-1.svg",
-    "https://cdn.worldvectorlogo.com/logos/lufthansa-1.svg",
-      
+    "https://1000logos.net/wp-content/uploads/2021/03/KLM-logo.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Lufthansa_Logo_2018.svg/1280px-Lufthansa_Logo_2018.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+    "https://www.justahotels.com/wp-content/uploads/2025/10/JHR-Website-Header-Logo-White-2560-x-823-px-scaled.png",
+    " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu0fwTBMTxMfVGG-_9_u9RTLaT2hqvi-HBXA&s",
+    "https://upload.wikimedia.org/wikipedia/commons/f/f8/EaseMyTrip_Logo.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
 
 
 
