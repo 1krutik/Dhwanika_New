@@ -11,11 +11,17 @@ app.use(express.json());
 
 /* ================= EMAIL CONFIG ================= */
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false,
+  requireTLS: true,
   auth: {
     user: process.env.EMAIL_USER || "dhwanikaoverseas@gmail.com",
     pass: process.env.EMAIL_PASS || "cgsejafinammuldd",
-  }
+  },
+  tls: {
+    rejectUnauthorized: false,
+  },
 });
 
 /* 🔍 CHECK SMTP CONNECTION */
@@ -40,50 +46,77 @@ mongoose
 app.get("/test-email", async (req, res) => {
   try {
     const info = await transporter.sendMail({
-      from: "dhwanikaoverseas@gmail.com",
-      to: "dhwanikaoverseas@gmail.com",
-      subject: "Test Email",
-      text: "Working ✅"
+      from: process.env.EMAIL_USER || "dhwanikaoverseas@gmail.com",
+      to: process.env.EMAIL_USER || "dhwanikaoverseas@gmail.com",
+      subject: "✅ Test Email - Dhwanika Overseas",
+      text: "Email system working successfully 🚀",
     });
 
     console.log("📩 TEST SUCCESS:", info.response);
-    res.send("Email Sent ✅");
+
+    res.send("Email Sent Successfully ✅");
   } catch (err) {
     console.log("❌ TEST ERROR:", err);
-    res.send("Error ❌");
+
+    res.status(500).send("Email Failed ❌");
   }
 });
 
 /* ================= INQUIRY API ================= */
 app.post("/api/inquiry", async (req, res) => {
   try {
+    /* SAVE TO DATABASE */
     const newInquiry = new Inquiry(req.body);
+
     await newInquiry.save();
 
     const { firstName, lastName, email, phone, service } = req.body;
 
+    /* EMAIL TEMPLATE */
     const mailOptions = {
-      from: "dhwanikaoverseas@gmail.com",
-      to: "dhwanikaoverseas@gmail.com",
+      from: process.env.EMAIL_USER || "dhwanikaoverseas@gmail.com",
+
+      to: process.env.EMAIL_USER || "dhwanikaoverseas@gmail.com",
+
       subject: "🔥 New Inquiry - Dhwanika Overseas",
+
       html: `
-        <h2>New Inquiry Received</h2>
-        <p><b>Name:</b> ${firstName} ${lastName}</p>
-        <p><b>Email:</b> ${email}</p>
-        <p><b>Phone:</b> ${phone}</p>
-        <p><b>Service:</b> ${service}</p>
-      `
+        <div style="font-family: Arial; padding:20px;">
+          <h2 style="color:#0b57d0;">New Inquiry Received 🚀</h2>
+
+          <p><b>Name:</b> ${firstName} ${lastName}</p>
+
+          <p><b>Email:</b> ${email}</p>
+
+          <p><b>Phone:</b> ${phone}</p>
+
+          <p><b>Service:</b> ${service}</p>
+
+          <hr />
+
+          <p style="color:gray;">
+            Dhwanika Overseas Website Inquiry
+          </p>
+        </div>
+      `,
     };
 
+    /* SEND EMAIL */
     const info = await transporter.sendMail(mailOptions);
 
     console.log("📩 EMAIL SENT:", info.response);
 
-    res.json({ message: "Inquiry sent successfully" });
-
+    res.json({
+      success: true,
+      message: "Inquiry Sent Successfully ✅",
+    });
   } catch (err) {
     console.log("❌ ERROR:", err);
-    res.status(500).json(err);
+      
+    res.status(500).json({
+      success: false,
+      message: "Something went wrong ❌",
+    });
   }
 });
 

@@ -185,18 +185,20 @@ export default function VisaDetails() {
     phone: "",
     email: "",
   });
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (!formData.name || !formData.phone) {
-      alert("Please fill Name and Phone Number");
-      return;
-    }
+  if (!formData.name || !formData.phone) {
+    alert("Please fill Name and Phone Number");
+    return;
+  }
 
-    setLoading(true);
+  setLoading(true);
 
-    try {
-      await fetch("https://dhwanikaoverseas.onrender.com/api/inquiry", {
+  try {
+    const response = await fetch(
+      "https://dhwanikaoverseas.onrender.com/api/inquiry",
+      {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -208,8 +210,12 @@ export default function VisaDetails() {
           phone: formData.phone,
           service: `${visa.country} Visa`,
         }),
-      });
+      }
+    );
 
+    const data = await response.json();
+
+    if (response.ok) {
       alert("🎉 Inquiry Submitted Successfully");
 
       setFormData({
@@ -217,12 +223,16 @@ export default function VisaDetails() {
         phone: "",
         email: "",
       });
-    } catch (error) {
-      alert("Something went wrong");
+    } else {
+      alert(data.message || "Something went wrong");
     }
+  } catch (error) {
+    console.log(error);
+    alert("Server Error");
+  }
 
-    setLoading(false);
-  };
+  setLoading(false);
+};
   const [loading, setLoading] = useState(false);
   if (!visa) {
     return (
