@@ -355,7 +355,7 @@ const handleSubmit = async (e) => {
               disabled={loading}
               className="btn-primary w-full justify-center"
             >
-              {loading ? "Submitting..." : "Submit Inquiry"}
+              {loading ? "Submitted" : "Submit Inquiry"}
             </button>
           </form>
         </div>
