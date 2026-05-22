@@ -185,54 +185,53 @@ export default function VisaDetails() {
     phone: "",
     email: "",
   });
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  if (!formData.name || !formData.phone) {
-    alert("Please fill Name and Phone Number");
-    return;
-  }
-
-  setLoading(true);
-
-  try {
-    const response = await fetch(
-      "https://dhwanikaoverseas.onrender.com/api/inquiry",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          firstName: formData.name,
-          lastName: "",
-          email: formData.email,
-          phone: formData.phone,
-          service: `${visa.country} Visa`,
-        }),
-      }
-    );
-
-    const data = await response.json();
-
-    if (response.ok) {
-      alert("🎉 Inquiry Submitted Successfully");
-
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-      });
-    } else {
-      alert(data.message || "Something went wrong");
+    if (!formData.name || !formData.phone) {
+      alert("Please fill Name and Phone Number");
+      return;
     }
-  } catch (error) {
-    console.log(error);
-    alert("Server Error");
-  }
 
-  setLoading(false);
-};
+    setLoading(true);
+
+    try {
+      const response = await fetch(
+        "https://dhwanikaoverseas.onrender.com/api/inquiry",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            firstName: formData.name,
+            lastName: "",
+            email: formData.email,
+            phone: formData.phone,
+            service: `${visa.country} Visa`,
+          }),
+        },
+      );
+
+      // ✅ don't force json parsing
+      if (response.ok) {
+        alert("🎉 Inquiry Submitted Successfully");
+
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+        });
+      } else {
+        alert("Something went wrong");
+      }
+    } catch (error) {
+      console.log(error);
+      alert("Server Error");
+    }
+
+    setLoading(false);
+  };
   const [loading, setLoading] = useState(false);
   if (!visa) {
     return (
@@ -339,7 +338,7 @@ const handleSubmit = async (e) => {
               }
               className="w-full border p-3 rounded-xl mb-4"
             />
-
+            
             <input
               type="email"
               placeholder="Email"
@@ -355,7 +354,7 @@ const handleSubmit = async (e) => {
               disabled={loading}
               className="btn-primary w-full justify-center"
             >
-              {loading ? "Submitted" : "Submit Inquiry"}
+              {loading ? "Submitting..." : "Submit Inquiry"}{" "}
             </button>
           </form>
         </div>

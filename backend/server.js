@@ -102,14 +102,19 @@ app.post("/api/inquiry", async (req, res) => {
     };
 
     /* SEND EMAIL */
-    const info = await transporter.sendMail(mailOptions);
+  try {
+  const info = await transporter.sendMail(mailOptions);
 
-    console.log("📩 EMAIL SENT:", info.response);
+  console.log("📩 EMAIL SENT:", info.response);
+} catch (mailError) {
+  console.log("❌ EMAIL ERROR:", mailError);
+}
 
-    res.json({
-      success: true,
-      message: "Inquiry Sent Successfully ✅",
-    });
+// ✅ ALWAYS SUCCESS RESPONSE
+res.status(200).json({
+  success: true,
+  message: "Inquiry saved successfully",
+});
   } catch (err) {
     console.log("❌ ERROR:", err);
       
