@@ -15,7 +15,7 @@ const Navbar = () => {
 
   const navLinkClass = ({ isActive }) =>
     [
-      "text-sm font-semibold transition-colors",
+      "text-md font-semibold transition-colors",
       isActive ? "text-white" : "text-white/80 hover:text-white",
     ].join(" ");
 
@@ -30,8 +30,8 @@ const Navbar = () => {
             loading="eager"
           />
           <div className="leading-tight">
-            <div className="text-sm font-bold text-white">Dhwanika Overseas</div>
-            <div className="text-xs text-white/60">Visa • Tours • Flights</div>
+            <div className="text-md font-bold text-white">Dhwanika Overseas</div>
+            <div className="text-xs text-white/60">Visa • Tours • Passport • Flights  </div>
           </div>
         </Link>
 
