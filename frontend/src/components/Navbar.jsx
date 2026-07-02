@@ -24,7 +24,7 @@ const Navbar = () => {
   }, []);
 
   const navLinkClass = ({ isActive }) =>
-    `flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 ${
+    `flex items-center gap-1 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 ${
       isActive
         ? "bg-blue-600 text-white shadow-lg shadow-blue-500/30"
         : "text-white/80 hover:text-white hover:bg-white/10 hover:scale-105"
