@@ -96,7 +96,7 @@ const Navbar = () => {
             </a>
 
             <Link to="/contact" className="btn-primary">
-              Book Now <ArrowRight size={16} />
+              Enquire Now <ArrowRight size={16} />
             </Link>
           </div>
 

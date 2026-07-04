@@ -240,49 +240,145 @@ export default function VisaServices() {
       console.log(err);
     }
   };
+  const flagMap = {
+    vietnam: "🇻🇳",
+    thailand: "🇹🇭",
+    "sri-lanka": "🇱🇰",
+    malaysia: "🇲🇾",
+    indonesia: "🇮🇩",
+    singapore: "🇸🇬",
+    "dubai-uae": "🇦🇪",
+    turkey: "🇹🇷",
+    egypt: "🇪🇬",
+    kenya: "🇰🇪",
+    australia: "🇦🇺",
+    "new-zealand": "🇳🇿",
+    japan: "🇯🇵",
+    "south-korea": "🇰🇷",
+    germany: "🇩🇪",
+    france: "🇫🇷",
+    italy: "🇮🇹",
+    switzerland: "🇨🇭",
+    canada: "🇨🇦",
+    usa: "🇺🇸",
+  };
+  const countryCodeMap = {
+    vietnam: "vn",
+    thailand: "th",
+    "sri-lanka": "lk",
+    malaysia: "my",
+    indonesia: "id",
+    singapore: "sg",
+    "dubai-uae": "ae",
+    turkey: "tr",
+    egypt: "eg",
+    kenya: "ke",
+    australia: "au",
+    "new-zealand": "nz",
+    japan: "jp",
+    "south-korea": "kr",
+    germany: "de",
+    france: "fr",
+    italy: "it",
+    switzerland: "ch",
+    canada: "ca",
+    usa: "us",
+  };
 
   return (
     <div className="bg-gray-100 py-4 px-4">
       {/* Popular Visa */}
       <div>
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-blue-600">
-          Popular Visa Destinations
-        </h2>
+        <div>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-2 text-blue-600">
+            Popular Visa Destinations
+          </h2>
+          <p className="text-center mb-4 text-gray-600">
+            We make your travel dream easy with hassle-free visas.
+          </p>
+        </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-7">
           {visaData.map((item, index) => (
             <div
               key={index}
               onClick={() => navigate(`/visa/${item.slug}`)}
-              className="relative rounded-3xl overflow-hidden group cursor-pointer"
+              className="relative h-[500px] overflow-hidden rounded-[34px] bg-black shadow-xl transition-all duration-500 group cursor-pointer hover:-translate-y-2 hover:shadow-2xl"
             >
               {/* IMAGE */}
               <img
-                src={item.image}
+                src={`${item.image}?auto=format&fit=crop&w=900&q=85`}
                 alt={item.country}
-                className="h-[400px] w-full object-cover group-hover:scale-110 transition duration-500"
+                className="absolute inset-0 h-full w-55 object-cover transition-all duration-700 group-hover:scale-110 group-hover:blur-[2px]"
               />
 
               {/* OVERLAY */}
-              <div className="absolute inset-0 group-hover:bg-black/60 transition"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/25 to-transparent transition-all duration-500 group-hover:from-black/75 group-hover:via-black/45" />
 
               {/* CONTENT */}
-              <div className="absolute bottom-0 p-4 text-white w-full">
-                <h2 className="text-lg font-bold mb-2">{item.country}</h2>
+              <div className="absolute inset-x-0 bottom-0 p-6 text-white transition-all duration-500 group-hover:-translate-y-3">
+                <div className="mx-auto mb-5 flex h-8 w-8 items-center justify-center overflow-hidden rounded-full bg-white shadow-lg">
+                  <img
+                    src={`https://flagcdn.com/w80/${countryCodeMap[item.slug]}.png`}
+                    alt={`${item.country} flag`}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
 
-                <div className="flex justify-between text-xs opacity-90">
-                  <span>{item.type}</span>
-                  <span>{item.valid}</span>
-                  <span>{item.fees}</span>
+                <h2 className="mb-6 text-center font-serif text-xl font-bold uppercase tracking-wide">
+                  {item.country}
+                </h2>
+
+                <div className="border-t border-white/20 pt-5">
+                  <div className="grid grid-cols-3 gap-3 text-center">
+                    <div>
+                      <p className="text-[11px] font-bold uppercase tracking-widest text-white/50">
+                        Type
+                      </p>
+                      <p className="mt-2 text-sm font-extrabold uppercase">
+                        {item.type}
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-[11px] font-bold uppercase tracking-widest text-white/50">
+                        Valid
+                      </p>
+                      <p className="mt-2 text-sm font-extrabold uppercase">
+                        {item.valid}
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-[11px] font-bold uppercase tracking-widest text-white/50">
+                        Fees
+                      </p>
+                      <p className="mt-2 text-sm font-extrabold uppercase">
+                        {item.fees || "On Request"}
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
                 {/* HOVER DOCUMENTS */}
-                <div className="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 mt-2">
-                  <div className="text-xs mt-3 border-t border-white/30 pt-2">
-                    <p className="opacity-80">Documents Needed:</p>
-                    <p className="font-semibold">{item.docs}</p>
+                <div className="max-h-0 overflow-hidden opacity-0 transition-all duration-500 group-hover:max-h-60 group-hover:opacity-100">
+                  <div className="border-t border-white/20 pt-3">
+                    <p className="text-[11px] font-bold uppercase tracking-widest text-white/50">
+                      Documents Needed:
+                    </p>
 
-                    <button className="mt-3 bg-white text-black w-full py-2 rounded-lg font-semibold">
+                    <p className="mt-4 line-clamp-2 text-sm font-bold leading-relaxed">
+                      {item.docs}
+                    </p>
+
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/visa/${item.slug}`);
+                      }}
+                      className="mt-6 w-full rounded-full bg-white/15 px-4 py-3 text-sm font-bold text-white backdrop-blur-md transition hover:bg-white hover:text-black"
+                    >
                       View Details
                     </button>
                   </div>
@@ -294,108 +390,221 @@ export default function VisaServices() {
       </div>
 
       {/* Inquiry Form */}
-      <div className="max-w-6xl mx-auto bg-white mt-8 shadow-lg rounded-lg p-8">
-        <h2 className="text-2xl font-bold mb-6 text-center">
-          Visa Inquiry Form
-        </h2>
+      <div className="max-w-7xl mx-auto mt-10 rounded-2xl border border-blue-100 bg-gradient-to-br from-white via-blue-50/40 to-white p-6 md:p-8 shadow-[0_12px_40px_rgba(37,99,235,0.14)]">
+        <div className="grid lg:grid-cols-[1.7fr_1fr] gap-8">
+          {/* LEFT FORM */}
+          <div>
+            <div className="mb-7">
+              <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-1 text-xs font-extrabold uppercase tracking-wide text-blue-700">
+                Get Started
+              </span>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <label className="font-semibold">First Name</label>
-              <input
-                type="text"
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
-                placeholder="Enter Your First Name"
-                className="w-full mt-2 border rounded-lg p-3"
-              />
+              <h2 className="mt-4 text-3xl font-black text-slate-950">
+                Visa Inquiry Form
+              </h2>
+
+              <p className="mt-2 text-sm font-medium text-slate-500">
+                Fill in your details and our visa experts will get in touch with
+                you.
+              </p>
             </div>
 
-            <div>
-              <label className="font-semibold">Last Name</label>
-              <input
-                type="text"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-                placeholder="Enter Your Last Name"
-                className="w-full mt-2 border rounded-lg p-3"
-              />
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div className="grid md:grid-cols-2 gap-5">
+                <div>
+                  <label className="text-sm font-bold text-slate-700">
+                    First Name
+                  </label>
+                  <input
+                    type="text"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    placeholder="Enter your first name"
+                    className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-medium outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
+                  />
+                </div>
+
+                <div>
+                  <label className="text-sm font-bold text-slate-700">
+                    Last Name
+                  </label>
+                  <input
+                    type="text"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    placeholder="Enter your last name"
+                    className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-medium outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-5">
+                <div>
+                  <label className="text-sm font-bold text-slate-700">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Enter your email address"
+                    className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-medium outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
+                  />
+                </div>
+
+                <div>
+                  <label className="text-sm font-bold text-slate-700">
+                    Phone Number <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    required
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="Enter your phone number"
+                    className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-medium outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="text-sm font-bold text-slate-700">
+                  Services
+                </label>
+
+                <select
+                  name="service"
+                  value={formData.service}
+                  onChange={handleChange}
+                  className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-600 outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
+                >
+                  <option>Visa Services</option>
+                  <option>Tour Packages</option>
+                  <option>Flight Booking</option>
+                  <option>Hotel Booking</option>
+                </select>
+              </div>
+
+              <div className="flex items-start gap-3 pt-1">
+                <input
+                  type="checkbox"
+                  name="agree"
+                  checked={formData.agree}
+                  onChange={handleChange}
+                  className="mt-1 h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+                />
+
+                <p className="text-sm font-medium leading-6 text-slate-600">
+                  By submitting this form, I agree to the{" "}
+                  <Link to="/privacy" className="font-bold text-blue-700">
+                    Privacy Policy
+                  </Link>{" "}
+                  and{" "}
+                  <Link to="/terms" className="font-bold text-blue-700">
+                    Terms of Use.
+                  </Link>
+                </p>
+              </div>
+
+              <button
+                type="submit"
+                className="inline-flex items-center justify-center rounded-lg bg-blue-700 px-8 py-4 text-sm font-black uppercase tracking-wide text-white shadow-[0_10px_25px_rgba(37,99,235,0.35)] transition hover:-translate-y-0.5 hover:bg-blue-800 hover:shadow-[0_14px_35px_rgba(37,99,235,0.45)]"
+              >
+                Submit Inquiry
+              </button>
+            </form>
+          </div>
+
+          {/* RIGHT INFO PANEL */}
+          <div className="lg:border-l lg:border-blue-100 lg:pl-8">
+            <div className="rounded-2xl border border-blue-100 bg-white/80 p-6 shadow-sm">
+              <div className="space-y-6">
+                <div className="flex gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-50 text-xl text-blue-600">
+                    🛡
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-blue-700">
+                      100% Secure Process
+                    </h3>
+                    <p className="mt-1 text-sm text-slate-500">
+                      Your data is safe and protected with us.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-50 text-xl text-blue-600">
+                    ⏱
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-blue-700">
+                      Fast & Easy Processing
+                    </h3>
+                    <p className="mt-1 text-sm text-slate-500">
+                      Quick visa assistance for your dream trip.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-50 text-xl text-blue-600">
+                    👥
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-blue-700">
+                      Expert Consultation
+                    </h3>
+                    <p className="mt-1 text-sm text-slate-500">
+                      Get guidance from our visa experts.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-50 text-xl text-blue-600">
+                    🏅
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-blue-700">
+                      High Success Rate
+                    </h3>
+                    <p className="mt-1 text-sm text-slate-500">
+                      We ensure the best visa success ratio.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 border-t border-dashed border-blue-200 pt-6">
+              <div className="flex items-center gap-4">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-blue-600 text-2xl text-white shadow-md">
+                  ☎
+                </div>
+
+                <div>
+                  <p className="text-sm font-bold text-blue-700">
+                    Need Immediate Help?
+                  </p>
+                  <a
+                    href="tel:+917698551313"
+                    className="mt-1 block text-xl font-bold text-blue-700"
+                  >
+                    +91 76985 51313
+                  </a>
+                  <p className="mt-1 text-sm text-slate-500">
+                    Mon - Sat (10AM - 7PM)
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div>
-            <label className="font-semibold">Email</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Email Address"
-              className="w-full mt-2 border rounded-lg p-3"
-            />
-          </div>
-
-          <div>
-            <label className="font-semibold">
-              Phone Number <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="tel"
-              name="phone"
-              required
-              value={formData.phone}
-              onChange={handleChange}
-              className="w-full mt-2 border rounded-lg p-3"
-            />
-          </div>
-
-          <div>
-            <label className="font-semibold">Services</label>
-
-            <select
-              name="service"
-              value={formData.service}
-              onChange={handleChange}
-              className="w-full mt-2 border rounded-lg p-3"
-            >
-              <option>Visa Services</option>
-              <option>Tour Packages</option>
-              <option>Flight Booking</option>
-              <option>Hotel Booking</option>
-            </select>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <input
-              className=""
-              type="checkbox"
-              name="agree"
-              checked={formData.agree}
-              onChange={handleChange}
-            />
-
-            <p className="text-sm">
-              By Submitting the form, I agree to the{" "}
-              <Link to="/privacy" className="text-blue-600">
-                Privacy Policy
-              </Link>{" "}
-              and Website{" "}
-              <Link to="/terms" className="text-blue-600">
-                Terms of Use.
-              </Link>{" "}
-            </p>
-          </div>
-
-          <button
-            type="submit"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold"
-          >
-            SUBMIT FORM
-          </button>
-        </form>
+        </div>
       </div>
     </div>
   );
