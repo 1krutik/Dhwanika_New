@@ -265,9 +265,8 @@ export default function VisaDetails() {
           </p>
         </div>
       </div>
-
       {/* BODY */}
-      <div className="max-w-7xl mx-auto px-4 py-16 grid lg:grid-cols-3 gap-10">
+      <div className="max-w-7xl mx-auto px-4 py-10 grid lg:grid-cols-3 gap-10">
         {/* LEFT */}
         <div className="lg:col-span-2">
           <div className="grid md:grid-cols-2 gap-6">
@@ -359,6 +358,14 @@ export default function VisaDetails() {
           </form>
         </div>
       </div>
+<div className="container mx-auto px-4 py-5 flex justify-center">
+  <img
+    src="/images/Process.jpg"
+    alt="Visa Process"
+    className="w-full max-w-4xl h-auto rounded-3xl shadow-xl object-contain"
+  />
+</div>
+      
     </div>
   );
 }

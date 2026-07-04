@@ -303,7 +303,7 @@ export default function VisaServices() {
             <div
               key={index}
               onClick={() => navigate(`/visa/${item.slug}`)}
-              className="relative h-[500px] overflow-hidden rounded-[34px] bg-black shadow-xl transition-all duration-500 group cursor-pointer hover:-translate-y-2 hover:shadow-2xl"
+              className="relative h-[460px] overflow-hidden rounded-[34px] bg-black shadow-xl transition-all duration-500 group cursor-pointer hover:-translate-y-2 hover:shadow-2xl"
             >
               {/* IMAGE */}
               <img
@@ -317,7 +317,7 @@ export default function VisaServices() {
 
               {/* CONTENT */}
               <div className="absolute inset-x-0 bottom-0 p-6 text-white transition-all duration-500 group-hover:-translate-y-3">
-                <div className="mx-auto mb-5 flex h-8 w-8 items-center justify-center overflow-hidden rounded-full bg-white shadow-lg">
+                <div className="mx-auto mb-5 flex h-6 w-6 items-center justify-center overflow-hidden rounded-full bg-white shadow-lg">
                   <img
                     src={`https://flagcdn.com/w80/${countryCodeMap[item.slug]}.png`}
                     alt={`${item.country} flag`}
@@ -325,7 +325,7 @@ export default function VisaServices() {
                   />
                 </div>
 
-                <h2 className="mb-6 text-center font-serif text-xl font-bold uppercase tracking-wide">
+                <h2 className="mb-3 text-center font-serif text-xl font-bold uppercase tracking-wide">
                   {item.country}
                 </h2>
 
@@ -335,7 +335,7 @@ export default function VisaServices() {
                       <p className="text-[11px] font-bold uppercase tracking-widest text-white/50">
                         Type
                       </p>
-                      <p className="mt-2 text-sm font-extrabold uppercase">
+                      <p className="mt-1 text-sm font-extrabold uppercase">
                         {item.type}
                       </p>
                     </div>
@@ -344,7 +344,7 @@ export default function VisaServices() {
                       <p className="text-[11px] font-bold uppercase tracking-widest text-white/50">
                         Valid
                       </p>
-                      <p className="mt-2 text-sm font-extrabold uppercase">
+                      <p className="mt-1 text-sm font-extrabold uppercase">
                         {item.valid}
                       </p>
                     </div>
