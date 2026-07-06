@@ -172,41 +172,79 @@ export default function VisaDetails() {
     },
   ];
   const getVisaFaqs = (visa) => [
-  {
-    question: `Do I need a visa for ${visa.country}?`,
-    answer: `Visa requirements for ${visa.country} depend on your nationality, passport type, travel purpose, and stay duration. Our team can help you check the correct requirement before you apply.`,
-  },
-  {
-    question: `What type of visa can I apply for ${visa.country}?`,
-    answer: `For ${visa.country}, we currently assist with ${visa.type}. Eligibility may vary depending on your travel profile and immigration rules.`,
-  },
-  {
-    question: `How long is the ${visa.country} visa valid?`,
-    answer: `The listed validity for ${visa.country} is ${visa.valid}. Final validity and stay permission are decided by the respective immigration authority.`,
-  },
-  {
-    question: `What documents are required for ${visa.country} visa?`,
-    answer: `Commonly required documents include: ${visa.docs}. Additional documents may be needed based on your profile, visa type, and embassy or immigration requirements.`,
-  },
-  {
-    question: `What is the visa fee for ${visa.country}?`,
-    answer: visa.fees
-      ? `The listed visa fee for ${visa.country} is ${visa.fees}. Fees may change depending on embassy, immigration, service charges, and processing options.`
-      : `Visa fees for ${visa.country} may vary depending on visa type, embassy or immigration charges, service charges, and processing options. Please contact our team for the latest fee details.`,
-  },
-  {
-    question: `How long does ${visa.country} visa processing take?`,
-    answer: `Processing time for ${visa.country} visa can vary based on visa type, application volume, document accuracy, and immigration or embassy decisions. We will guide you with the expected timeline before submission.`,
-  },
-  {
-    question: `Can I apply for ${visa.country} visa online?`,
-    answer: `Online application availability for ${visa.country} depends on the visa type, nationality, and current immigration rules. Our team will confirm the correct process before starting your application.`,
-  },
-  {
-    question: `Can Dhwanika Overseas guarantee my ${visa.country} visa approval?`,
-    answer: `No travel agency can guarantee visa approval. Final approval is always decided by the embassy, consulate, or immigration authority. We help you prepare and submit your application correctly to improve clarity and reduce avoidable mistakes.`,
-  },
-];
+    {
+      question: `Do I need a visa for ${visa.country}?`,
+      answer: `Visa requirements for ${visa.country} depend on your nationality, passport type, travel purpose, and stay duration. Our team can help you check the correct requirement before you apply.`,
+    },
+    {
+      question: `What type of visa can I apply for ${visa.country}?`,
+      answer: `For ${visa.country}, we currently assist with ${visa.type}. Eligibility may vary depending on your travel profile and immigration rules.`,
+    },
+    {
+      question: `How long is the ${visa.country} visa valid?`,
+      answer: `The listed validity for ${visa.country} is ${visa.valid}. Final validity and stay permission are decided by the respective immigration authority.`,
+    },
+    {
+      question: `What documents are required for ${visa.country} visa?`,
+      answer: `Commonly required documents include: ${visa.docs}. Additional documents may be needed based on your profile, visa type, and embassy or immigration requirements.`,
+    },
+    {
+      question: `What is the visa fee for ${visa.country}?`,
+      answer: visa.fees
+        ? `The listed visa fee for ${visa.country} is ${visa.fees}. Fees may change depending on embassy, immigration, service charges, and processing options.`
+        : `Visa fees for ${visa.country} may vary depending on visa type, embassy or immigration charges, service charges, and processing options. Please contact our team for the latest fee details.`,
+    },
+    {
+      question: `How long does ${visa.country} visa processing take?`,
+      answer: `Processing time for ${visa.country} visa can vary based on visa type, application volume, document accuracy, and immigration or embassy decisions. We will guide you with the expected timeline before submission.`,
+    },
+    {
+      question: `Can I apply for ${visa.country} visa online?`,
+      answer: `Online application availability for ${visa.country} depends on the visa type, nationality, and current immigration rules. Our team will confirm the correct process before starting your application.`,
+    },
+    {
+      question: `Can Dhwanika Overseas guarantee my ${visa.country} visa approval?`,
+      answer: `No travel agency can guarantee visa approval. Final approval is always decided by the embassy, consulate, or immigration authority. We help you prepare and submit your application correctly to improve clarity and reduce avoidable mistakes.`,
+    },
+  ];
+  const googleReviews = [
+    {
+      name: "Meena Modi",
+      type: "Customer",
+      date: "Google Review",
+      title: "Best visa service",
+      rating: 5,
+      review:
+        "We are very pleased n satisfied with Dhwanika ..very cooperative staff , replying within no time at odd hours too.Sincerely appreciate all your efforts..Thanks.",
+    },
+    {
+      name: "Krutik Panchal",
+      type: "Customer",
+      date: "Google Review",
+      title: "Excellent visa service",
+      rating: 5,
+      review:
+        "Excellent visa service with proper guidance at every step. The team explained the documents clearly and made the process very smooth.",
+    },
+    {
+      name: "Jagdish Bulchandani",
+      type: "Customer",
+      date: "Google Review",
+      title: "Very helpful team",
+      rating: 5,
+      review:
+        "Very helpful and professional team. They responded quickly, checked all documents carefully, and gave clear updates throughout the process.",
+    },
+    {
+      name: "Nikki Asrani",
+      type: "Customer",
+      date: "Google Review",
+      title: "Stress-free experience",
+      rating: 5,
+      review:
+        "Great experience with Dhwanika Overseas. The staff was supportive, polite, and made the visa application process easy and stress-free.",
+    },
+  ];
 
   const formatSlug = (text) =>
     text
@@ -275,7 +313,7 @@ export default function VisaDetails() {
       <div className="py-32 text-center text-4xl font-bold">Visa Not Found</div>
     );
   }
-const faqs = getVisaFaqs(visa);
+  const faqs = getVisaFaqs(visa);
   return (
     <div className="bg-white">
       {/* HERO */}
@@ -395,7 +433,7 @@ const faqs = getVisaFaqs(visa);
           </form>
         </div>
       </div>
-
+      {/* Services Card */}
       <section className="max-w-6xl mx-auto px-4 py-8 md:py-10">
         <div className="rounded-2xl bg-[#f3f3f3] px-4 py-8 md:rounded-[28px] md:px-10 md:py-12">
           <h2 className="mx-auto mb-8 max-w-3xl text-center font-serif text-3xl font-semibold leading-tight text-black sm:text-3xl md:text-3xl">
@@ -447,6 +485,7 @@ const faqs = getVisaFaqs(visa);
           </div>
         </div>
       </section>
+      {/* Visa Process Image */}
       <div className="container mx-auto px-4 py-4 flex justify-center">
         <img
           src="/images/Process.jpg"
@@ -454,36 +493,130 @@ const faqs = getVisaFaqs(visa);
           className="mb-3 rounded-3xl shadow-xl object-contain"
         />
       </div>
+        {/* Google Reviews */}
+      <section className="max-w-6xl mx-auto px-4 py-14">
+        <div className="rounded-3xl bg-white p-6 shadow-sm md:p-8">
+          <div className="mb-8">
+            <h2 className="text-3xl font-bold text-slate-900">
+              Rating Across All Platforms
+            </h2>
+          </div>
+
+          <div className="mb-8">
+            <p className="mb-3 text-sm font-semibold text-slate-500">
+              Common Keywords Found in Reviews
+            </p>
+
+            <div className="flex flex-wrap gap-3">
+              {[
+                "Quick Support",
+                "Easy Process",
+                "Customer Support",
+                "Documentation",
+                "On Time",
+              ].map((keyword) => (
+                <span
+                  key={keyword}
+                  className="rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700"
+                >
+                  {keyword}
+                </span>
+              ))}
+            </div>
+          </div>
+
+
+{/* Buttons */}
+          {/* <div className="mb-4 flex items-center justify-between">
+            <h3 className="text-xl font-bold text-slate-900">
+              Popular Reviews
+            </h3>
+
+            <div className="flex gap-2">
+              <button className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-700 hover:bg-slate-50">
+                ‹
+              </button>
+              <button className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-700 hover:bg-slate-50">
+                ›
+              </button>
+            </div>
+          </div> */}
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {googleReviews.map((item, index) => (
+              <div
+                key={index}
+                className="rounded-2xl border border-slate-200 bg-slate-50/60 p-5"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-600 text-sm font-bold text-white">
+                    {item.name
+                      .split(" ")
+                      .map((word) => word[0])
+                      .join("")
+                      .slice(0, 2)}
+                  </div>
+
+                  <div>
+                    <h4 className="font-bold text-slate-900">{item.name}</h4>
+                    <p className="text-sm text-slate-500">
+                      {item.type} • {item.date}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-4 text-yellow-400">
+                  {"★".repeat(item.rating)}
+                </div>
+
+                <h5 className="mt-3 font-bold text-slate-900">{item.title}</h5>
+
+                <p className="mt-2 line-clamp-4 text-sm leading-6 text-slate-600">
+                  {item.review}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-7">
+            <button className="rounded-full border border-slate-300 px-6 py-3 text-sm font-bold text-slate-700 transition hover:bg-slate-100">
+              View More
+            </button>
+          </div>
+        </div>
+      </section>
+      {/* FAQ's */}
       <section className="max-w-5xl mx-auto px-4 py-12">
-  <div className="mb-8 text-center">
-    <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
-      Frequently Asked Questions
-    </h2>
-    <p className="mt-2 text-slate-500">
-      Everything you need to know about {visa.country} visa.
-    </p>
-  </div>
+        <div className="mb-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+            Frequently Asked Questions
+          </h2>
+          <p className="mt-2 text-slate-500">
+            Everything you need to know about {visa.country} visa.
+          </p>
+        </div>
 
-  <div className="space-y-4">
-    {faqs.map((faq, index) => (
-      <details
-        key={index}
-        className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
-      >
-        <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-slate-900">
-          {faq.question}
-          <span className="text-2xl text-blue-600 transition group-open:rotate-45">
-            +
-          </span>
-        </summary>
+        <div className="space-y-4">
+          {faqs.map((faq, index) => (
+            <details
+              key={index}
+              className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+            >
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-slate-900">
+                {faq.question}
+                <span className="text-2xl text-blue-600 transition group-open:rotate-45">
+                  +
+                </span>
+              </summary>
 
-        <p className="mt-4 text-sm leading-6 text-slate-600">
-          {faq.answer}
-        </p>
-      </details>
-    ))}
-  </div>
-</section>
+              <p className="mt-4 text-sm leading-6 text-slate-600">
+                {faq.answer}
+              </p>
+            </details>
+          ))}
+        </div>
+      </section>
+    
     </div>
   );
 }

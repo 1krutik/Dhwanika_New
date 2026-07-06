@@ -61,7 +61,23 @@ app.get("/test-email", async (req, res) => {
     res.status(500).send("Email Failed ❌");
   }
 });
+app.get("/api/google-reviews", async (req, res) => {
+  const placeId = "YOUR_GOOGLE_PLACE_ID";
+  const apiKey = process.env.GOOGLE_MAPS_API_KEY;
 
+  const url = `https://places.googleapis.com/v1/places/${placeId}`;
+
+  const response = await fetch(url, {
+    headers: {
+      "X-Goog-Api-Key": apiKey,
+      "X-Goog-FieldMask":
+        "displayName,rating,userRatingCount,reviews,googleMapsUri",
+    },
+  });
+
+  const data = await response.json();
+  res.json(data);
+});
 /* ================= INQUIRY API ================= */
 app.post("/api/inquiry", async (req, res) => {
   try {
