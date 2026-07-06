@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
+import VisaInfoCard from "../components/VisaInfoCard";
 
 export default function VisaDetails() {
   const { slug } = useParams();
@@ -170,6 +171,42 @@ export default function VisaDetails() {
       docs: "Passport, DS-160 Form, Passport Photo, Bank Statement, Visa Interview",
     },
   ];
+  const getVisaFaqs = (visa) => [
+  {
+    question: `Do I need a visa for ${visa.country}?`,
+    answer: `Visa requirements for ${visa.country} depend on your nationality, passport type, travel purpose, and stay duration. Our team can help you check the correct requirement before you apply.`,
+  },
+  {
+    question: `What type of visa can I apply for ${visa.country}?`,
+    answer: `For ${visa.country}, we currently assist with ${visa.type}. Eligibility may vary depending on your travel profile and immigration rules.`,
+  },
+  {
+    question: `How long is the ${visa.country} visa valid?`,
+    answer: `The listed validity for ${visa.country} is ${visa.valid}. Final validity and stay permission are decided by the respective immigration authority.`,
+  },
+  {
+    question: `What documents are required for ${visa.country} visa?`,
+    answer: `Commonly required documents include: ${visa.docs}. Additional documents may be needed based on your profile, visa type, and embassy or immigration requirements.`,
+  },
+  {
+    question: `What is the visa fee for ${visa.country}?`,
+    answer: visa.fees
+      ? `The listed visa fee for ${visa.country} is ${visa.fees}. Fees may change depending on embassy, immigration, service charges, and processing options.`
+      : `Visa fees for ${visa.country} may vary depending on visa type, embassy or immigration charges, service charges, and processing options. Please contact our team for the latest fee details.`,
+  },
+  {
+    question: `How long does ${visa.country} visa processing take?`,
+    answer: `Processing time for ${visa.country} visa can vary based on visa type, application volume, document accuracy, and immigration or embassy decisions. We will guide you with the expected timeline before submission.`,
+  },
+  {
+    question: `Can I apply for ${visa.country} visa online?`,
+    answer: `Online application availability for ${visa.country} depends on the visa type, nationality, and current immigration rules. Our team will confirm the correct process before starting your application.`,
+  },
+  {
+    question: `Can Dhwanika Overseas guarantee my ${visa.country} visa approval?`,
+    answer: `No travel agency can guarantee visa approval. Final approval is always decided by the embassy, consulate, or immigration authority. We help you prepare and submit your application correctly to improve clarity and reduce avoidable mistakes.`,
+  },
+];
 
   const formatSlug = (text) =>
     text
@@ -238,7 +275,7 @@ export default function VisaDetails() {
       <div className="py-32 text-center text-4xl font-bold">Visa Not Found</div>
     );
   }
-
+const faqs = getVisaFaqs(visa);
   return (
     <div className="bg-white">
       {/* HERO */}
@@ -337,7 +374,7 @@ export default function VisaDetails() {
               }
               className="w-full border p-3 rounded-xl mb-4"
             />
-            
+
             <input
               type="email"
               placeholder="Email"
@@ -358,14 +395,95 @@ export default function VisaDetails() {
           </form>
         </div>
       </div>
-<div className="container mx-auto px-4 py-5 flex justify-center">
-  <img
-    src="/images/Process.jpg"
-    alt="Visa Process"
-    className="w-full max-w-4xl h-auto rounded-3xl shadow-xl object-contain"
-  />
-</div>
-      
+
+      <section className="max-w-6xl mx-auto px-4 py-8 md:py-10">
+        <div className="rounded-2xl bg-[#f3f3f3] px-4 py-8 md:rounded-[28px] md:px-10 md:py-12">
+          <h2 className="mx-auto mb-8 max-w-3xl text-center font-serif text-3xl font-semibold leading-tight text-black sm:text-3xl md:text-3xl">
+            Visa application made simple and reliable
+          </h2>
+
+          <div className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-gray-200 bg-white">
+            <div className="grid grid-cols-[1.4fr_0.8fr_0.6fr] sm:grid-cols-[1.7fr_0.8fr_0.7fr]">
+              <div className="min-h-16 sm:min-h-20"></div>
+
+              <div className="flex min-h-16 items-center justify-center border-x border-gray-200 bg-white px-2 text-center sm:min-h-20">
+                <span className="text-sm font-bold leading-tight text-black sm:text-base md:text-lg">
+                  Dhwanika Overseas
+                </span>
+              </div>
+
+              <div className="flex min-h-16 items-center justify-center px-2 text-sm font-semibold text-gray-500 sm:min-h-20 sm:text-base">
+                Others
+              </div>
+            </div>
+
+            {[
+              "Real-time tracking of your visa",
+              "Precise ETA, no guesswork",
+              "Transparent pricing, no hidden fees",
+              "100% digital process",
+            ].map((text, index) => (
+              <div
+                key={index}
+                className="grid grid-cols-[1.4fr_0.8fr_0.6fr] border-t border-gray-100 even:bg-gray-50 sm:grid-cols-[1.7fr_0.8fr_0.7fr]"
+              >
+                <div className="flex min-h-[66px] items-center px-4 text-sm font-medium leading-snug text-slate-950 sm:min-h-[76px] sm:px-6 sm:text-base md:text-lg">
+                  {text}
+                </div>
+
+                <div className="flex min-h-[66px] items-center justify-center border-x border-gray-200 bg-white sm:min-h-[76px]">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-green-500 text-xl font-semibold text-white sm:h-10 sm:w-10 sm:text-2xl">
+                    ✓
+                  </span>
+                </div>
+
+                <div className="flex min-h-[66px] items-center justify-center sm:min-h-[76px]">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full border border-red-200 bg-red-100 text-lg font-medium text-red-500 sm:h-10 sm:w-10 sm:text-xl">
+                    ×
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <div className="container mx-auto px-4 py-4 flex justify-center">
+        <img
+          src="/images/Process.jpg"
+          alt="Visa Process"
+          className="mb-3 rounded-3xl shadow-xl object-contain"
+        />
+      </div>
+      <section className="max-w-5xl mx-auto px-4 py-12">
+  <div className="mb-8 text-center">
+    <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+      Frequently Asked Questions
+    </h2>
+    <p className="mt-2 text-slate-500">
+      Everything you need to know about {visa.country} visa.
+    </p>
+  </div>
+
+  <div className="space-y-4">
+    {faqs.map((faq, index) => (
+      <details
+        key={index}
+        className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+      >
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-slate-900">
+          {faq.question}
+          <span className="text-2xl text-blue-600 transition group-open:rotate-45">
+            +
+          </span>
+        </summary>
+
+        <p className="mt-4 text-sm leading-6 text-slate-600">
+          {faq.answer}
+        </p>
+      </details>
+    ))}
+  </div>
+</section>
     </div>
   );
 }
