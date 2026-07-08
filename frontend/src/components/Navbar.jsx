@@ -167,7 +167,7 @@ const Navbar = () => {
               </a>
 
               <Link
-                to="/contact"
+                to="/enquiry"
                 className="btn-primary w-full justify-center"
                 onClick={() => setMenuOpen(false)}
               >
