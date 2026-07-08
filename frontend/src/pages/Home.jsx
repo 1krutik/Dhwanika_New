@@ -11,6 +11,7 @@ import destinations from "../components/Destinations/data";
 import InquiryForm from "../components/InquiryForm";
 import VisaServices from "./VisaServices ";
 import PartnersMarquee from "../components/PartnersMarquee";
+import WhyChooseUs from "../components/whychooseus";
 
 const stats = [
   { label: "Fast responses", value: "Under 30 min" },
@@ -50,6 +51,7 @@ export default function Home() {
     <div className="bg-ink-50">
       <VisaServices />
 <PartnersMarquee/> 
+<WhyChooseUs/>
       {/* HERO */}
       {/* <section className="relative overflow-hidden bg-ink-950 text-white">
         <div className="absolute inset-0 bg-hero-radial" />

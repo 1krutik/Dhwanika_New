@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import ScrollToTop from "./components/ScrollToTop";
 import VisaServices from "./pages/VisaServices ";
 import VisaDetails from "./pages/VisaDetails";
+import InquiryForm from "./components/InquiryForm";
 
 function App() {
   useEffect(() => {
@@ -36,6 +37,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/terms" element={<TermsConditions />} />
         <Route path="/visas" element={<VisaServices />} />
+        <Route path="/enquiry" element={<InquiryForm />} />
         {/* ✅ THIS FIXES CLICKED VISA PAGE */}
         <Route path="/visa/:slug" element={<VisaDetails />} />
 

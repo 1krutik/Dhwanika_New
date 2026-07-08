@@ -78,7 +78,7 @@ const Navbar = () => {
             </li>
 
             <li>
-              <NavLink to="/contact" className={navLinkClass}>
+              <NavLink to="/enquiry" className={navLinkClass}>
                 <PhoneCall size={18} />
                 Contact Us
               </NavLink>
@@ -171,7 +171,7 @@ const Navbar = () => {
                 className="btn-primary w-full justify-center"
                 onClick={() => setMenuOpen(false)}
               >
-                Book Now <ArrowRight size={16} />
+                Enquire Now<ArrowRight size={16}/>
               </Link>
             </div>
           </div>

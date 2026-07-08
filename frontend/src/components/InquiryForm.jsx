@@ -1,212 +1,263 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Loader2 } from "lucide-react";
 
-export default function InquiryForm() {
+export default function VisaInquiryForm({ defaultService = "Visa Services" }) {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    service: defaultService,
+    agree: false,
+  });
 
-const [formData,setFormData]=useState({
-firstName:"",
-lastName:"",
-email:"",
-phone:"",
-service:"Tour Packages",
-agree:false
-});
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
 
-const [isSubmitting, setIsSubmitting] = useState(false);
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
 
-const serviceOptions = useMemo(
-  () => ["Visa Services", "Tour Packages", "Flight Booking", "Hotel Booking"],
-  []
-);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-const handleChange=(e)=>{
-const {name,value,type,checked}=e.target;
+    if (!formData.agree) {
+      alert("Please accept terms and conditions.");
+      return;
+    }
 
-setFormData({
-...formData,
-[name]:type==="checkbox"?checked:value
-});
-};
+    try {
+      await fetch("https://dhwanikaoverseas.onrender.com/api/inquiry", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-const handleSubmit=async(e)=>{
-e.preventDefault();
+      alert("🎉 Thank You for Contacting Us!");
 
-if(!formData.agree){
-alert("Please accept terms");
-return;
-}
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        service: defaultService,
+        agree: false,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-try{
-setIsSubmitting(true);
+  return (
+    <section
+      id="inquiry-form"
+      className="max-w-7xl mx-auto mt-10 rounded-2xl border border-blue-100 bg-gradient-to-br from-white via-blue-50/40 to-white p-6 md:p-8 shadow-[0_12px_40px_rgba(37,99,235,0.14)]"
+    >
+      <div className="grid lg:grid-cols-[1.7fr_1fr] gap-8">
+        <div>
+          <div className="mb-7">
+            <span className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-1 text-xs font-extrabold uppercase tracking-wide text-blue-700">
+              Get Started
+            </span>
 
-await fetch("https://dhwanikaoverseas.onrender.com/api/inquiry",{
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify(formData)
-});
+            <h2 className="mt-4 text-3xl font-black text-slate-950">
+              Inquiry Form
+            </h2>
 
-alert(" 🎉 Thank You for Contacting Us! Form Submitted Successfully");
+            <p className="mt-2 text-sm font-medium text-slate-500">
+              Fill in your details and our visa experts will get in touch with you.
+            </p>
+          </div>
 
-setFormData({
-firstName:"",
-lastName:"",
-email:"",
-phone:"",
-service:"Tour Packages",
-agree:false
-});
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <div className="grid md:grid-cols-2 gap-5">
+              <div>
+                <label className="text-sm font-bold text-slate-700">
+                  First Name
+                </label>
+                <input
+                  type="text"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  placeholder="Enter your first name"
+                  className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-medium outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
+                />
+              </div>
 
-}catch(err){
-console.log(err);
-} finally {
-  setIsSubmitting(false);
-}
+              <div>
+                <label className="text-sm font-bold text-slate-700">
+                  Last Name
+                </label>
+                <input
+                  type="text"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  placeholder="Enter your last name"
+                  className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-medium outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
+                />
+              </div>
+            </div>
 
-};
+            <div className="grid md:grid-cols-2 gap-5">
+              <div>
+                <label className="text-sm font-bold text-slate-700">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Enter your email address"
+                  className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-medium outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
+                />
+              </div>
 
-return(
+              <div>
+                <label className="text-sm font-bold text-slate-700">
+                  Phone Number <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  required
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="Enter your phone number"
+                  className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-medium outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
+                />
+              </div>
+            </div>
 
-<form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label className="text-sm font-bold text-slate-700">
+                Services
+              </label>
 
-{/* Name row */}
+              <select
+                name="service"
+                value={formData.service}
+                onChange={handleChange}
+                className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-600 outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
+              >
+                <option>Visa Services</option>
+                <option>Tour Packages</option>
+                <option>Flight Booking</option>
+                <option>Hotel Booking</option>
+              </select>
+            </div>
 
-<div className="grid md:grid-cols-2 gap-6">
+            <div className="flex items-start gap-3 pt-1">
+              <input
+                type="checkbox"
+                name="agree"
+                checked={formData.agree}
+                onChange={handleChange}
+                className="mt-1 h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+              />
 
-<div>
-<label className="text-sm font-semibold text-white/80">First Name</label>
-<input
-type="text"
-name="firstName"
-value={formData.firstName}
-onChange={handleChange}
-placeholder="Enter Your First Name"
-className="mt-2 w-full rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white placeholder:text-white/40 outline-none ring-0 transition focus:border-brand-500/60 focus:bg-white/10 focus:ring-2 focus:ring-brand-500/30"
-/>
-</div>
+              <p className="text-sm font-medium leading-6 text-slate-600">
+                By submitting this form, I agree to the{" "}
+                <Link to="/privacy" className="font-bold text-blue-700">
+                  Privacy Policy
+                </Link>{" "}
+                and{" "}
+                <Link to="/terms" className="font-bold text-blue-700">
+                  Terms of Use.
+                </Link>
+              </p>
+            </div>
 
-<div>
-<label className="text-sm font-semibold text-white/80">Last Name</label>
-<input
-type="text"
-name="lastName"
-value={formData.lastName}
-onChange={handleChange}
-placeholder="Enter Your Last Name"
-className="mt-2 w-full rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-brand-500/60 focus:bg-white/10 focus:ring-2 focus:ring-brand-500/30"
-/>
-</div>
+            <button
+              type="submit"
+              className="inline-flex items-center justify-center rounded-lg bg-blue-700 px-8 py-4 text-sm font-black uppercase tracking-wide text-white shadow-[0_10px_25px_rgba(37,99,235,0.35)] transition hover:-translate-y-0.5 hover:bg-blue-800 hover:shadow-[0_14px_35px_rgba(37,99,235,0.45)]"
+            >
+              Submit Inquiry
+            </button>
+          </form>
+        </div>
 
-</div>
+        <div className="lg:border-l lg:border-blue-100 lg:pl-8">
+          <div className="rounded-2xl border border-blue-100 bg-white/80 p-6 shadow-sm">
+            <div className="space-y-6">
+              <div className="flex gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-50 text-xl text-blue-600">
+                  🛡
+                </div>
+                <div>
+                  <h3 className="font-bold text-blue-700">100% Secure Process</h3>
+                  <p className="mt-1 text-sm text-slate-500">
+                    Your data is safe and protected with us.
+                  </p>
+                </div>
+              </div>
 
-{/* Email */}
+              <div className="flex gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-50 text-xl text-blue-600">
+                  ⏱
+                </div>
+                <div>
+                  <h3 className="font-bold text-blue-700">Fast & Easy Processing</h3>
+                  <p className="mt-1 text-sm text-slate-500">
+                    Quick visa assistance for your dream trip.
+                  </p>
+                </div>
+              </div>
 
-<div>
-<label className="text-sm font-semibold text-white/80">Email</label>
-<input
-type="email"
-name="email"
-value={formData.email}
-onChange={handleChange}
-placeholder="Email Address"
-className="mt-2 w-full rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-brand-500/60 focus:bg-white/10 focus:ring-2 focus:ring-brand-500/30"
-/>
-</div>
+              <div className="flex gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-50 text-xl text-blue-600">
+                  👥
+                </div>
+                <div>
+                  <h3 className="font-bold text-blue-700">Expert Consultation</h3>
+                  <p className="mt-1 text-sm text-slate-500">
+                    Get guidance from our visa experts.
+                  </p>
+                </div>
+              </div>
 
-{/* Phone */}
+              <div className="flex gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-50 text-xl text-blue-600">
+                  🏅
+                </div>
+                <div>
+                  <h3 className="font-bold text-blue-700">High Success Rate</h3>
+                  <p className="mt-1 text-sm text-slate-500">
+                    We ensure the best visa success ratio.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-<div>
-<label className="text-sm font-semibold text-white/80">
-Phone Number <span className="text-rose-300">*</span>
-</label>
-<input
-type="tel"
-name="phone"
-required
-value={formData.phone}
-onChange={handleChange}
-className="mt-2 w-full rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-brand-500/60 focus:bg-white/10 focus:ring-2 focus:ring-brand-500/30"
-/>
-</div>
+          <div className="mt-6 border-t border-dashed border-blue-200 pt-6">
+            <div className="flex items-center gap-4">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-blue-600 text-2xl text-white shadow-md">
+                ☎
+              </div>
 
-{/* Services */}
-
-<div>
-  
-<label className="text-sm font-semibold text-white/80">
-Services <span className="text-rose-300">*</span>
-</label>
-
-<select
-name="service"
-value={formData.service}
-onChange={handleChange}
-className="mt-2 w-full appearance-none rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white outline-none transition focus:border-brand-500/60 focus:bg-white/10 focus:ring-2 focus:ring-brand-500/30"
->
-{serviceOptions.map((opt) => (
-  <option key={opt} value={opt} className="text-ink-900">
-    {opt}
-  </option>
-))}
-
-</select>
-
-</div>
-
-{/* Terms */}
-
-<div className="flex items-start gap-3">
-
-<input
-type="checkbox"
-name="agree"
-checked={formData.agree}
-onChange={handleChange}
-className="mt-1 h-4 w-4 rounded border-white/20 bg-white/10 text-brand-600"
-/>
-
-<p className="text-xs text-white/70">
-I have read and agree to the{" "}
-<Link
-to="/terms"
-className="font-semibold text-white hover:underline"
->
-Terms and Conditions
-</Link>{" "}
-and{" "}
-<Link
-to="/privacy"
-className="font-semibold text-white hover:underline"
->
-Privacy Policy
-</Link>
-</p>
-
-</div>
-{/* Button */}
-
-<button
-type="submit"
-disabled={isSubmitting}
-className="btn-primary w-full justify-center disabled:cursor-not-allowed disabled:opacity-70"
->
-{isSubmitting ? (
-  <>
-    <Loader2 size={16} className="animate-spin" />
-    Submitting…
-  </>
-) : (
-  <>
-    Submit <ArrowRight size={16} />
-  </>
-)}
-
-</button>
-
-</form>
-
-);
-
+              <div>
+                <p className="text-sm font-bold text-blue-700">Need Immediate Help?</p>
+                <a
+                  href="tel:+917698551313"
+                  className="mt-1 block text-xl font-bold text-blue-700"
+                >
+                  +91 76985 51313
+                </a>
+                <p className="mt-1 text-sm text-slate-500">
+                  Mon - Sat (10AM - 7PM)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
