@@ -148,7 +148,7 @@ const Navbar = () => {
               </NavLink>
 
               <NavLink
-                to="/contact"
+                to="/enquiry"
                 className={navLinkClass}
                 onClick={() => setMenuOpen(false)}
               >

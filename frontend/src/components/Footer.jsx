@@ -68,7 +68,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link className="hover:text-white" to="/contact">
+                  <Link className="hover:text-white" to="/enquiry">
                     Contact
                   </Link>
                 </li>
@@ -102,7 +102,7 @@ const Footer = () => {
               <p className="mt-2 text-sm text-white/70">
                 Tell us what you need—we’ll reply quickly with next steps.
               </p>
-              <Link to="/contact" className="btn-primary mt-4 w-full justify-center">
+              <Link to="/enquiry" className="btn-primary mt-4 w-full justify-center">
                 Contact Us <ArrowRight size={16} />
               </Link>
             </div>
