@@ -95,7 +95,7 @@ const Navbar = () => {
               +91 76985 51313
             </a>
 
-            <Link to="/contact" className="btn-primary">
+            <Link to="/enquiry" className="btn-primary">
               Enquire Now <ArrowRight size={16} />
             </Link>
           </div>
