@@ -50,8 +50,8 @@ export default function Home() {
   return (
     <div className="bg-ink-50">
       <VisaServices />
-      <PartnersMarquee />
       <WhyChooseUs />
+      <PartnersMarquee />
 
       {/* FEATURED PACKAGES */}
       <section className="container-page pb-14 sm:pb-16" data-aos="fade-up">
