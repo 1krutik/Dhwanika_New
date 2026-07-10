@@ -9,7 +9,11 @@ import {
   Plane,
   Info,
   PhoneCall,
+  PlaneTakeoff,
+  Hotel,
+  HotelIcon,
 } from "lucide-react";
+import { FaUmbrellaBeach } from "react-icons/fa";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -24,17 +28,17 @@ const Navbar = () => {
   }, []);
 
   const navLinkClass = ({ isActive }) =>
-    `flex items-center gap-1 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 ${
+    `flex items-center gap-2 whitespace-nowrap rounded-xl px-3 py-3 text-[14px] font-semibold transition-all duration-300 ${
       isActive
-        ? "bg-blue-600 text-white shadow-lg shadow-blue-500/30"
-        : "text-white/80 hover:text-white hover:bg-white/10 hover:scale-105"
+        ? "bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-lg"
+        : "text-white/80 hover:text-white hover:bg-white/10"
     }`;
 
   return (
     <>
       {/* HEADER */}
       <header className="sticky top-0 z-[200] border-b border-white/10 bg-ink-950/80 backdrop-blur-xl">
-        <nav className="container-page flex items-center justify-between py-4">
+        <nav className="container-pag flex items-center justify-between p-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
             <img
@@ -44,9 +48,7 @@ const Navbar = () => {
             />
 
             <div>
-              <h2 className="text-white font-bold text-md">
-                Dhwanika Overseas
-              </h2>
+              <h2 className="text-white font-bold text-">Dhwanika Overseas</h2>
 
               <p className="text-xs text-white/60">
                 Visa • Tours • Passport • Flights
@@ -65,8 +67,22 @@ const Navbar = () => {
 
             <li>
               <NavLink to="/holidays" className={navLinkClass}>
-                <Plane size={18} />
+                <FaUmbrellaBeach size={18} />
                 Holiday Packages
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink to="/flights" className={navLinkClass}>
+                <PlaneTakeoff size={18} />
+                Flights
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink to="/hotels" className={navLinkClass}>
+                <HotelIcon size={18} />
+                Hotels
               </NavLink>
             </li>
 
@@ -134,10 +150,22 @@ const Navbar = () => {
                 className={navLinkClass}
                 onClick={() => setMenuOpen(false)}
               >
-                <Plane size={18} />
+                <FaUmbrellaBeach size={18} />
                 Holiday Packages
               </NavLink>
 
+              <li>
+                <NavLink to="/flights" className={navLinkClass}>
+                  <PlaneTakeoff size={18} />
+                  Flights
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/hotels" className={navLinkClass}>
+                  <HotelIcon size={18} />
+                  Hotels
+                </NavLink>
+              </li>
               <NavLink
                 to="/about"
                 className={navLinkClass}
@@ -171,7 +199,8 @@ const Navbar = () => {
                 className="btn-primary w-full justify-center"
                 onClick={() => setMenuOpen(false)}
               >
-                Enquire Now<ArrowRight size={16}/>
+                Enquire Now
+                <ArrowRight size={16} />
               </Link>
             </div>
           </div>
