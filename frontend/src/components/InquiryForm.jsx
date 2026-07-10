@@ -55,7 +55,7 @@ export default function VisaInquiryForm({ defaultService = "Visa Services" }) {
   return (
     <section
       id="inquiry-form"
-      className="max-w-7xl mx-auto mt-10 rounded-2xl border border-blue-100 bg-gradient-to-br from-white via-blue-50/40 to-white p-6 md:p-8 shadow-[0_12px_40px_rgba(37,99,235,0.14)]"
+      className="max-w-7xl mx-auto mt-10 rounded-2xl border border-blue-100 bg-gradient-to-br from-white via-blue-50/40 to-white p-6 md:p-8  shadow-[0_12px_40px_rgba(37,99,235,0.14)] mb-8"
     >
       <div className="grid lg:grid-cols-[1.7fr_1fr] gap-8">
         <div>
