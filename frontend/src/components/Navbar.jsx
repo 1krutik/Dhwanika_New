@@ -12,8 +12,11 @@ import {
   PlaneTakeoff,
   Hotel,
   HotelIcon,
+  Ship,
+  ShipIcon,
+  ShipWheel,
 } from "lucide-react";
-import { FaUmbrellaBeach } from "react-icons/fa";
+import { FaShip, FaUmbrellaBeach } from "react-icons/fa";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -76,6 +79,13 @@ const Navbar = () => {
               <NavLink to="/flights" className={navLinkClass}>
                 <PlaneTakeoff size={18} />
                 Flights
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink to="/Cruise" className={navLinkClass}>
+                <Ship size={18} />
+                Cruises
               </NavLink>
             </li>
 
@@ -158,6 +168,12 @@ const Navbar = () => {
                 <NavLink to="/flights" className={navLinkClass}>
                   <PlaneTakeoff size={18} />
                   Flights
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/Cruise" className={navLinkClass}>
+                  <Ship size={18} />
+                  Cruises
                 </NavLink>
               </li>
               <li>
