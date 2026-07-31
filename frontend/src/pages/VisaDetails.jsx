@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import VisaInfoCard from "../components/VisaInfoCard";
+import GoogleReviews from "../components/GoogleReviews";
 
 export default function VisaDetails() {
   const { slug } = useParams();
@@ -207,44 +208,7 @@ export default function VisaDetails() {
       answer: `No travel agency can guarantee visa approval. Final approval is always decided by the embassy, consulate, or immigration authority. We help you prepare and submit your application correctly to improve clarity and reduce avoidable mistakes.`,
     },
   ];
-  const googleReviews = [
-    {
-      name: "Meena Modi",
-      type: "Customer",
-      date: "Google Review",
-      title: "Best visa service",
-      rating: 5,
-      review:
-        "We are very pleased n satisfied with Dhwanika ..very cooperative staff , replying within no time at odd hours too.Sincerely appreciate all your efforts..Thanks.",
-    },
-    {
-      name: "Krutik Panchal",
-      type: "Customer",
-      date: "Google Review",
-      title: "Excellent visa service",
-      rating: 5,
-      review:
-        "Excellent visa service with proper guidance at every step. The team explained the documents clearly and made the process very smooth.",
-    },
-    {
-      name: "Jagdish Bulchandani",
-      type: "Customer",
-      date: "Google Review",
-      title: "Very helpful team",
-      rating: 5,
-      review:
-        "Very helpful and professional team. They responded quickly, checked all documents carefully, and gave clear updates throughout the process.",
-    },
-    {
-      name: "Nikki Asrani",
-      type: "Customer",
-      date: "Google Review",
-      title: "Stress-free experience",
-      rating: 5,
-      review:
-        "Great experience with Dhwanika Overseas. The staff was supportive, polite, and made the visa application process easy and stress-free.",
-    },
-  ];
+ 
 
   const formatSlug = (text) =>
     text
@@ -493,98 +457,9 @@ export default function VisaDetails() {
           className="mb-3 rounded-3xl shadow-xl object-contain"
         />
       </div>
-        {/* Google Reviews */}
-      <section className="max-w-6xl mx-auto px-4 py-14">
-        <div className="rounded-3xl bg-white p-6 shadow-sm md:p-8">
-          <div className="mb-8">
-            <h2 className="text-3xl font-bold text-slate-900">
-              Rating Across All Platforms
-            </h2>
-          </div>
 
-          <div className="mb-8">
-            <p className="mb-3 text-sm font-semibold text-slate-500">
-              Common Keywords Found in Reviews
-            </p>
+<GoogleReviews />
 
-            <div className="flex flex-wrap gap-3">
-              {[
-                "Quick Support",
-                "Easy Process",
-                "Customer Support",
-                "Documentation",
-                "On Time",
-              ].map((keyword) => (
-                <span
-                  key={keyword}
-                  className="rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700"
-                >
-                  {keyword}
-                </span>
-              ))}
-            </div>
-          </div>
-
-
-{/* Buttons */}
-          {/* <div className="mb-4 flex items-center justify-between">
-            <h3 className="text-xl font-bold text-slate-900">
-              Popular Reviews
-            </h3>
-
-            <div className="flex gap-2">
-              <button className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-700 hover:bg-slate-50">
-                ‹
-              </button>
-              <button className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-700 hover:bg-slate-50">
-                ›
-              </button>
-            </div>
-          </div> */}
-
-          <div className="grid gap-5 md:grid-cols-2">
-            {googleReviews.map((item, index) => (
-              <div
-                key={index}
-                className="rounded-2xl border border-slate-200 bg-slate-50/60 p-5"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-600 text-sm font-bold text-white">
-                    {item.name
-                      .split(" ")
-                      .map((word) => word[0])
-                      .join("")
-                      .slice(0, 2)}
-                  </div>
-
-                  <div>
-                    <h4 className="font-bold text-slate-900">{item.name}</h4>
-                    <p className="text-sm text-slate-500">
-                      {item.type} • {item.date}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mt-4 text-yellow-400">
-                  {"★".repeat(item.rating)}
-                </div>
-
-                <h5 className="mt-3 font-bold text-slate-900">{item.title}</h5>
-
-                <p className="mt-2 line-clamp-4 text-sm leading-6 text-slate-600">
-                  {item.review}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-7">
-            <button className="rounded-full border border-slate-300 px-6 py-3 text-sm font-bold text-slate-700 transition hover:bg-slate-100">
-              View More
-            </button>
-          </div>
-        </div>
-      </section>
       {/* FAQ's */}
       <section className="max-w-5xl mx-auto px-4 py-12">
         <div className="mb-8 text-center">
