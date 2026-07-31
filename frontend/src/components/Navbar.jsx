@@ -30,7 +30,7 @@ const Navbar = () => {
   }, []);
 
 const navLinkClass = ({ isActive }) =>
-  `group flex items-center gap-2 rounded-xl px-4 py-2.5 text-[16px] font-medium
+  `group flex items-center gap-2 rounded-xl px-3 py-3 text-[14px] font-medium
    transition-[background-color,color] duration-150 ease-out
    ${
      isActive
@@ -43,7 +43,7 @@ const navLinkClass = ({ isActive }) =>
       <header className="sticky top-0 z-[200] bg-white/90 backdrop-blur-xl border-b border-black/[0.06]">
         <nav className="container-pag flex items-center justify-between h-[82px] p-6">
           {/* ================= LOGO ================= */}
-          <Link to="/" className="group flex items-center gap-3 shrink-0">
+          <Link to="/" className="group flex items-center gap-4 shrink-0">
             <img
               src="/logos/new-logo.png"
               alt="Dhwanika Overseas"
@@ -63,7 +63,7 @@ const navLinkClass = ({ isActive }) =>
           </Link>
 
           {/* ================= DESKTOP NAV ================= */}
-          <ul className="hidden xl:flex items-center ml-auto mr-8">
+          <ul className="hidden xl:flex items-center  mr-8">
             <li className="">
               <NavLink to="/visas" className={navLinkClass}>
               <Globe
