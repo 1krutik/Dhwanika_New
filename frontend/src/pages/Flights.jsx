@@ -15,86 +15,80 @@ export default function Flights() {
     passengers: "",
   });
 
-const flights = [
-  {
-    id: 1,
-    airline: "Emirates",
-    route: "Ahmedabad → Dubai",
-    from: "Ahmedabad",
-    to: "Dubai",
-    date: "Daily Flights",
-    time: "03h 15m",
-    cta: "Enquire Now",
-    image:
-      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05",
-    badge: "BEST VALUE",
-  },
-  {
-    id: 2,
-    airline: "Singapore Airlines",
-    route: "Mumbai → Singapore",
-    from: "Mumbai",
-    to: "Singapore",
-    date: "Daily Flights",
-    time: "05h 40m",
-    cta: "Enquire Now",
-    image:
-      "https://images.unsplash.com/photo-1529070538774-1843cb3265df",
-    badge: "POPULAR",
-  },
-  {
-    id: 3,
-    airline: "Qatar Airways",
-    route: "Delhi → London",
-    from: "Delhi",
-    to: "London",
-    date: "Daily Flights",
-    time: "09h 30m",
-    cta: "Enquire Now",
-    image:
-      "https://images.unsplash.com/photo-1473445361085-b9a07f55608b",
-    badge: "PREMIUM",
-  },
-  {
-    id: 4,
-    airline: "Thai Airways",
-    route: "Mumbai → Bangkok",
-    from: "Mumbai",
-    to: "Bangkok",
-    date: "Daily Flights",
-    time: "04h 25m",
-    cta: "Enquire Now",
-    image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-    badge: "HOT DEAL",
-  },
-  {
-    id: 5,
-    airline: "Malaysia Airlines",
-    route: "Delhi → Kuala Lumpur",
-    from: "Delhi",
-    to: "Kuala Lumpur",
-    date: "Daily Flights",
-    time: "05h 10m",
-    cta: "Enquire Now",
-    image:
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
-    badge: "LIMITED OFFER",
-  },
-  {
-    id: 6,
-    airline: "Etihad Airways",
-    route: "Ahmedabad → Paris",
-    from: "Ahmedabad",
-    to: "Paris",
-    date: "Daily Flights",
-    time: "10h 20m",
-    cta: "Enquire Now",
-    image:
-      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34",
-    badge: "LUXURY",
-  },
-];
+  const flights = [
+    {
+      id: 1,
+      airline: "Emirates",
+      route: "Ahmedabad → Dubai",
+      from: "Ahmedabad",
+      to: "Dubai",
+      date: "Daily Flights",
+      time: "03h 15m",
+      cta: "Enquire Now",
+      image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05",
+      badge: "BEST VALUE",
+    },
+    {
+      id: 2,
+      airline: "Singapore Airlines",
+      route: "Mumbai → Singapore",
+      from: "Mumbai",
+      to: "Singapore",
+      date: "Daily Flights",
+      time: "05h 40m",
+      cta: "Enquire Now",
+      image: "https://images.unsplash.com/photo-1529070538774-1843cb3265df",
+      badge: "POPULAR",
+    },
+    {
+      id: 3,
+      airline: "Qatar Airways",
+      route: "Delhi → London",
+      from: "Delhi",
+      to: "London",
+      date: "Daily Flights",
+      time: "09h 30m",
+      cta: "Enquire Now",
+      image: "https://images.unsplash.com/photo-1473445361085-b9a07f55608b",
+      badge: "PREMIUM",
+    },
+    {
+      id: 4,
+      airline: "Thai Airways",
+      route: "Mumbai → Bangkok",
+      from: "Mumbai",
+      to: "Bangkok",
+      date: "Daily Flights",
+      time: "04h 25m",
+      cta: "Enquire Now",
+      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+      badge: "HOT DEAL",
+    },
+    {
+      id: 5,
+      airline: "Malaysia Airlines",
+      route: "Delhi → Kuala Lumpur",
+      from: "Delhi",
+      to: "Kuala Lumpur",
+      date: "Daily Flights",
+      time: "05h 10m",
+      cta: "Enquire Now",
+      image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+      badge: "LIMITED OFFER",
+    },
+    {
+      id: 6,
+      airline: "Etihad Airways",
+      route: "Ahmedabad → Paris",
+      from: "Ahmedabad",
+      to: "Paris",
+      date: "Daily Flights",
+      time: "10h 20m",
+      cta: "Enquire Now",
+      image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34",
+      badge: "LUXURY",
+    },
+  ];
 
   const handleChange = (e) => {
     setFormData({
@@ -123,7 +117,7 @@ const flights = [
             phone: formData.phone,
             service: `Flight Booking - ${selectedFlight.airline} (${selectedFlight.route})`,
           }),
-        }
+        },
       );
 
       const data = await response.json();
@@ -242,7 +236,7 @@ const flights = [
                     onClick={() => setSelectedFlight(flight)}
                     className="flex gap-2 items-center bg-blue-600 hover:bg-blue-700 text-white px-3 py-3 rounded-xl font-semibold transition"
                   >
-                    Enquire Now <FaPlaneDeparture/>
+                    Enquire Now <FaPlaneDeparture />
                   </button>
                 </div>
               </div>

@@ -210,9 +210,9 @@ export default function Cruises() {
 
                 <div className="flex justify-between items-center mt-6">
                   <div>
-                    <p className="text-xs text-gray-400">Starting From</p>
+                    <p className="text-xs text-gray-400">At Best Price✨</p>
                     <p className="text-2xl font-bold text-gray-800">
-                      {cruise.price}
+                      
                     </p>
                   </div>
 
@@ -220,7 +220,7 @@ export default function Cruises() {
                     onClick={() => setSelectedCruise(cruise)}
                     className="bg-cyan-600 hover:bg-cyan-700 text-white px-5 py-3 rounded-xl font-semibold transition"
                   >
-                    Enquire 🚢
+                    Enquire Now 🛳️
                   </button>
                 </div>
               </div>
