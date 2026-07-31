@@ -63,7 +63,7 @@ const Navbar = () => {
           </Link>
 
           {/* ================= DESKTOP NAV ================= */}
-          <ul className="hidden xl:flex items-center  mr-8">
+          <ul className="hidden xl:flex items-center">
             <li className="">
               <NavLink to="/visas" className={navLinkClass}>
                 <Globe
