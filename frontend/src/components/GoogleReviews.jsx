@@ -154,24 +154,7 @@ const GoogleReviews = () => {
               </p>
             </div>
 
-            {/* ARROWS */}
-            <div className="flex gap-2">
-              <button
-                onClick={previousSlide}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition-all duration-300 hover:border-blue-600 hover:bg-blue-600 hover:text-white"
-                aria-label="Previous review"
-              >
-                <ChevronLeft size={20} />
-              </button>
-
-              <button
-                onClick={nextSlide}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition-all duration-300 hover:border-blue-600 hover:bg-blue-600 hover:text-white"
-                aria-label="Next review"
-              >
-                <ChevronRight size={20} />
-              </button>
-            </div>
+          
           </div>
         </div>
 
@@ -284,6 +267,24 @@ const GoogleReviews = () => {
             />
           ))}
         </div>
+          {/* ARROWS */}
+            {/* <div className="flex gap-2">
+              <button
+                onClick={previousSlide}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition-all duration-300 hover:border-blue-600 hover:bg-blue-600 hover:text-white"
+                aria-label="Previous review"
+              >
+                <ChevronLeft size={20} />
+              </button>
+
+              <button
+                onClick={nextSlide}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition-all duration-300 hover:border-blue-600 hover:bg-blue-600 hover:text-white"
+                aria-label="Next review"
+              >
+                <ChevronRight size={20} />
+              </button>
+            </div> */}
       </div>
     </section>
   );
