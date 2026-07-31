@@ -29,8 +29,8 @@ const Navbar = () => {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
 
-const navLinkClass = ({ isActive }) =>
-  `group flex items-center gap-2 rounded-xl px-3 py-3 text-[14px] font-medium
+  const navLinkClass = ({ isActive }) =>
+    `group flex items-center gap-2 rounded-xl px-3 py-3 text-[14px] font-medium
    transition-[background-color,color] duration-150 ease-out
    ${
      isActive
@@ -66,82 +66,71 @@ const navLinkClass = ({ isActive }) =>
           <ul className="hidden xl:flex items-center  mr-8">
             <li className="">
               <NavLink to="/visas" className={navLinkClass}>
-              <Globe
-  size={18}
-  strokeWidth={1.8}
-  className="transition-transform duration-150 ease-out group-hover:scale-110 group-hover:rotate-6"
-/>
+                <Globe
+                  size={18}
+                  strokeWidth={1.8}
+                  className="transition-transform duration-150 ease-out group-hover:scale-110 group-hover:rotate-6"
+                />
 
                 <span>Visa Services</span>
-
               </NavLink>
             </li>
 
             <li>
               <NavLink to="/holidays" className={navLinkClass}>
-              <FaUmbrellaBeach
-  size={17}
-  className="transition-transform duration-150 ease-out group-hover:scale-110 group-hover:-rotate-6"
-/>
+                <FaUmbrellaBeach
+                  size={17}
+                  className="transition-transform duration-150 ease-out group-hover:scale-110 group-hover:-rotate-6"
+                />
                 <span>Holiday Packages</span>
-
-                
               </NavLink>
             </li>
 
             <li>
               <NavLink to="/flights" className={navLinkClass}>
-               <PlaneTakeoff
-  size={18}
-  strokeWidth={1.8}
-  className="transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:scale-110"
-/>
+                <PlaneTakeoff
+                  size={18}
+                  strokeWidth={1.8}
+                  className="transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:scale-110"
+                />
 
                 <span>Flights</span>
-
-                
               </NavLink>
             </li>
 
             <li>
               <NavLink to="/Cruise" className={navLinkClass}>
-                  <Ship
-                    size={17}
-                    strokeWidth={1.8}
+                <Ship
+                  size={17}
+                  strokeWidth={1.8}
                   className="transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:scale-110"
-                  />
+                />
 
                 <span>Cruises</span>
-
-                
               </NavLink>
             </li>
 
             <li>
               <NavLink to="/hotels" className={navLinkClass}>
-                  <Hotel
-                    size={17}
-                    strokeWidth={1.8}
-                    className="transition-all duration-300 group-hover:-translate-y-1 group-hover:scale-110"
-                  />
+                <Hotel
+                  size={17}
+                  strokeWidth={1.8}
+                  className="transition-all duration-300 group-hover:-translate-y-1 group-hover:scale-110"
+                />
 
                 <span>Hotels</span>
-
-               
               </NavLink>
             </li>
 
             <li>
               <NavLink to="/about" className={navLinkClass}>
-                  <Info
-                    size={17}
-                    strokeWidth={1.8}
+                <Info
+                  size={17}
+                  strokeWidth={1.8}
                   className="transition-all duration-300 group-hover:rotate-12 group-hover:scale-110"
-                  />
+                />
 
                 <span>About</span>
-
-               
               </NavLink>
             </li>
           </ul>
