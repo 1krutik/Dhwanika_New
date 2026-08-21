@@ -48,6 +48,24 @@ const GoogleReviews = () => {
       review:
         "Very caring and efficient service in achieving the target.",
     },
+    {
+      name: "Rashmi Patel",
+      type: "Customer",
+      date: "Google Review",
+      title: "Excellent support",
+      rating: 5,
+      review:
+        "Excellent support and guidance throughout the visa application process. The team was responsive and made everything easy.",
+    },
+    {
+      name: "Ghanshyam Batheja",
+      type: "Customer",
+      date: "Google Review",
+      title: "Professional service",
+      rating: 5,
+      review:
+        "Very genuinely advised. Arranged all for Bali package including flight, visa, hotel, vehicle, guide and all sightseeing entry fee etc. very cost effectively compared to other travel agencies.",
+    }
   ];
 
   const keywords = [
