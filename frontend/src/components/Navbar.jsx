@@ -51,13 +51,13 @@ const Navbar = () => {
             />
 
             <div className="hidden sm:block leading-tight">
-              <h2 className="text-[19px] font-extrabold tracking-[-0.5px] text-black">
+              <h2 className="text-[19px] font-extrabold tracking-[-0.5px] text-red-600">
                 Dhwanika
                 <span className="text-red-600"> Overseas</span>
               </h2>
 
-              <p className="text-[10px] uppercase tracking-[2px] text-black">
-                Visa • Tours • Passport • Flights
+              <p className="text-[10px] uppercase tracking-[2px] font-bold text-black">
+               For Holidays & Visas
               </p>
             </div>
           </Link>
