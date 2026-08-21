@@ -50,16 +50,21 @@ const Navbar = () => {
               className="h-[58px] w-[58px] rounded-full object-contain transition-transform duration-500 group-hover:scale-105"
             />
 
-            <div className="hidden sm:block leading-tight">
-              <h2 className="text-[19px] font-extrabold tracking-[-0.5px] text-red-600">
-                Dhwanika
-                <span className="text-red-600"> Overseas</span>
-              </h2>
+           <div className="hidden sm:block leading-tight">
+  <h2 className="text-[19px] font-extrabold tracking-[-0.5px] text-red-600 text-center">
+    Dhwanika <span className="text-red-600">Overseas</span>
+  </h2>
 
-              <p className="text-[10px] uppercase tracking-[2px] font-bold text-black">
-               For Holidays & Visas
-              </p>
-            </div>
+  <div className="mt-1 flex items-center justify-center gap-2">
+    <span className="block h-px w-7 bg-black"></span>
+
+    <p className="m-0 whitespace-nowrap text-[10px] uppercase tracking-[2px] font-bold leading-none text-black">
+      For Holidays & Visas
+    </p>
+
+    <span className="block h-px w-7 bg-black"></span>
+  </div>
+</div>
           </Link>
 
           {/* ================= DESKTOP NAV ================= */}
