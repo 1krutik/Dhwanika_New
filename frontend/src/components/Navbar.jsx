@@ -191,7 +191,7 @@ const Navbar = () => {
             <div className="flex flex-col gap-1">
               <MobileNavLink
                 to="/visas"
-                icon={<Globe2 size={18} />}
+                icon={<Globe size={18} />}
                 label="Visa Services"
                 closeMenu={() => setMenuOpen(false)}
               />
