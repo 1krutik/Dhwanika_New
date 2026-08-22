@@ -16,6 +16,8 @@ import VisaDetails from "./pages/VisaDetails";
 import InquiryForm from "./components/InquiryForm";
 import Flights from "./pages/Flights";
 import Cruises from "./pages/Cruises";
+import Packages from "./pages/Packages";
+import PackageDetails from "./pages/PackageDetails";
 
 function App() {
   useEffect(() => {
@@ -47,6 +49,8 @@ function App() {
 
         <Route path="/holidays" element={<TravelCards />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/holidays" element={<Packages />} />
+<Route path="/holidays/:id" element={<PackageDetails />} />
       </Routes>
 
       <a

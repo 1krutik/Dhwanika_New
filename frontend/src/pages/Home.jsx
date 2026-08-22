@@ -7,11 +7,11 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import destinations from "../components/Destinations/data";
 import InquiryForm from "../components/InquiryForm";
 import VisaServices from "./VisaServices ";
 import PartnersMarquee from "../components/PartnersMarquee";
 import WhyChooseUs from "../components/whychooseus";
+import { packagesData } from "../components/data/packagesData";
 
 const stats = [
   { label: "Fast responses", value: "Under 30 min" },
@@ -73,7 +73,7 @@ export default function Home() {
           </div>
 
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {destinations.slice(0, 8).map((d) => (
+            {packagesData.slice(0, 8).map((d) => (
               <div
                 key={`${d.name}-${d.country}`}
                 className="group overflow-hidden rounded-2xl ring-1 ring-ink-200"

@@ -11,16 +11,19 @@ export default function VisaInquiryForm({ defaultService = "Visa Services" }) {
     agree: false,
   });
 
+  // NEW: State to manage the button's loading appearance
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-
     setFormData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
     }));
   };
 
-  const handleSubmit = async (e) => {
+  // NEW: Lightning fast submit function
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!formData.agree) {
@@ -28,15 +31,20 @@ export default function VisaInquiryForm({ defaultService = "Visa Services" }) {
       return;
     }
 
-    try {
-      await fetch("https://dhwanikaoverseas.onrender.com/api/inquiry", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+    // Instantly disable button and show "Sending..."
+    setIsSubmitting(true);
 
+    // Send data to backend silently in the background
+    fetch("https://dhwanikaoverseas.onrender.com/api/inquiry", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    }).catch((err) => console.log(err));
+
+    // Wait 0.5s for a natural feel, then show success instantly
+    setTimeout(() => {
       alert("🎉 Thank You for Contacting Us!");
 
       setFormData({
@@ -47,9 +55,8 @@ export default function VisaInquiryForm({ defaultService = "Visa Services" }) {
         service: defaultService,
         agree: false,
       });
-    } catch (err) {
-      console.log(err);
-    }
+      setIsSubmitting(false); // Reset button
+    }, 500);
   };
 
   return (
@@ -174,11 +181,17 @@ export default function VisaInquiryForm({ defaultService = "Visa Services" }) {
               </p>
             </div>
 
+            {/* NEW: Updated Button with loading styles */}
             <button
               type="submit"
-              className="inline-flex items-center justify-center rounded-lg bg-blue-700 px-8 py-4 text-sm font-black uppercase tracking-wide text-white shadow-[0_10px_25px_rgba(37,99,235,0.35)] transition hover:-translate-y-0.5 hover:bg-blue-800 hover:shadow-[0_14px_35px_rgba(37,99,235,0.45)]"
+              disabled={isSubmitting}
+              className={`inline-flex items-center justify-center rounded-lg px-8 py-4 text-sm font-black uppercase tracking-wide text-white transition ${
+                isSubmitting
+                  ? "bg-slate-400 cursor-not-allowed shadow-none"
+                  : "bg-blue-700 shadow-[0_10px_25px_rgba(37,99,235,0.35)] hover:-translate-y-0.5 hover:bg-blue-800 hover:shadow-[0_14px_35px_rgba(37,99,235,0.45)]"
+              }`}
             >
-              Submit Inquiry
+              {isSubmitting ? "Sending..." : "Submit Inquiry"}
             </button>
           </form>
         </div>

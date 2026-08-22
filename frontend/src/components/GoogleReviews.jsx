@@ -45,8 +45,7 @@ const GoogleReviews = () => {
       date: "Google Review",
       title: "Highly recommended",
       rating: 5,
-      review:
-        "Very caring and efficient service in achieving the target.",
+      review: "Very caring and efficient service in achieving the target.",
     },
     {
       name: "Rashmi Patel",
@@ -65,7 +64,7 @@ const GoogleReviews = () => {
       rating: 5,
       review:
         "Very genuinely advised. Arranged all for Bali package including flight, visa, hotel, vehicle, guide and all sightseeing entry fee etc. very cost effectively compared to other travel agencies.",
-    }
+    },
   ];
 
   const keywords = [
@@ -99,10 +98,7 @@ const GoogleReviews = () => {
   const cardsVisible = isMobile ? 1 : 2;
 
   /* MAXIMUM SLIDE POSITION */
-  const maxSlide = Math.max(
-    googleReviews.length - cardsVisible,
-    0
-  );
+  const maxSlide = Math.max(googleReviews.length - cardsVisible, 0);
 
   /* AUTO SLIDE */
   useEffect(() => {
@@ -171,8 +167,6 @@ const GoogleReviews = () => {
                 Real experiences from customers who trusted Dhwanika Overseas.
               </p>
             </div>
-
-          
           </div>
         </div>
 
@@ -199,9 +193,7 @@ const GoogleReviews = () => {
           <div
             className="flex transition-transform duration-700 ease-in-out"
             style={{
-              transform: `translateX(-${
-                current * (100 / cardsVisible)
-              }%)`,
+              transform: `translateX(-${current * (100 / cardsVisible)}%)`,
             }}
           >
             {googleReviews.map((item, index) => (
@@ -215,7 +207,6 @@ const GoogleReviews = () => {
                 "
               >
                 <div className="h-full min-h-[250px] rounded-2xl border border-slate-200 bg-slate-50/60 p-5 transition-all duration-300 hover:border-blue-200 hover:bg-white hover:shadow-lg">
-                  
                   {/* CUSTOMER */}
                   <div className="flex items-start gap-3">
                     <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blue-600 text-sm font-bold text-white">
@@ -242,11 +233,7 @@ const GoogleReviews = () => {
                   <div className="mt-4 flex items-center gap-1">
                     <div className="flex text-yellow-400">
                       {Array.from({ length: item.rating }).map((_, i) => (
-                        <Star
-                          key={i}
-                          size={16}
-                          fill="currentColor"
-                        />
+                        <Star key={i} size={16} fill="currentColor" />
                       ))}
                     </div>
 
@@ -285,8 +272,8 @@ const GoogleReviews = () => {
             />
           ))}
         </div>
-          {/* ARROWS */}
-            {/* <div className="flex gap-2">
+        {/* ARROWS */}
+        {/* <div className="flex gap-2">
               <button
                 onClick={previousSlide}
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition-all duration-300 hover:border-blue-600 hover:bg-blue-600 hover:text-white"
