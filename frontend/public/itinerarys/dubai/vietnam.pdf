@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="canonical" href="https://www.dhwanikaoverseas.in/" />
+    <meta name="robots" content="index, follow" />
+    <!-- ✅ Favicon -->
+    <link rel="icon" type="image/png" href="/logos/new-logo.png" />
+    <meta
+      name="google-site-verification"
+      content="zoY3VtzsfmH7-tiBpl8kpHeLbnODOCI6_nmkpj9hbd4"
+    />
+    <!-- ✅ SEO Title -->
+    <title>
+      Dhwanika Overseas | Visa Consultant in Ahmedabad | Tours, Flights &
+      Passport Services
+    </title>
+
+    <!-- ✅ Meta Description -->
+    <meta
+      name="description"
+      content="Dhwanika Overseas is Ahmedabad's trusted Visa Consultant offering Tourist Visa, Student Visa, Business Visa, Passport Assistance, International & Domestic Tour Packages, Flight Booking and Hotel Booking."
+    />
+
+    <!-- ✅ Keywords -->
+    <meta
+      name="keywords"
+      content="visa services, International & Domestic Tours, Passport, Flight Tickets, Hotel Booking"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dhwanika Overseas" />
+    <meta
+      property="og:description"
+      content="Visa Services, Tours, Passport Assistance, Flight Booking & Hotel Booking."
+    />
+    <meta
+      property="og:image"
+      content="https://www.dhwanikaoverseas.in/logos/new-logo.png"
+    />
+    <meta property="og:url" content="https://www.dhwanikaoverseas.in/" />
+    <!-- ✅ Schema (Google Logo) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Dhwanika Overseas",
+        "url": "https://dhwanikaoverseas.in",
+        "logo": "https://dhwanikaoverseas.in/logos/new-logo.png"
+      }
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" crossorigin src="/assets/index-DD9MfUfR.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DVOw4Gx9.css">
+  </head>
+
+ <body>
+
+  <div style="display:none;">
+    <h1>Visa Services - Dhwanika Overseas</h1>
+    <p>
+      Dhwanika Overseas provides visa services, international and domestic
+      tours, flight tickets and hotel booking.
+    </p>
+  </div>
+
+  <div id="root"></div>
+
+</body>
+</html>

@@ -400,7 +400,7 @@ export default function VisaDetails() {
             <input
               type="text"
               required
-              placeholder="Full Name *"
+              placeholder="Full Name"
               value={formData.name}
               onChange={(e) =>
                 setFormData({ ...formData, name: e.target.value })
@@ -411,7 +411,7 @@ export default function VisaDetails() {
             <input
               type="tel"
               required
-              placeholder="WhatsApp Number *"
+              placeholder="Phone Number"
               value={formData.phone}
               onChange={(e) => {
                 setFormData({ ...formData, phone: e.target.value });
