@@ -443,7 +443,7 @@ export default function VisaDetails() {
                   : "bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/30"
               }`}
             >
-              {loading ? "Processing..." : "📄 Download PDF Checklist"}
+              {loading ? "Processing..." : "📄Download Document Checklist"}
             </button>
           </form>
         </div>
