@@ -163,14 +163,15 @@ export const packagesData = [
   {
     _id: "dubai-desert-202",
     title: "Dubai Desert Safari Adventure",
-    destination: "Dubai, United Arab Emirates", 
+    destination: "Dubai, United Arab Emirates",
     duration: "3 Nights / 4 Days",
     price: 45000,
     image: "/images/dubai.jpg", // Reusing image for testing
-    description: "Experience the thrill of dune bashing and a traditional Bedouin camp.",
+    description:
+      "Experience the thrill of dune bashing and a traditional Bedouin camp.",
     highlights: ["Dune Bashing", "BBQ Dinner", "Camel Ride"],
     pdfUrl: "",
-    itinerary: [{ day: 1, title: "Arrival", description: "Welcome to Dubai" }]
+    itinerary: [{ day: 1, title: "Arrival", description: "Welcome to Dubai" }],
   },
   {
     _id: "dubai-shopping-303",
@@ -182,7 +183,7 @@ export const packagesData = [
     description: "Shop till you drop at the world's biggest malls.",
     highlights: ["Dubai Mall", "Gold Souk", "Burj Khalifa"],
     pdfUrl: "",
-    itinerary: [{ day: 1, title: "Arrival", description: "Welcome to Dubai" }]
+    itinerary: [{ day: 1, title: "Arrival", description: "Welcome to Dubai" }],
   },
 
   // Extra Maldives Packages
@@ -196,7 +197,9 @@ export const packagesData = [
     description: "A beautiful and affordable stay in a beachfront villa.",
     highlights: ["Beachfront Access", "Snorkeling", "Sunset Cruise"],
     pdfUrl: "",
-    itinerary: [{ day: 1, title: "Arrival", description: "Welcome to Maldives" }]
+    itinerary: [
+      { day: 1, title: "Arrival", description: "Welcome to Maldives" },
+    ],
   },
   {
     _id: "maldives-honeymoon-606",
@@ -208,7 +211,9 @@ export const packagesData = [
     description: "The ultimate luxury experience for couples.",
     highlights: ["Private Pool", "Spa Day", "Romantic Dinner"],
     pdfUrl: "",
-    itinerary: [{ day: 1, title: "Arrival", description: "Welcome to Maldives" }]
+    itinerary: [
+      { day: 1, title: "Arrival", description: "Welcome to Maldives" },
+    ],
   },
 
   // Extra Bali Packages
@@ -223,15 +228,48 @@ export const packagesData = [
     highlights: ["Surfing Lessons", "Mt. Batur Hike", "Waterfalls"],
     pdfUrl: "/itinerarys/Bali/Bali07days.pdf",
     itinerary: [
-      { day: 1, title: "KUTA • ARRIVAL / STAY", description: " Begin the Bali package with thefirst scheduled night in Kuta -> The supplied source does not state an arrival time or specific transfer arrangement. "},
-      { day: 2, title: "NORTH BALI • WANAGIRI & ULUNDANU", description: " • Proceedf or the listed Wanagiri Hidden Hills experience and Ulundanu Temple Tour • Overnight stay in Ubud. "},
-      { day: 3, title: "UBUD • ALAS HARUM EXPERIENCE", description: " • Visit Alas Harum Tegalang including entrance fee,coffee tour and rice terrace selfie spot • Enjoy 1x of Angel Swing OR Sky Bike OR Flying Fox, as listed in the package."},
-      { day: 4, title: "UBUD • TANAH LOT / KUTA", description: " • Cover Tanah Lot Temple from the listed sightseeing inclusions • Continue the accommodation plan with a night in Kuta."},
-      { day: 5, title: "KUTA • TANJUNG BENOA", description: " • Visit Tanjung Benoa Beach for water activities • Water activity charges are on own cost as stated in the source."},
-      { day: 6, title: "KUTA • LEISURE / STAY", description: " • Continuethe finalKutastay underthe 03-night accommodation plan • No additional sightseeing is specified in the supplied source for this day."},
-      { day: 7, title: " KUTA • FINAL DAY / DEPARTURE", description: "• Complete the07-day package.• The source does not provide a departure time; please follow the confirmed operational schedule."},
-
-    
-    ]
-  }
+      {
+        day: 1,
+        title: "KUTA • ARRIVAL / STAY",
+        description:
+          " Begin the Bali package with thefirst scheduled night in Kuta -> The supplied source does not state an arrival time or specific transfer arrangement. ",
+      },
+      {
+        day: 2,
+        title: "NORTH BALI • WANAGIRI & ULUNDANU",
+        description:
+          " • Proceedf or the listed Wanagiri Hidden Hills experience and Ulundanu Temple Tour • Overnight stay in Ubud. ",
+      },
+      {
+        day: 3,
+        title: "UBUD • ALAS HARUM EXPERIENCE",
+        description:
+          " • Visit Alas Harum Tegalang including entrance fee,coffee tour and rice terrace selfie spot • Enjoy 1x of Angel Swing OR Sky Bike OR Flying Fox, as listed in the package.",
+      },
+      {
+        day: 4,
+        title: "UBUD • TANAH LOT / KUTA",
+        description:
+          " • Cover Tanah Lot Temple from the listed sightseeing inclusions • Continue the accommodation plan with a night in Kuta.",
+      },
+      {
+        day: 5,
+        title: "KUTA • TANJUNG BENOA",
+        description:
+          " • Visit Tanjung Benoa Beach for water activities • Water activity charges are on own cost as stated in the source.",
+      },
+      {
+        day: 6,
+        title: "KUTA • LEISURE / STAY",
+        description:
+          " • Continuethe finalKutastay underthe 03-night accommodation plan • No additional sightseeing is specified in the supplied source for this day.",
+      },
+      {
+        day: 7,
+        title: " KUTA • FINAL DAY / DEPARTURE",
+        description:
+          "• Complete the07-day package.• The source does not provide a departure time; please follow the confirmed operational schedule.",
+      },
+    ],
+  },
 ];
