@@ -41,15 +41,18 @@ const Navbar = () => {
     <>
       {/* ================= HEADER ================= */}
       <header className="sticky top-0 z-[200] bg-white/90 backdrop-blur-xl border-b border-black/[0.06]">
-        <nav className="container-pag flex items-center justify-between h-[82px] p-6">
+        {/* ADDED 'relative' for absolute positioning of mobile text */}
+        <nav className="container-pag relative flex items-center justify-between h-[82px] p-6">
+          
           {/* ================= LOGO ================= */}
-          <Link to="/" className="group flex items-center gap-4 shrink-0">
+          <Link to="/" className="group flex items-center gap-2 sm:gap-4 shrink-0 relative z-20">
             <img
               src="/logos/new-logo.png"
               alt="Dhwanika Overseas"
-              className="h-[58px] w-[58px] rounded-full object-contain transition-transform duration-500 group-hover:scale-105"
+              className="h-[40px] w-[40px] sm:h-[58px] sm:w-[58px] rounded-full object-contain transition-transform duration-500 group-hover:scale-105"
             />
 
+            {/* Desktop Text: Hidden on mobile (sm:block) */}
             <div className="hidden sm:block leading-tight">
               <h2 className="text-[19px] font-extrabold tracking-[-0.5px] text-red-600 text-center">
                 Dhwanika <span className="text-red-600">Overseas</span>
@@ -57,18 +60,35 @@ const Navbar = () => {
 
               <div className="mt-1 flex items-center justify-center gap-2">
                 <span className="block h-px w-7 bg-black"></span>
-
                 <p className="m-0 whitespace-nowrap text-[10px] uppercase tracking-[2px] font-bold leading-none text-black">
                   For Holidays & Visas
                 </p>
-
                 <span className="block h-px w-7 bg-black"></span>
               </div>
             </div>
           </Link>
 
+          {/* ================= MOBILE CENTER TEXT ================= */}
+          {/* This ONLY shows on mobile (sm:hidden) and is perfectly centered */}
+          <Link 
+            to="/" 
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center sm:hidden z-10 w-max"
+          >
+            <h2 className="text-[15px] font-extrabold tracking-[-0.5px] text-red-600 text-center leading-tight">
+              Dhwanika <span className="text-red-600">Overseas</span>
+            </h2>
+
+            <div className="mt-0.5 flex items-center justify-center gap-1.5">
+              <span className="block h-px w-3 bg-black"></span>
+              <p className="m-0 whitespace-nowrap text-[7px] uppercase tracking-[1px] font-bold leading-none text-black">
+                For Holidays & Visas
+              </p>
+              <span className="block h-px w-3 bg-black"></span>
+            </div>
+          </Link>
+
           {/* ================= DESKTOP NAV ================= */}
-          <ul className="hidden xl:flex items-center">
+          <ul className="hidden xl:flex items-center relative z-20">
             <li className="">
               <NavLink to="/visas" className={navLinkClass}>
                 <Globe
@@ -141,7 +161,7 @@ const Navbar = () => {
           </ul>
 
           {/* ================= RIGHT SIDE ================= */}
-          <div className="hidden xl:flex items-center gap-3">
+          <div className="hidden xl:flex items-center gap-3 relative z-20">
             {/* Phone */}
             <a
               href="tel:+917698551313"
@@ -170,7 +190,7 @@ const Navbar = () => {
           {/* ================= MOBILE BUTTON ================= */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="xl:hidden flex h-11 w-11 items-center justify-center rounded-full bg-black text-white transition-transform duration-300 active:scale-90"
+            className="xl:hidden flex h-11 w-11 items-center justify-center rounded-full bg-black text-white transition-transform duration-300 active:scale-90 relative z-20"
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
