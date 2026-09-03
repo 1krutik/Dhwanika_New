@@ -219,7 +219,7 @@ export const packagesData = [
   // Extra Bali Packages
   {
     _id: "bali-adventure-707",
-    title: "Bali Surf & Adventure Tour",
+    title: "Bali & Adventure Tour",
     destination: "Bali, Indonesia",
     duration: "6 Nights / 7 Days",
     price: 38000,

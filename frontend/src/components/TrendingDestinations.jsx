@@ -75,10 +75,10 @@ export default function TrendingDestinations() {
                   <p className="text-xs text-gray-500">{dest.tours}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-xs text-gray-500">From</p>
-                  <p className="font-bold text-teal-600 text-sm md:text-base">
+                  <p className="text-xs text-gray-500"> Best Price</p>
+                  {/* <p className="font-bold text-teal-600 text-sm md:text-base">
                     ₹{dest.startingPrice.toLocaleString('en-IN')}
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </Link>
