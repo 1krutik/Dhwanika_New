@@ -69,7 +69,7 @@ export default function TravelCards() {
   return (
     <div className="max-w-7xl mx-auto py-4 px-4">
       <div className="text-center mb-4">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4 text-teal-600">Popular Holiday Destinations</h1>
+        <h1 className="text-4xl font-bold  mb-4 text-blue-600">Popular Holiday Destinations</h1>
         <p className="text-gray-600 max-w-2xl mx-auto">Find the perfect getaway for your next adventure with Dhwanika Overseas.</p>
       </div>
 
