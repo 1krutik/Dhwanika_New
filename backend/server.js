@@ -61,6 +61,7 @@ app.get("/test-email", async (req, res) => {
     res.status(500).send("Email Failed ❌");
   }
 });
+
 app.get("/api/google-reviews", async (req, res) => {
   const placeId = "YOUR_GOOGLE_PLACE_ID";
   const apiKey = process.env.GOOGLE_MAPS_API_KEY;
@@ -78,38 +79,53 @@ app.get("/api/google-reviews", async (req, res) => {
   const data = await response.json();
   res.json(data);
 });
+
 /* ================= INQUIRY API ================= */
 app.post("/api/inquiry", async (req, res) => {
   try {
-    /* SAVE TO DATABASE */
-    const newInquiry = new Inquiry(req.body);
-
-    await newInquiry.save();
-
     const { firstName, lastName, email, phone, service } = req.body;
 
-    /* EMAIL TEMPLATE */
+    /* 1. SAVE TO DATABASE */
+    const newInquiry = new Inquiry(req.body);
+    await newInquiry.save();
+    console.log("✅ INQUIRY SAVED TO MONGODB");
+
+    /* 2. SEND TO GOOGLE SHEETS (NEW FEATURE) */
+    try {
+      // ⚠️ IMPORTANT: Paste your copied Google Apps Script Web App URL right here inside the quotes!
+      const GOOGLE_SCRIPT_URL = "PASTE_YOUR_WEB_APP_URL_HERE"; 
+      
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          firstName: `${firstName || ""} ${lastName || ""}`.trim(), // Combines first and last name for the sheet
+          phone: phone,
+          email: email,
+          service: service
+        }),
+      });
+      console.log("✅ INQUIRY SENT TO GOOGLE SHEETS");
+    } catch (sheetError) {
+      console.log("❌ GOOGLE SHEETS ERROR:", sheetError.message);
+      // We don't throw an error here so the user still gets a success message if DB & Email work.
+    }
+
+    /* 3. EMAIL TEMPLATE */
     const mailOptions = {
       from: process.env.EMAIL_USER || "dhwanikaoverseas@gmail.com",
-
       to: process.env.EMAIL_USER || "dhwanikaoverseas@gmail.com",
-
       subject: "🔥 New Inquiry - Dhwanika Overseas",
-
       html: `
         <div style="font-family: Arial; padding:20px;">
           <h2 style="color:#0b57d0;">New Inquiry Received 🚀</h2>
-
-          <p><b>Name:</b> ${firstName} ${lastName}</p>
-
+          <p><b>Name:</b> ${firstName} ${lastName || ""}</p>
           <p><b>Email:</b> ${email}</p>
-
           <p><b>Phone:</b> ${phone}</p>
-
           <p><b>Service:</b> ${service}</p>
-
           <hr />
-
           <p style="color:gray;">
             Dhwanika Overseas Website Inquiry
           </p>
@@ -117,20 +133,20 @@ app.post("/api/inquiry", async (req, res) => {
       `,
     };
 
-    /* SEND EMAIL */
-  try {
-  const info = await transporter.sendMail(mailOptions);
+    /* 4. SEND EMAIL */
+    try {
+      const info = await transporter.sendMail(mailOptions);
+      console.log("📩 EMAIL SENT:", info.response);
+    } catch (mailError) {
+      console.log("❌ EMAIL ERROR:", mailError);
+    }
 
-  console.log("📩 EMAIL SENT:", info.response);
-} catch (mailError) {
-  console.log("❌ EMAIL ERROR:", mailError);
-}
+    // ✅ ALWAYS SUCCESS RESPONSE IF DB SAVES
+    res.status(200).json({
+      success: true,
+      message: "Inquiry saved successfully",
+    });
 
-// ✅ ALWAYS SUCCESS RESPONSE
-res.status(200).json({
-  success: true,
-  message: "Inquiry saved successfully",
-});
   } catch (err) {
     console.log("❌ ERROR:", err);
       

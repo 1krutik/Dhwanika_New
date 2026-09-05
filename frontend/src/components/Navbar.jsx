@@ -54,7 +54,7 @@ const Navbar = () => {
 
             {/* Desktop Text: Hidden on mobile (sm:block) */}
             <div className="hidden sm:block leading-tight">
-              <h2 className="text-[19px] font-extrabold tracking-[-0.5px] text-red-600 text-center">
+              <h2 className="text-[19px] font-bold tracking-[-0.5px] text-red-600 text-center">
                 Dhwanika <span className="text-red-600">Overseas</span>
               </h2>
 
