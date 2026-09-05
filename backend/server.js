@@ -37,7 +37,7 @@ transporter.verify((error, success) => {
 mongoose
   .connect(
     process.env.MONGO_URI ||
-      "mongodb://krutikpanchal2322002_db_user:CxUsPp7K16nxQ8HM@ac-7qptq0q-shard-00-00.fyrea24.mongodb.net:27017,ac-7qptq0q-shard-00-01.fyrea24.mongodb.net:27017,ac-7qptq0q-shard-00-02.fyrea24.mongodb.net:27017/?ssl=true&replicaSet=atlas-isxfi1-shard-0&authSource=admin&appName=Cluster0"
+      "mongodb://krutikpanchal2322002_db_user:CxUsPp7K16nxQ8HM@ac-7qptq0q-shard-00-00.fyrea24.mongodb.net:27017,ac-7qptq0q-shard-00-01.fyrea24.mongodb.net:27017,ac-7qptq0q-shard-00-02.fyrea24.mongodb.net:27017/?ssl=true&replicaSet=atlas-isxfi1-shard-0&authSource=admin&appName=Cluster0",
   )
   .then(() => console.log("MongoDB Connected Successfully 😊"))
   .catch((err) => console.log(err));
@@ -93,8 +93,8 @@ app.post("/api/inquiry", async (req, res) => {
     /* 2. SEND TO GOOGLE SHEETS (NEW FEATURE) */
     try {
       // ⚠️ IMPORTANT: Paste your copied Google Apps Script Web App URL right here inside the quotes!
-      const GOOGLE_SCRIPT_URL = "PASTE_YOUR_WEB_APP_URL_HERE"; 
-      
+      const GOOGLE_SCRIPT_URL = "PASTE_YOUR_WEB_APP_URL_HERE";
+
       await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         headers: {
@@ -104,7 +104,7 @@ app.post("/api/inquiry", async (req, res) => {
           firstName: `${firstName || ""} ${lastName || ""}`.trim(), // Combines first and last name for the sheet
           phone: phone,
           email: email,
-          service: service
+          service: service,
         }),
       });
       console.log("✅ INQUIRY SENT TO GOOGLE SHEETS");
@@ -146,10 +146,9 @@ app.post("/api/inquiry", async (req, res) => {
       success: true,
       message: "Inquiry saved successfully",
     });
-
   } catch (err) {
     console.log("❌ ERROR:", err);
-      
+
     res.status(500).json({
       success: false,
       message: "Something went wrong ❌",
