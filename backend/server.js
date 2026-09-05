@@ -91,26 +91,27 @@ app.post("/api/inquiry", async (req, res) => {
     console.log("✅ INQUIRY SAVED TO MONGODB");
 
     /* 2. SEND TO GOOGLE SHEETS (NEW FEATURE) */
+/* 2. SEND TO GOOGLE SHEETS (NEW FEATURE) */
     try {
-      // ⚠️ IMPORTANT: Paste your copied Google Apps Script Web App URL right here inside the quotes!
-      const GOOGLE_SCRIPT_URL = "PASTE_YOUR_WEB_APP_URL_HERE";
-
+      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxAR01hf1TR2aXcWI-VA-exm_EI3Yx3z2U9AoSCa4QBvGGjwMWJKqBsL2DPjhpSCx0LoA/exec"; 
+      
       await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
+        // ADDED redirect: "follow" which is required for Google Apps Script
+        redirect: "follow", 
         body: JSON.stringify({
-          firstName: `${firstName || ""} ${lastName || ""}`.trim(), // Combines first and last name for the sheet
+          firstName: `${firstName || ""} ${lastName || ""}`.trim(), 
           phone: phone,
           email: email,
-          service: service,
+          service: service
         }),
       });
       console.log("✅ INQUIRY SENT TO GOOGLE SHEETS");
     } catch (sheetError) {
       console.log("❌ GOOGLE SHEETS ERROR:", sheetError.message);
-      // We don't throw an error here so the user still gets a success message if DB & Email work.
     }
 
     /* 3. EMAIL TEMPLATE */
