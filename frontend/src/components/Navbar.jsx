@@ -80,7 +80,7 @@ const Navbar = () => {
 
             <div className="mt-0.5 flex items-center justify-center gap-1.5">
               <span className="block h-px w-3 bg-black"></span>
-              <p className="m-0 whitespace-nowrap text-[7px] uppercase tracking-[1px] font-bold leading-none text-black">
+              <p className="m-0 whitespace-nowrap text-[10px] uppercase tracking-[1px] font-bold leading-none text-black">
                 For Holidays & Visas
               </p>
               <span className="block h-px w-3 bg-black"></span>
