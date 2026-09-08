@@ -49,7 +49,7 @@ const Navbar = () => {
             <img
               src="/logos/new-logo.png"
               alt="Dhwanika Overseas"
-              className="h-[40px] w-[40px] sm:h-[58px] sm:w-[58px] rounded-full object-contain transition-transform duration-500 group-hover:scale-105"
+              className="h-[50px] w-[50px] sm:h-[58px] sm:w-[58px] rounded-full object-contain transition-transform duration-500 group-hover:scale-105"
             />
 
             {/* Desktop Text: Hidden on mobile (sm:block) */}
