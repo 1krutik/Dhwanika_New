@@ -41,9 +41,11 @@ const Navbar = () => {
       <header className="sticky top-0 z-[200] bg-white/90 backdrop-blur-xl border-b border-black/[0.06]">
         {/* ADDED 'relative' for absolute positioning of mobile text */}
         <nav className="container-pag relative flex items-center justify-between h-[82px] p-6">
-          
           {/* ================= LOGO ================= */}
-          <Link to="/" className="group flex items-center gap-2 sm:gap-4 shrink-0 relative z-20">
+          <Link
+            to="/"
+            className="group flex items-center gap-2 sm:gap-4 shrink-0 relative z-20"
+          >
             <img
               src="/logos/new-logo.png"
               alt="Dhwanika Overseas"
@@ -68,8 +70,8 @@ const Navbar = () => {
 
           {/* ================= MOBILE CENTER TEXT ================= */}
           {/* This ONLY shows on mobile (sm:hidden) and is perfectly centered */}
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center sm:hidden z-10 w-max"
           >
             <h2 className="text-[15px] font-extrabold tracking-[-0.5px] text-red-600 text-center leading-tight">
