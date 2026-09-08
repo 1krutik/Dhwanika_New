@@ -5,13 +5,11 @@ import {
   Menu,
   Phone,
   X,
-  Globe2,
   PlaneTakeoff,
   Hotel,
   Ship,
   Info,
   PhoneCall,
-  ChevronDown,
   Globe,
 } from "lucide-react";
 import { FaUmbrellaBeach } from "react-icons/fa";
