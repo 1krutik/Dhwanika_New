@@ -74,7 +74,7 @@ const Navbar = () => {
             to="/"
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center sm:hidden z-10 w-max"
           >
-            <h2 className="text-[15px] font-extrabold tracking-[-0.5px] text-red-600 text-center leading-tight">
+            <h2 className="text-[19px] font-extrabold tracking-[-0.5px] text-red-600 text-center leading-tight">
               Dhwanika <span className="text-red-600">Overseas</span>
             </h2>
 
