@@ -41,10 +41,10 @@ export default function TravelCards() {
       <div className="max-w-7xl mx-auto px-4">
         {/* 1. TITLE (Always at the top) */}
         <div className="text-center mb-4">
-          <h1 className="text-4xl font-bold mb-4 text-blue-600">
+          {/* <h1 className="text-4xl font-bold mb-4 text-blue-600">
             Popular Holiday Destinations 
-          </h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          </h1> */}
+          <p className="text-gray-600 font-bold max-w-2xl mx-auto">
             Find the perfect getaway for your next adventure with Dhwanika
             Overseas.
           </p>

@@ -327,7 +327,7 @@ export const packagesData = [
       },
     ],
   },
-    {
+  {
     _id: "Dream-Bali-909",
     title: "Dream Bali ",
     destination: "Bali, Indonesia",
@@ -372,7 +372,8 @@ export const packagesData = [
         day: 6,
         title: "KUTA • LEISURE / STAY",
         description:
-          " • Enjoyleisure time inKuta • Continue the final Kuta stay under the 03-night accommodation plan",      },
+          " • Enjoyleisure time inKuta • Continue the final Kuta stay under the 03-night accommodation plan",
+      },
       {
         day: 7,
         title: " KUTA • FINAL DAY / DEPARTURE",
