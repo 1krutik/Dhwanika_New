@@ -272,7 +272,7 @@ export const packagesData = [
       },
     ],
   },
-   {
+  {
     _id: "Discover-Bali-808",
     title: "Discover Bali ",
     destination: "Bali, Indonesia",
@@ -311,7 +311,8 @@ export const packagesData = [
         day: 5,
         title: "KUTA • TANJUNG BENOA",
         description:
-          "• Visit Tanjung Benoa Beach for water activities.• Package includes 1x Parasailing, Banana Ride & Jetski; activity charges/operational terms to follow the confirmed package",      },
+          "• Visit Tanjung Benoa Beach for water activities.• Package includes 1x Parasailing, Banana Ride & Jetski; activity charges/operational terms to follow the confirmed package",
+      },
       {
         day: 6,
         title: "KUTA • LEISURE / STAY",
