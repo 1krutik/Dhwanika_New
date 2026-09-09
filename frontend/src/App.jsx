@@ -46,7 +46,6 @@ function App() {
         <Route path="/enquiry" element={<InquiryForm />} />
         {/* ✅ THIS FIXES CLICKED VISA PAGE */}
         <Route path="/visa/:slug" element={<VisaDetails />} />
-
         <Route path="/holidays" element={<TravelCards />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/holidays" element={<Packages />} />
