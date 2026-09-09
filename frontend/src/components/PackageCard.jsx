@@ -19,7 +19,7 @@ export default function PackageCard({ pkg }) {
         <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
           <div>
             <p className="text-xs text-gray-500">Starting from</p>
-            <p className="text-orange-600 font-extrabold text-2xl">₹{pkg.price.toLocaleString("en-IN")}</p>
+            <p className="text-orange-600 font-bold text-2xl">₹{pkg.price.toLocaleString("en-IN")}</p>
           </div>
           
           {/* Notice we use a Link to go to the Details page */}

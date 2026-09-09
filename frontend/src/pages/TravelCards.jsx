@@ -113,9 +113,9 @@ export default function TravelCards() {
 
                   <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
                     <div>
-                      <p className="text-xs text-gray-500">Starting from</p>
+                      <p className="text-xs text-gray-500">At Best Price</p>
                       <p className="text-teal-600 font-extrabold text-lg">
-                        ₹{pkg.price.toLocaleString("en-IN")}
+                        {/* ₹{pkg.price.toLocaleString("en-IN")} */}
                       </p>
                     </div>
 

@@ -391,8 +391,8 @@ export default function VisaServices() {
       </div>
 
       {/* Inquiry Form */}
-     
-      <VisaInquiryForm/>
+
+      <VisaInquiryForm />
     </div>
   );
 }
