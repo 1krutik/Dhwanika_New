@@ -272,4 +272,58 @@ export const packagesData = [
       },
     ],
   },
+   {
+    _id: "Discover-Bali-808",
+    title: "Discover Bali ",
+    destination: "Bali, Indonesia",
+    duration: "6 Nights / 7 Days",
+    price: 38000,
+    image: "images/NewBali.jpg",
+    description: "Dicsover the beauty of Bali with this 7-day package.",
+    highlights: ["Bali Swing", "Water Activities", "White Water Rafting"],
+    pdfUrl: "/itinerarys/Bali/Discover Bali 7 days.pdf",
+    itinerary: [
+      {
+        day: 1,
+        title: "KUTA • ARRIVAL / STAY",
+        description:
+          " Begin the Bali package with thefirst scheduled night in Kuta • Overnight stay in Kuta.",
+      },
+      {
+        day: 2,
+        title: "NORTH BALI • WANAGIRI & ULUNDANU",
+        description:
+          " • Proceedf or the listed Wanagiri Hidden Hills experience and Ulundanu Temple Tour • Overnight stay in Kuta. ",
+      },
+      {
+        day: 3,
+        title: "UBUD • AYUNG RIVER & BALI SWING",
+        description:
+          "• Enjoy White Water Rafting at Ayung River • Experience the Bali Swing and continue the Ubud stay",
+      },
+      {
+        day: 4,
+        title: "UBUD • TANAH LOT / KUTA",
+        description:
+          " • Visit Tanah Lot Temple as part of the listed sightseeing • Continue to Kuta for the 03-night Kuta stay",
+      },
+      {
+        day: 5,
+        title: "KUTA • TANJUNG BENOA",
+        description:
+          "• Visit Tanjung Benoa Beach for water activities.• Package includes 1x Parasailing, Banana Ride & Jetski; activity charges/operational terms to follow the confirmed package",      },
+      {
+        day: 6,
+        title: "KUTA • LEISURE / STAY",
+        description:
+          " • Leisure day in Kuta.• Continue the final Kuta stay under the 03-night accommodation plan.",
+      },
+      {
+        day: 7,
+        title: " KUTA • FINAL DAY / DEPARTURE",
+        description:
+          "• • Complete the 07-day package and proceed for departure.• Departure timing is not specified in the supplied content; follow the confirmed operational schedule",
+      },
+    ],
+  },
 ];
