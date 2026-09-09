@@ -223,7 +223,7 @@ export const packagesData = [
     destination: "Bali, Indonesia",
     duration: "6 Nights / 7 Days",
     price: 38000,
-    image: "images/NewBali.jpg",
+    image: "/images/NewBali.jpg",
     description: "Catch the best waves and hike active volcanoes.",
     highlights: ["Surfing Lessons", "Mt. Batur Hike", "Waterfalls"],
     pdfUrl: "/itinerarys/Bali/Bali07days.pdf",
@@ -278,7 +278,7 @@ export const packagesData = [
     destination: "Bali, Indonesia",
     duration: "6 Nights / 7 Days",
     price: 38000,
-    image: "images/NewBali.jpg",
+    image: "/images/discoverbali.jpg",
     description: "Dicsover the beauty of Bali with this 7-day package.",
     highlights: ["Bali Swing", "Water Activities", "White Water Rafting"],
     pdfUrl: "/itinerarys/Bali/Discover Bali 7 days.pdf",
@@ -287,7 +287,7 @@ export const packagesData = [
         day: 1,
         title: "KUTA • ARRIVAL / STAY",
         description:
-          " Begin the Bali package with thefirst scheduled night in Kuta • Overnight stay in Kuta.",
+          " • Begin the Bali package with thefirst scheduled night in Kuta • Overnight stay in Kuta.",
       },
       {
         day: 2,
@@ -323,7 +323,61 @@ export const packagesData = [
         day: 7,
         title: " KUTA • FINAL DAY / DEPARTURE",
         description:
-          "• • Complete the 07-day package and proceed for departure.• Departure timing is not specified in the supplied content; follow the confirmed operational schedule",
+          "• Complete the 07-day package and proceed for departure.• Departure timing is not specified in the supplied content; follow the confirmed operational schedule",
+      },
+    ],
+  },
+    {
+    _id: "Dream-Bali-909",
+    title: "Dream Bali ",
+    destination: "Bali, Indonesia",
+    duration: "6 Nights / 7 Days",
+    price: 38000,
+    image: "/images/dreambali.jpg",
+    description: "Dicsover the beauty of Bali with this 7-day package.",
+    highlights: ["Tanah Lot Temple", "Hidden Hills", " Ulundanu Temple"],
+    pdfUrl: "/itinerarys/Bali/Dream Bali 7 days.pdf",
+    itinerary: [
+      {
+        day: 1,
+        title: "KUTA • ARRIVAL / STAY",
+        description:
+          " • Arrivein Bali and begin the Dream Bali holiday • Proceed to Kuta and check in for the first scheduled night.",
+      },
+      {
+        day: 2,
+        title: "NORTH BALI • WANAGIRI & ULUNDANU",
+        description:
+          "• Proceedfor Wanagiri Hidden Hills and Ulundanu Temple Tour • Overnight stay in Ubud as per the accommodation plan. ",
+      },
+      {
+        day: 3,
+        title: "UBUD • ALAS HARUM EXPERIENCE",
+        description:
+          "• Visit Alas Harum Tegalang including entrance fee,coffee tour and rice terrace selfie spot • Enjoy 1x of Angel Swing OR Sky Bike OR Flying Fox.",
+      },
+      {
+        day: 4,
+        title: "UBUD • TANAH LOT / KUTA",
+        description:
+          " • VisitTanah LotTemple from thelistedsightseeing inclusions.• Continue to Kuta for the next scheduled stay.",
+      },
+      {
+        day: 5,
+        title: "KUTA • TANJUNG BENOA",
+        description:
+          "• VisitTanjung BenoaBeach for wateractivities.• Water activity charges are on own cost.",
+      },
+      {
+        day: 6,
+        title: "KUTA • LEISURE / STAY",
+        description:
+          " • Enjoyleisure time inKuta • Continue the final Kuta stay under the 03-night accommodation plan",      },
+      {
+        day: 7,
+        title: " KUTA • FINAL DAY / DEPARTURE",
+        description:
+          "• Complete the07-dayDream Bali package • Departure arrangements as per the confirmed operational schedule.",
       },
     ],
   },
