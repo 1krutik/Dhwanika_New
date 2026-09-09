@@ -118,7 +118,6 @@ export default function TravelCards() {
                         {/* ₹{pkg.price.toLocaleString("en-IN")} */}
                       </p>
                     </div>
-
                     <Link
                       to={`/holidays/${pkg._id}`}
                       className="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 font-semibold transition text-sm shadow-md shadow-teal-500/20"
