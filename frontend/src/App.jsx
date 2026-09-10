@@ -34,7 +34,6 @@ function App() {
     <>
       <Navbar />
       <ScrollToTop />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
@@ -49,11 +48,11 @@ function App() {
         <Route path="/holidays" element={<TravelCards />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/holidays" element={<Packages />} />
-<Route path="/holidays/:id" element={<PackageDetails />} />
+        <Route path="/holidays/:id" element={<PackageDetails />} />
       </Routes>
 
       <a
-        href="https://wa.me/916359891313?text=I want more information about your services."
+        href="https://wa.me/916359891313?"
         target="_blank"
         style={{
           position: "fixed",
@@ -73,7 +72,6 @@ function App() {
           loading="lazy"
         />
       </a>
-
       <Footer />
     </>
   );

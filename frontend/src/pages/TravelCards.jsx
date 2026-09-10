@@ -70,14 +70,12 @@ export default function TravelCards() {
             <option value="price-high">Price: High to Low</option>
           </select>
         </div>
-
         {/* 3. TRENDING CAROUSEL (Hides when searching) */}
         {!searchTerm && (
           <div className="mb-8">
             <TrendingDestinations />
           </div>
         )}
-
         {/* 4. PACKAGE GRID (Shows the filtered results) */}
         {sortedPackages.length > 0 ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -110,7 +108,6 @@ export default function TravelCards() {
                   <p className="text-sm text-gray-500 mb-4 line-clamp-2">
                     {pkg.description}
                   </p>
-
                   <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
                     <div>
                       <p className="text-xs text-gray-500">At Best Price</p>
