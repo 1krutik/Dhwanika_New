@@ -233,4 +233,60 @@ export const packagesData = [
       },
     ],
   },
+  {
+    _id: "Gabala-1010",
+    title: "Gabala 07 Days",
+    destination: "Gabala, Azerbaijan",
+    duration: "6 Nights / 7 Days",
+    price: 38000,
+    image: "/images/baku7days.jpg",
+    description:
+      "Explore the beauty of Baku and Gabala with this 7-day package.",
+    highlights: ["Baku City Tour", "Gabala Sightseeing", "Nohur Lake"],
+    pdfUrl: "/itinerarys/Azerbaijan/Gabala7Days.pdf",
+    itinerary: [
+      {
+        day: 1,
+        title: "BAKU • ARRIVAL / STAY",
+        description:
+          " Arrive in Baku and proceed with the airport transfer arrangement included in the package • Check in and begin the first part of the 03-night stay in Baku.",
+      },
+      {
+        day: 2,
+        title: "BAKU • CITY TOUR",
+        description:
+          "Enjoy the Baku City Tour covering Highland Park, Flame Towers, Baku Boulevard, Park, Nizami Street, Crystal Hall, Maiden Tower and Shirvanshah Palace • Return to the hotel for your Baku stay.",
+      },
+      {
+        day: 3,
+        title: "BAKU • ATESHGAH TOUR",
+        description:
+          "Proceed for the Ateshgah Tour, covering the Fire Temple and Fire Mountain Tour as listed in the package • Overnight stay in Baku. ",
+      },
+      {
+        day: 4,
+        title: " BAKU • GABALA",
+        description:
+          " Check out and proceed towards Gabala with the included intercity transfer arrangement • Begin the 02-night stay in Gabala.",
+      },
+      {
+        day: 5,
+        title: "GABALA • SIGHTSEEING",
+        description:
+          "Enjoy the Gabala Tour including Nohur Lake and Tufandag Mountain Cable Car • Return to the hotel after sightseeing.",
+      },
+      {
+        day: 6,
+        title: "GABALA • BAKU",
+        description:
+          "Proceed back to Baku for the final 01-night stay.Half Day Shopping Tour and/or Gobustan sightseeing can be scheduled as per the confirmed operational itinerary",
+      },
+      {
+        day: 7,
+        title: "BAKU • DEPARTURE",
+        description:
+          "Complete the 07-day package and proceed for departure.Please follow the confirmed travel schedule for final airport transfer and departure timing",
+      },
+    ],
+  },
 ];
