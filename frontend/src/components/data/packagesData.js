@@ -289,4 +289,139 @@ export const packagesData = [
       },
     ],
   },
+  {
+    _id: "GEORGIA-AZERBAIJAN-TOUR-2026",
+    title: "Georgia With Azerbaijan 11 Days",
+    destination: "Azerbaijan & Georgia",
+    duration: "10 Nights / 11 Days",
+    price: 85000,
+    image: "/images/georgiaazerbaijan.jpg",
+    description:
+      "Explore the beauty of Azerbaijan and Georgia with this 11-day package.",
+    highlights: ["Tbilisi ", "Batumi", "Baku", "Gabala"],
+    pdfUrl: "/itinerarys/Azerbaijan/Georgia With Azerbaijan 11 Days.pdf",
+    itinerary: [
+      {
+        day: 1,
+        title: "TBILISI • ARRIVAL / STAY",
+        description:
+          " Arrive in Tbilisi and transfer to the hotel • Check in and begin the 03-night Tbilisi stay",
+      },
+      {
+        day: 2,
+        title: "TBILISI • CITY & MTSKHETA",
+        description:
+          " Explore Tbilisi City Tour and Mtskheta Tour • Enjoy the included private touring with an English-speaking driver. Overnight in Tbilisi",
+      },
+      {
+        day: 3,
+        title: "TBILISI • ANANURI, GUDAURI & KAZBEGI",
+        description:
+          "• Proceed for the Ananuri - Gudauri - KazbegiTour • Georgia entrance tickets include Kazbegi Delika Car. Overnight in Tbilisi.",
+      },
+      {
+        day: 4,
+        title: "TBILISI • BATUMI / CITY TOUR",
+        description:
+          " Transfer onward to Batumi andcheck in forthe02-night stay • Explore Batumi City Tour. Overnight in Batumi.",
+      },
+      {
+        day: 5,
+        title: "BATUMI • MARTVILI & PROMETHEUS / MAKHUNTSETI",
+        description:
+          "• Visit Martvili Canyon and Prometheus Cave • Visit Makhuntseti Waterfall as listed in the sightseeing program. Overnightin Batumi.",
+      },
+      {
+        day: 6,
+        title: "BATUMI • UPLISTSIKHE / BAKU",
+        description:
+          "• Visit Uplists ikhe Caveas included in the sightseeing program • Proceed onward to Baku and check in for the 03-night stay.",
+      },
+      {
+        day: 7,
+        title: " BAKU • ATESHGah & BAKU CITY",
+        description:
+          "• Take the Ateshgah Tour covering the Fire Templeand Fire Mountain • Enjoy Baku City Tour including Highland Park, Flame Tower, Boulevard Park, Nizami Street, Carpet Museum, Little Venice, Heydar Aliyev and Old City.",
+      },
+      {
+        day: 8,
+        title: " BAKU • GOBUSTAN & SHOPPING",
+        description:
+          "Visit Gobustan National Park, MudVolcano andRock Museum • Continue with Shopping Tour covering local market, 28 Mall, Ganjlik and Port Baku.",
+      },
+      {
+        day: 9,
+        title: "BAKU • LEISURE / STAY",
+        description:
+          " Leisure time in Baku • Continue the scheduled 03-night Baku accommodation.",
+      },
+      {
+        day: 10,
+        title: " BAKU • GABALA / NOHUR LAKE",
+        description:
+          " Transfer to Gabala and checkin for the 02-night stay • Visit Nohur Lake.",
+      },
+      {
+        day: 11,
+        title: "GABALA • CABLE CAR / DEPARTURE",
+        description:
+          "Day trip in Gabala with Cable Car / Tufandag experience • Complete the 11-day itinerary and proceed for departure as per confirmed schedule",
+      },
+    ],
+  },
+  {
+    _id: "Stunnin-Baku-06Days",
+    title: "Stunning Baku 06 Days",
+    destination: "Baku, Azerbaijan",
+    duration: "5 Nights / 6 Days",
+    price: 58000,
+    image: "/images/StuningBaku.jpg",
+    description: "Explore the beauty of Baku with this 6-day package.",
+    highlights: [" Rifle Shooting In Baku ", "Mt. Batur Hike", "Mud Volcano","Rock Museum"],
+    pdfUrl: "/itinerarys/Azerbaijan/StunningBaku6Days.pdf",
+    itinerary: [
+      {
+        day: 1,
+        title: "KUTA • ARRIVAL / STAY",
+        description:
+          " Begin the Bali package with thefirst scheduled night in Kuta -> The supplied source does not state an arrival time or specific transfer arrangement. ",
+      },
+      {
+        day: 2,
+        title: "NORTH BALI • WANAGIRI & ULUNDANU",
+        description:
+          " • Proceedf or the listed Wanagiri Hidden Hills experience and Ulundanu Temple Tour • Overnight stay in Ubud. ",
+      },
+      {
+        day: 3,
+        title: "UBUD • ALAS HARUM EXPERIENCE",
+        description:
+          " • Visit Alas Harum Tegalang including entrance fee,coffee tour and rice terrace selfie spot • Enjoy 1x of Angel Swing OR Sky Bike OR Flying Fox, as listed in the package.",
+      },
+      {
+        day: 4,
+        title: "UBUD • TANAH LOT / KUTA",
+        description:
+          " • Cover Tanah Lot Temple from the listed sightseeing inclusions • Continue the accommodation plan with a night in Kuta.",
+      },
+      {
+        day: 5,
+        title: "KUTA • TANJUNG BENOA",
+        description:
+          " • Visit Tanjung Benoa Beach for water activities • Water activity charges are on own cost as stated in the source.",
+      },
+      {
+        day: 6,
+        title: "KUTA • LEISURE / STAY",
+        description:
+          " • Continuethe finalKutastay underthe 03-night accommodation plan • No additional sightseeing is specified in the supplied source for this day.",
+      },
+      {
+        day: 7,
+        title: " KUTA • FINAL DAY / DEPARTURE",
+        description:
+          "• Complete the07-day package.• The source does not provide a departure time; please follow the confirmed operational schedule.",
+      },
+    ],
+  },
 ];
