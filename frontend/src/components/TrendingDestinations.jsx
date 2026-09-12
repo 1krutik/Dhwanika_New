@@ -1,5 +1,4 @@
-// src/components/TrendingDestinations.jsx
-import { useRef, useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 const trendingDestinations = [
@@ -19,9 +18,10 @@ export default function TrendingDestinations() {
   const scrollRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
 
+  // Manual scroll function for the arrows
   const scroll = (direction) => {
     if (scrollRef.current) {
-      const scrollAmount = 300; 
+      const scrollAmount = 350; 
       scrollRef.current.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
@@ -29,41 +29,31 @@ export default function TrendingDestinations() {
     }
   };
 
-  // NEW: Auto-scroll logic
-  useEffect(() => {
-    let interval;
-    
-    // Only auto-scroll if the user isn't hovering over the carousel
-    if (!isHovered) {
-      interval = setInterval(() => {
-        if (scrollRef.current) {
-          const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-          
-          // If we have scrolled all the way to the right end, jump back to the start
-          if (scrollLeft + clientWidth >= scrollWidth - 10) {
-            scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
-          } else {
-            // Otherwise, keep scrolling right
-            scroll("right");
-          }
-        }
-      }, 3000); // Scrolls every 3 seconds (adjust this number to make it faster/slower)
-    }
-
-    return () => clearInterval(interval); // Cleanup the timer when unmounted
-  }, [isHovered]);
-
   return (
-    <section className="max-w-7xl mx-auto py-12 px-4">
+    <section className="max-w-7xl mx-auto py-12 px-4 overflow-hidden">
+      
       {/* 
-        NEW: Added onMouseEnter and onMouseLeave here 
-        so the sliding pauses when the mouse is over the container!
+        This style block injects the CSS animation directly into the component.
+        It moves the track left by exactly half its width, then resets seamlessly.
       */}
-      <div 
-        className="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 relative"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
+      <style>{`
+        @keyframes smoothScroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(-50% - 1rem)); } /* -1rem accounts for the gap */
+        }
+        
+        .animate-smooth-scroll {
+          /* Adjust the '40s' here to make it faster or slower! */
+          animation: smoothScroll 40s linear infinite; 
+          will-change: transform;
+        }
+
+        .animate-smooth-scroll.paused {
+          animation-play-state: paused;
+        }
+      `}</style>
+
+      <div className="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 relative">
         <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">
           Top Trending Travel Destinations
         </h2>
@@ -71,7 +61,7 @@ export default function TrendingDestinations() {
         {/* Left Arrow */}
         <button 
           onClick={() => scroll("left")}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md rounded-full w-10 h-10 flex items-center justify-center text-gray-600 hover:text-teal-600 transition hidden md:flex"
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white shadow-md rounded-full w-10 h-10 flex items-center justify-center text-gray-600 hover:text-teal-600 transition hidden md:flex"
           aria-label="Scroll left"
         >
           &#10094;
@@ -80,47 +70,69 @@ export default function TrendingDestinations() {
         {/* Right Arrow */}
         <button 
           onClick={() => scroll("right")}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md rounded-full w-10 h-10 flex items-center justify-center text-gray-600 hover:text-teal-600 transition hidden md:flex"
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white shadow-md rounded-full w-10 h-10 flex items-center justify-center text-gray-600 hover:text-teal-600 transition hidden md:flex"
           aria-label="Scroll right"
         >
           &#10095;
         </button>
 
-        {/* Scroll Container */}
+        {/* 
+          Outer Scroll Container.
+          We use ref here so the manual arrows still work. 
+        */}
         <div 
           ref={scrollRef}
-          className="flex overflow-x-auto gap-4 pb-4 snap-x [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          className="flex overflow-x-hidden relative"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         >
-          {trendingDestinations.map((dest, index) => (
-            <Link 
-              key={index} 
-              to={`/holidays?dest=${dest.name}`} 
-              className="min-w-[160px] md:min-w-[220px] snap-start flex flex-col group cursor-pointer"
-            >
-              <div className="rounded-2xl overflow-hidden h-56 md:h-72 w-full mb-3 shadow-md">
-                <img 
-                  src={dest.image} 
-                  alt={dest.name}
-                  className="h-full w-full object-cover group-hover:scale-110 transition duration-700 ease-in-out" 
-                  loading="lazy"
-                />
-              </div>
-              <div className="flex justify-between items-start px-1">
-                <div>
-                  <h3 className="font-bold text-gray-900 text-sm md:text-base">{dest.name}</h3>
-                  <p className="text-xs text-gray-500">{dest.tours}</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-xs text-gray-500"> Best Price</p>
-                  {/* <p className="font-bold text-teal-600 text-sm md:text-base">
-                    ₹{dest.startingPrice.toLocaleString('en-IN')}
-                  </p> */}
-                </div>
-              </div>
-            </Link>
-          ))}
+          {/* 
+            Inner Animation Track. 
+            We duplicate the array so it can loop seamlessly!
+          */}
+          <div className={`flex gap-4 w-max ${isHovered ? 'paused' : ''} animate-smooth-scroll`}>
+            
+            {/* First Set of Cards */}
+            {trendingDestinations.map((dest, index) => (
+              <DestinationCard key={`set1-${index}`} dest={dest} />
+            ))}
+
+            {/* Second Set of Cards (Identical, for the seamless loop) */}
+            {trendingDestinations.map((dest, index) => (
+              <DestinationCard key={`set2-${index}`} dest={dest} />
+            ))}
+
+          </div>
         </div>
       </div>
     </section>
+  );
+}
+
+// Extracted the card into a small component to keep the map clean
+function DestinationCard({ dest }) {
+  return (
+    <Link 
+      to={`/holidays?dest=${dest.name}`} 
+      className="w-[160px] md:w-[220px] flex-shrink-0 flex flex-col group cursor-pointer"
+    >
+      <div className="rounded-2xl overflow-hidden h-56 md:h-72 w-full mb-3 shadow-md">
+        <img 
+          src={dest.image} 
+          alt={dest.name}
+          className="h-full w-full object-cover group-hover:scale-110 transition duration-700 ease-in-out" 
+          loading="lazy"
+        />
+      </div>
+      <div className="flex justify-between items-start px-1">
+        <div>
+          <h3 className="font-bold text-gray-900 text-sm md:text-base">{dest.name}</h3>
+          <p className="text-xs text-gray-500">{dest.tours}</p>
+        </div>
+        <div className="text-right">
+          <p className="text-xs text-gray-500">Best Price</p>
+        </div>
+      </div>
+    </Link>
   );
 }
