@@ -68,6 +68,7 @@ export const packagesData = [
       },
     ],
   },
+  // Bali
   {
     _id: "bali-adventure-707",
     title: "Bali & Adventure Tour",
@@ -233,6 +234,7 @@ export const packagesData = [
       },
     ],
   },
+  // Azerbaijan & Georgia
   {
     _id: "Gabala-1010",
     title: "Gabala 07 Days",
@@ -424,4 +426,212 @@ export const packagesData = [
       },
     ],
   },
+  {
+    _id: "Tbilisi-Batumi-07Days",
+    title: "Tbilisi & Batumi 07 Days",
+    destination: "Tbilisi & Batumi, Georgia",
+    duration: "6 Nights / 7 Days",
+    price: 58000, // Update this if the price differs
+    image: "/images/tbilisibatumi.jpg", // Update with your actual image path
+    description: "Explore the beauty of Tbilisi and Batumi with this 7-day package, including mountain trips, vineyard experiences, and canyon tours.",
+    highlights: [
+      "Tbilisi City Tour", 
+      "Gudauri & Caucasus Mountain Trip", 
+      "4x4 Vehicle Kazbegi Tour",
+      "Kakheti Vineyard Tour & Wine Tasting",
+      "Chronicles of Georgia",
+      "Prometheus Cave & Martvili Canyon",
+      "Batumi City Tour"
+    ],
+    pdfUrl: "/itinerarys/Azerbaijan/Tbilisi&Batumi7Days.pdf",
+    itinerary: [
+      {
+        day: 1,
+        title: "TBILISI • ARRIVAL / STAY",
+        description:
+          "Arrive in Tbilisi and proceed with the scheduled transfer to the hotel. Check in and settle into the first night of the 03-night Tbilisi stay. Overnight stay in Tbilisi."
+      },
+      {
+        day: 2,
+        title: "TBILISI • GUDAURI & CAUCASUS MOUNTAIN TRIP",
+        description:
+          "Proceed for the listed Gudauri and Caucasus Mountain Trip by 4x4 vehicle. Enjoy the mountain scenery and the scheduled sightseeing experience. Return to Tbilisi for overnight stay."
+      },
+      {
+        day: 3,
+        title: "TBILISI • KAKHETI VINEYARD EXPERIENCE",
+        description:
+          "Visit the Kakheti vineyard region for a wine tasting experience. Visit the Chronicles of Georgia as included in the sightseeing plan. Return to Tbilisi for overnight stay."
+      },
+      {
+        day: 4,
+        title: "TBILISI • PROMETHEUS CAVE & MARTVILI CANYON / BATUMI",
+        description:
+          "Proceed for the Prometheus Cave & Martvili Canyon day trip. Continue the journey toward Batumi as per the package accommodation plan. Check in for the first of 02 nights in Batumi."
+      },
+      {
+        day: 5,
+        title: "BATUMI • CITY TOUR & OPTIONAL TOURS",
+        description:
+          "Explore Batumi on the included Batumi City Tour. Optional sightseeing may include Gonio Fortress, Argo Cable Car and Makhuntseti Waterfall. Overnight stay in Batumi."
+      },
+      {
+        day: 6,
+        title: "BATUMI • RETURN TO TBILISI / STAY",
+        description:
+          "Complete the Batumi stay and proceed with the scheduled transfer to Tbilisi. Check in for the final night in Tbilisi. Overnight stay in Tbilisi."
+      },
+      {
+        day: 7,
+        title: "TBILISI • FINAL DAY / DEPARTURE",
+        description:
+          "Complete the 07-day package and proceed for departure as per the confirmed schedule."
+      }
+    ]
+  },
+  // Kerala
+  { 
+    _id: "Kerala-Tour-08Days",
+    title: "Kerala Tour 08 Days",
+    destination: "Kerala, India",
+    duration: "7 Nights / 8 Days",
+    price: 0, // Please update with your actual price
+    image: "/images/Kerala08Days.jpg", // Update with your actual image path
+    description: "Experience the ultimate Kerala Bliss tour with this 8-day package covering Cochin, Munnar, Thekkady, and the backwaters of Alleppey.",
+    highlights: [
+      "Traditional Kerala Meal",
+      "Periyar Lake Boating Experience",
+      "Kathakali Dance & Kalaripayattu Show",
+      "Vagamon Full-Day Excursion",
+      "Group Photoshoot at Munnar Gap Road",
+      "Sunset Dinner Cruise with High Tea & Live Music",
+      "Fort Kochi & Chinese Fishing Nets"
+    ],
+    pdfUrl: "/itinerarys/Kerala/KeralaTour8Days.pdf", // Update folder structure if needed
+    itinerary: [
+      {
+        day: 1,
+        title: "COCHIN • ARRIVAL / STAY",
+        description:
+          "Arrive in Cochin and receive Meet & Greet assistance upon arrival. Transfer to the hotel and overnight stay in Cochin."
+      },
+      {
+        day: 2,
+        title: "COCHIN • MUNNAR",
+        description:
+          "Proceed to Munnar, a scenic hill station surrounded by tea plantations. Visit tea plantations and enjoy the scenic surroundings. Overnight stay in Munnar."
+      },
+      {
+        day: 3,
+        title: "MUNNAR • SIGHTSEEING",
+        description:
+          "Visit the Tea Museum and Eravikulam National Park. Explore tea plantations and spice gardens and enjoy a Kerala Traditional Meal."
+      },
+      {
+        day: 4,
+        title: "MUNNAR • THEKKADY",
+        description:
+          "Proceed to Thekkady through the scenic Western Ghats. Continue with the listed Thekkady sightseeing and overnight stay."
+      },
+      {
+        day: 5,
+        title: "THEKKADY • EXPERIENCES",
+        description:
+          "Enjoy the Periyar Sanctuary Boat Ride. Attend the Kathakali Dance and Kalaripayattu Martial Arts Show."
+      },
+      {
+        day: 6,
+        title: "THEKKADY • ALLEPPEY",
+        description:
+          "Proceed to Alleppey and enjoy the backwater surroundings. Check in and relax. Overnight stay in Alleppey."
+      },
+      {
+        day: 7,
+        title: "ALLEPPEY • COCHIN",
+        description:
+          "Proceed towards Cochin after the Alleppey stay. Visit Fort Kochi and the Chinese Fishing Nets."
+      },
+      {
+        day: 8,
+        title: "COCHIN • FINAL DAY / DEPARTURE",
+        description:
+          "Complete the Kerala Bliss tour and proceed for departure. Departure timing is not specified in the supplied content; follow the confirmed operational schedule."
+      }
+    ]
+  },
+  {
+    _id: "Scenic-Kerala-09Days",
+    title: "Scenic Kerala 09 Days",
+    destination: "Kerala, India",
+    duration: "8 Nights / 9 Days",
+    price: 0, // Please update with your actual price
+    image: "/images/ScennicKerala.jpg", // Update with your actual image path
+    description: "Explore the scenic beauty of Kerala with this 9-day package covering Cochin, Munnar, Thekkady, Kovalam, and the backwaters of Alleppey.",
+    highlights: [
+      "Traditional Kerala Welcome Meal",
+      "Periyar Lake Boating Experience & Spice Plantation",
+      "Kathakali Dance & Kalaripayattu Martial Arts Show",
+      "Sunset Cruise on Vembanad Lake",
+      "Shri Padmanabhaswamy Temple & Kovalam Beaches",
+      "Professional Group Photoshoot at Munnar Gap Road",
+      "Kanyakumari Full-day Excursion"
+    ],
+    pdfUrl: "/itinerarys/Kerala/ScenicKerala9Days.pdf",
+    itinerary: [
+      {
+        day: 1,
+        title: "COCHIN • ARRIVAL / STAY",
+        description:
+          "Arrive in Cochin and transfer to the hotel. Visit Mattancherry Palace, Chinese Fishing Nets, Museum of Kerala History and Paradesi Synagogue."
+      },
+      {
+        day: 2,
+        title: "COCHIN • MUNNAR",
+        description:
+          "Proceed towards Munnar and check in for the first of two nights. Visit Mattupetty Dam and Echo Point."
+      },
+      {
+        day: 3,
+        title: "MUNNAR • SIGHTSEEING",
+        description:
+          "Explore Tea Gardens & Museums, Blossom Park and Kundala Lake. Visit Rajamalai (Eravikulam) National Park."
+      },
+      {
+        day: 4,
+        title: "MUNNAR • THEKKADY",
+        description:
+          "Proceed to Thekkady and check in for one night. Go for the Periyar Boat experience, visit a Spice Plantation, and enjoy the Martial Art & Kathakali Dance Show."
+      },
+      {
+        day: 5,
+        title: "THEKKADY • KOVALAM",
+        description:
+          "Proceed to Kovalam and check in for the first of two nights."
+      },
+      {
+        day: 6,
+        title: "KOVALAM • SIGHTSEEING",
+        description:
+          "Enjoy the listed Kovalam sightseeing as per the tour itinerary. Visit Hawa Beach, Lighthouse Beach, and the Shri Padmanabhaswamy Temple."
+      },
+      {
+        day: 7,
+        title: "KOVALAM • KUMARAKOM / ALLEPPEY",
+        description:
+          "Proceed towards the Kumarakom / Alleppey region and check in for the first of two nights. Visit Kumarakom Bird Sanctuary."
+      },
+      {
+        day: 8,
+        title: "ALLEPPEY • VEMBANAD LAKE",
+        description:
+          "Enjoy a half-hour Sunset Cruise on Vembanad Lake, as listed in the package. Continue the second night stay in Alleppey."
+      },
+      {
+        day: 9,
+        title: "ALLEPPEY • DEPARTURE",
+        description:
+          "Complete the Scenic Kerala tour and proceed for departure. Departure timing and final transfer details are to be followed as per the confirmed operational schedule."
+      }
+    ]
+  }
 ];

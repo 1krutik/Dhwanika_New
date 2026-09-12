@@ -1,5 +1,5 @@
 // src/components/TrendingDestinations.jsx
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const trendingDestinations = [
@@ -10,10 +10,14 @@ const trendingDestinations = [
   { name: "Japan", image: "/images/japan.jpg", startingPrice: 120000, tours: "2+ Tours" },
   { name: "Thailand", image: "/images/thailand.jpg", startingPrice: 25000, tours: "8+ Tours" },
   { name: "Singapore", image: "/images/singapore.jpg", startingPrice: 48000, tours: "4+ Tours" },
+  { name: "Kerala", image: "/images/ScennicKerala.jpg", startingPrice: 30000, tours: "6+ Tours" },
+  { name: "Azerbaijan", image: "/images/StuningBaku.jpg", startingPrice: 60000, tours: "3+ Tours" },
+  { name: "Georgia", image: "/images/tbilisibatumi.jpg", startingPrice: 55000, tours: "4+ Tours" },
 ];
 
 export default function TrendingDestinations() {
   const scrollRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
 
   const scroll = (direction) => {
     if (scrollRef.current) {
@@ -25,9 +29,41 @@ export default function TrendingDestinations() {
     }
   };
 
+  // NEW: Auto-scroll logic
+  useEffect(() => {
+    let interval;
+    
+    // Only auto-scroll if the user isn't hovering over the carousel
+    if (!isHovered) {
+      interval = setInterval(() => {
+        if (scrollRef.current) {
+          const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+          
+          // If we have scrolled all the way to the right end, jump back to the start
+          if (scrollLeft + clientWidth >= scrollWidth - 10) {
+            scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+          } else {
+            // Otherwise, keep scrolling right
+            scroll("right");
+          }
+        }
+      }, 3000); // Scrolls every 3 seconds (adjust this number to make it faster/slower)
+    }
+
+    return () => clearInterval(interval); // Cleanup the timer when unmounted
+  }, [isHovered]);
+
   return (
     <section className="max-w-7xl mx-auto py-12 px-4">
-      <div className="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 relative">
+      {/* 
+        NEW: Added onMouseEnter and onMouseLeave here 
+        so the sliding pauses when the mouse is over the container!
+      */}
+      <div 
+        className="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 relative"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">
           Top Trending Travel Destinations
         </h2>

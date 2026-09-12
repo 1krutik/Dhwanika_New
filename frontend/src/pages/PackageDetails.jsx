@@ -129,8 +129,8 @@ link.setAttribute("download", pkg.pdfUrl.split('/').pop());
         <div className="relative">
           <div className="sticky top-24 bg-white p-6 rounded-2xl shadow-xl border border-gray-100">
             <p className="text-gray-500 mb-1">Package Price</p>
-            <h3 className="text-4xl font-extrabold text-blue-600 mb-6">₹{pkg.price.toLocaleString("en-IN")}</h3>
-            
+            {/* <h3 className="text-4xl font-extrabold text-blue-600 mb-6">₹{pkg.price.toLocaleString("en-IN")}</h3> */}
+             <h3 className="text-4xl font-extrabold text-blue-600 mb-6">At Best Price </h3>
             <button 
               onClick={() => setShowModal(true)}
               className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl transition duration-300 shadow-lg shadow-blue-500/30"
