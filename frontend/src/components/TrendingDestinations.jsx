@@ -61,7 +61,7 @@ export default function TrendingDestinations() {
         {/* Left Arrow */}
         <button 
           onClick={() => scroll("left")}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white shadow-md rounded-full w-10 h-10 flex items-center justify-center text-gray-600 hover:text-teal-600 transition hidden md:flex"
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white shadow-md rounded-full w-10 h-10 items-center justify-center text-gray-600 hover:text-teal-600 transition hidden md:flex"
           aria-label="Scroll left"
         >
           &#10094;
@@ -70,7 +70,7 @@ export default function TrendingDestinations() {
         {/* Right Arrow */}
         <button 
           onClick={() => scroll("right")}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white shadow-md rounded-full w-10 h-10 flex items-center justify-center text-gray-600 hover:text-teal-600 transition hidden md:flex"
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white shadow-md rounded-full w-10 h-10 items-center justify-center text-gray-600 hover:text-teal-600 transition hidden md:flex"
           aria-label="Scroll right"
         >
           &#10095;
