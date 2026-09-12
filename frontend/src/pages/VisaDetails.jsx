@@ -7,6 +7,7 @@ export default function VisaDetails() {
   const { slug } = useParams();
 
   // 1. ACTUAL REAL-WORLD VISA DATA
+ // 1. ACTUAL REAL-WORLD VISA DATA
   const visaData = [
     {
       country: "Vietnam",
@@ -36,6 +37,7 @@ export default function VisaDetails() {
       fees: "",
       processing: "1 - 2 Working Days",
       docs: "Passport Copy, Passport Size Photo, Return Flight Tickets.",
+      pdfUrl: "/visa-checklists/srilanka.pdf",
     },
     {
       country: "Malaysia",
@@ -45,6 +47,7 @@ export default function VisaDetails() {
       fees: "",
       processing: "3 - 5 Working Days",
       docs: "Passport Copy, 35x50mm Matte Photo, Confirmed Return Flight, Hotel Booking.",
+      pdfUrl: "/visa-checklists/malaysia.pdf",
     },
     {
       country: "Indonesia",
@@ -54,6 +57,7 @@ export default function VisaDetails() {
       fees: "",
       processing: "2 - 3 Working Days",
       docs: "Passport Color Copy, Passport Size Photo, Confirmed Return Flight Ticket.",
+      pdfUrl: "/visa-checklists/indonesia.pdf",
     },
     {
       country: "Singapore",
@@ -63,6 +67,7 @@ export default function VisaDetails() {
       fees: "",
       processing: "4 - 5 Working Days",
       docs: "Original Passport, Form 14A, 35x45mm Matte Photo, 6 Months Bank Statement, Flight & Hotel.",
+      pdfUrl: "/visa-checklists/singapore.pdf",
     },
     {
       country: "Dubai (UAE)",
@@ -72,6 +77,7 @@ export default function VisaDetails() {
       fees: "",
       processing: "3 - 4 Working Days",
       docs: "Passport Front & Back Copy, Passport Size Photo, PAN Card Copy.",
+      pdfUrl: "/visa-checklists/dubai.pdf",
     },
     {
       country: "Turkey",
@@ -81,6 +87,7 @@ export default function VisaDetails() {
       fees: "",
       processing: "10 - 15 Working Days",
       docs: "Original Passport, 50x50mm White BG Photo, 6 Months Bank Statement, 3 Years ITR, Employment Proof, Travel Insurance.",
+      pdfUrl: "/visa-checklists/turkey.pdf",
     },
     {
       country: "Egypt",
@@ -90,6 +97,7 @@ export default function VisaDetails() {
       fees: "",
       processing: "5 - 7 Working Days",
       docs: "Original Passport, 2 White Background Photos, 6 Months Bank Statement, Flight & Hotel Bookings.",
+      pdfUrl: "/visa-checklists/egypt.pdf",
     },
     {
       country: "Kenya",
@@ -99,6 +107,7 @@ export default function VisaDetails() {
       fees: "",
       processing: "2 - 3 Working Days",
       docs: "Passport Copy, Photo, Flight Ticket, Hotel Booking (Yellow Fever Vaccination recommended).",
+      pdfUrl: "/visa-checklists/kenya.pdf",
     },
     {
       country: "Australia",
@@ -108,6 +117,7 @@ export default function VisaDetails() {
       fees: "",
       processing: "15 - 25 Working Days",
       docs: "Notarized Passport Copies, 6 Months Bank Statement, 3 Years ITR, Employment/Business Proof, Travel Plan.",
+      pdfUrl: "/visa-checklists/australia.pdf",
     },
     {
       country: "New Zealand",
@@ -117,6 +127,7 @@ export default function VisaDetails() {
       fees: "",
       processing: "20 - 30 Working Days",
       docs: "Notarized Passport Copies, 6 Months Bank Statement, 3 Years ITR, Employment Proof, Medical/PCC (if requested).",
+      pdfUrl: "/visa-checklists/new zealand.pdf",
     },
     {
       country: "Japan",
@@ -126,6 +137,7 @@ export default function VisaDetails() {
       fees: "",
       processing: "5 - 7 Working Days",
       docs: "Original Passport, 2x2 inch White BG Photo, 6 Months Bank Statement, 3 Years ITR, Flight & Hotel.",
+      pdfUrl: "/visa-checklists/japan.pdf",
     },
     {
       country: "South Korea",
@@ -135,6 +147,7 @@ export default function VisaDetails() {
       fees: "",
       processing: "7 - 10 Working Days",
       docs: "Original Passport, 35x45mm Photo, 6 Months Bank Statement (Attested), 3 Years ITR, Employment Proof, Cover Letter.",
+      pdfUrl: "/visa-checklists/south korea.pdf",
     },
     {
       country: "Germany",
@@ -144,6 +157,7 @@ export default function VisaDetails() {
       fees: "",
       processing: "15 - 20 Working Days",
       docs: "Original Passport, 35x45mm Matte Photo, 6 Months Bank Statement, 3 Years ITR, Employment Proof, Travel Insurance (€30,000 coverage), Flight & Hotel.",
+      pdfUrl: "/visa-checklists/germany.pdf",
     },
     {
       country: "France",
@@ -153,6 +167,7 @@ export default function VisaDetails() {
       fees: "",
       processing: "15 - 20 Working Days",
       docs: "Original Passport, 35x45mm Matte Photo, 6 Months Bank Statement, 3 Years ITR, Employment Proof, Travel Insurance (€30,000 coverage), Flight & Hotel.",
+      pdfUrl: "/visa-checklists/france.pdf",
     },
     {
       country: "Italy",
@@ -162,6 +177,7 @@ export default function VisaDetails() {
       fees: "",
       processing: "15 - 20 Working Days",
       docs: "Original Passport, 35x45mm Matte Photo, 6 Months Bank Statement, 3 Years ITR, Employment Proof, Travel Insurance (€30,000 coverage), Flight & Hotel.",
+      pdfUrl: "/visa-checklists/italy.pdf",
     },
     {
       country: "Switzerland",
@@ -171,6 +187,7 @@ export default function VisaDetails() {
       fees: "",
       processing: "15 - 20 Working Days",
       docs: "Original Passport, 35x45mm Matte Photo, 6 Months Bank Statement, 3 Years ITR, Employment Proof, Travel Insurance (€30,000 coverage), Flight & Hotel.",
+      pdfUrl: "/visa-checklists/switzerland.pdf",
     },
     {
       country: "Canada",
@@ -180,6 +197,7 @@ export default function VisaDetails() {
       fees: "",
       processing: "30 - 45 Working Days",
       docs: "Original Passport, 35x45mm White BG Photo, 6 Months Bank Statement, 3 Years ITR, Employment/Business Proof, Property Papers (Optional).",
+      pdfUrl: "/visa-checklists/canada.pdf",
     },
     {
       country: "USA",
@@ -189,6 +207,7 @@ export default function VisaDetails() {
       fees: "",
       processing: "Appointment Based",
       docs: "Original Passport, DS-160 Form, 2x2 inch Photo, 6 Months Bank Statement, 3 Years ITR, Employment Proof (Carried to Interview).",
+      pdfUrl: "/visa-checklists/usa.pdf",
     },
   ];
 
