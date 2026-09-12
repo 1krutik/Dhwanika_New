@@ -68,7 +68,7 @@ export default function TrendingDestinations() {
         </button>
 
         {/* Right Arrow */}
-        <button 
+        <button  
           onClick={() => scroll("right")}
           className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white shadow-md rounded-full w-10 h-10 items-center justify-center text-gray-600 hover:text-teal-600 transition hidden md:flex"
           aria-label="Scroll right"

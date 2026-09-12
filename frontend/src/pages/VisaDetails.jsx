@@ -7,7 +7,7 @@ export default function VisaDetails() {
   const { slug } = useParams();
 
   // 1. ACTUAL REAL-WORLD VISA DATA
- // 1. ACTUAL REAL-WORLD VISA DATA
+  // 1. ACTUAL REAL-WORLD VISA DATA
   const visaData = [
     {
       country: "Vietnam",
@@ -17,7 +17,7 @@ export default function VisaDetails() {
       fees: "",
       processing: "4 - 5 Working Days",
       docs: "Passport Front & Back, 4x6cm White Background Photo, Return Flight Tickets.",
-      pdfUrl: "/visa-checklists/vietnam.pdf", 
+      pdfUrl: "/visa-checklists/vietnam.pdf",
     },
     {
       country: "Thailand",
@@ -91,7 +91,8 @@ export default function VisaDetails() {
     },
     {
       country: "Egypt",
-      image: "https://images.unsplash.com/photo-1572252009286-268acec5ca0a?q=80&w=1170&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1572252009286-268acec5ca0a?q=80&w=1170&auto=format&fit=crop",
       type: "Tourist Visa",
       valid: "30 Days",
       fees: "",
@@ -111,7 +112,8 @@ export default function VisaDetails() {
     },
     {
       country: "Australia",
-      image: "https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?q=80&w=1333&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?q=80&w=1333&auto=format&fit=crop",
       type: "Visitor Visa (Subclass 600)",
       valid: "Up to 1 Year",
       fees: "",
@@ -131,7 +133,8 @@ export default function VisaDetails() {
     },
     {
       country: "Japan",
-      image: "https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=1192&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=1192&auto=format&fit=crop",
       type: "E-Visa / Sticker",
       valid: "30 Days",
       fees: "",
@@ -201,7 +204,8 @@ export default function VisaDetails() {
     },
     {
       country: "USA",
-      image: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=1170&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=1170&auto=format&fit=crop",
       type: "B1/B2 Tourist Visa",
       valid: "10 Years",
       fees: "",
@@ -263,7 +267,7 @@ export default function VisaDetails() {
     phone: "",
     email: "",
   });
-  
+
   const [phoneError, setPhoneError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -271,7 +275,7 @@ export default function VisaDetails() {
     e.preventDefault();
 
     // Phone Validation
-    let cleanNumber = formData.phone.replace(/\D/g, '');
+    let cleanNumber = formData.phone.replace(/\D/g, "");
     if (cleanNumber.length > 10) {
       cleanNumber = cleanNumber.slice(-10);
     }
@@ -279,7 +283,7 @@ export default function VisaDetails() {
 
     if (!isValidPhone) {
       setPhoneError("Please enter a valid 10-digit mobile number.");
-      return; 
+      return;
     }
     setPhoneError("");
 
@@ -293,8 +297,8 @@ export default function VisaDetails() {
     // TRIGGER PDF DOWNLOAD INSTANTLY
     if (visa.pdfUrl) {
       const link = document.createElement("a");
-      link.href = visa.pdfUrl || "#"; 
-      link.setAttribute("download", visa.pdfUrl.split('/').pop()); 
+      link.href = visa.pdfUrl || "#";
+      link.setAttribute("download", visa.pdfUrl.split("/").pop());
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -308,17 +312,21 @@ export default function VisaDetails() {
       },
       body: JSON.stringify({
         firstName: formData.name,
-        lastName: "", 
+        lastName: "",
         email: formData.email,
         phone: cleanNumber,
-        service: `${visa.country} Visa Checklist Download`, 
-        agree: true
+        service: `${visa.country} Visa Checklist Download`,
+        agree: true,
       }),
     }).catch((error) => console.log(error));
 
     // INSTANT SUCCESS FEEDBACK
     setTimeout(() => {
-      alert(visa.pdfUrl ? "🎉 Checklist Downloading! Our team will contact you soon." : "🎉 Inquiry Submitted Successfully!");
+      alert(
+        visa.pdfUrl
+          ? "🎉 Checklist Downloading! Our team will contact you soon."
+          : "🎉 Inquiry Submitted Successfully!",
+      );
       setFormData({
         name: "",
         phone: "",
@@ -335,7 +343,7 @@ export default function VisaDetails() {
   }
 
   const faqs = getVisaFaqs(visa);
-  
+
   return (
     <div className="bg-white">
       {/* HERO */}
@@ -362,10 +370,9 @@ export default function VisaDetails() {
           </p>
         </div>
       </div>
-      
+
       {/* BODY */}
       <div className="max-w-7xl mx-auto px-4 py-10 grid lg:grid-cols-3 gap-10">
-        
         {/* LEFT */}
         <div className="lg:col-span-2">
           <div className="grid md:grid-cols-2 gap-6">
@@ -409,10 +416,13 @@ export default function VisaDetails() {
 
         {/* RIGHT (Sticky Form) */}
         <div className="sticky top-28 bg-white shadow-2xl rounded-3xl p-8 border h-fit">
-          <h2 className="text-3xl font-bold mb-2 text-slate-800">Get Checklist</h2>
+          <h2 className="text-3xl font-bold mb-2 text-slate-800">
+            Get Checklist
+          </h2>
 
           <p className="mb-6 text-sm text-gray-500">
-            Fill the form to download the {visa.country} Visa document checklist & get assistance.
+            Fill the form to download the {visa.country} Visa document checklist
+            & get assistance.
           </p>
 
           <form onSubmit={handleSubmit}>
@@ -434,13 +444,19 @@ export default function VisaDetails() {
               value={formData.phone}
               onChange={(e) => {
                 setFormData({ ...formData, phone: e.target.value });
-                setPhoneError(""); 
+                setPhoneError("");
               }}
               className={`w-full border p-3 rounded-xl focus:outline-none focus:ring-2 ${
-                phoneError ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-blue-500"
+                phoneError
+                  ? "border-red-500 focus:ring-red-500"
+                  : "border-gray-300 focus:ring-blue-500"
               }`}
             />
-            {phoneError && <p className="text-red-500 text-xs font-semibold mt-1 mb-4">{phoneError}</p>}
+            {phoneError && (
+              <p className="text-red-500 text-xs font-semibold mt-1 mb-4">
+                {phoneError}
+              </p>
+            )}
             {!phoneError && <div className="mb-4"></div>}
 
             <input
@@ -457,8 +473,8 @@ export default function VisaDetails() {
               type="submit"
               disabled={loading}
               className={`w-full justify-center font-bold py-3 rounded-xl transition ${
-                loading 
-                  ? "bg-slate-400 cursor-not-allowed text-white" 
+                loading
+                  ? "bg-slate-400 cursor-not-allowed text-white"
                   : "bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/30"
               }`}
             >
@@ -467,7 +483,7 @@ export default function VisaDetails() {
           </form>
         </div>
       </div>
-      
+
       {/* Services Card */}
       <section className="max-w-6xl mx-auto px-4 py-8 md:py-10">
         <div className="rounded-2xl bg-[#f3f3f3] px-4 py-8 md:rounded-[28px] md:px-10 md:py-12">
@@ -520,7 +536,7 @@ export default function VisaDetails() {
           </div>
         </div>
       </section>
-      
+
       {/* Visa Process Image */}
       <div className="container mx-auto px-4 py-4 flex justify-center">
         <img
@@ -563,7 +579,6 @@ export default function VisaDetails() {
           ))}
         </div>
       </section>
-    
     </div>
   );
 }
