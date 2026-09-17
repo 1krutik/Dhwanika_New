@@ -1,4 +1,3 @@
-import nodemailer from "nodemailer";
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
@@ -9,30 +8,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-/* ================= EMAIL CONFIG ================= */
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false,
-  requireTLS: true,
-  auth: {
-    user: process.env.EMAIL_USER || "dhwanikaoverseas@gmail.com",
-    pass: process.env.EMAIL_PASS || "cgsejafinammuldd",
-  },
-  tls: {
-    rejectUnauthorized: false,
-  },
-});
-
-/* 🔍 CHECK SMTP CONNECTION */
-transporter.verify((error, success) => {
-  if (error) {
-    console.log("❌ SMTP ERROR:", error);
-  } else {
-    console.log("✅ SMTP READY");
-  }
-});
-
 /* ================= DATABASE ================= */
 mongoose
   .connect(
@@ -42,25 +17,6 @@ mongoose
   .then(() => console.log("MongoDB Connected Successfully 😊"))
   .catch((err) => console.log(err));
 
-/* ================= TEST EMAIL ROUTE ================= */
-app.get("/test-email", async (req, res) => {
-  try {
-    const info = await transporter.sendMail({
-      from: process.env.EMAIL_USER || "dhwanikaoverseas@gmail.com",
-      to: process.env.EMAIL_USER || "dhwanikaoverseas@gmail.com",
-      subject: "✅ Test Email - Dhwanika Overseas",
-      text: "Email system working successfully 🚀",
-    });
-
-    console.log("📩 TEST SUCCESS:", info.response);
-
-    res.send("Email Sent Successfully ✅");
-  } catch (err) {
-    console.log("❌ TEST ERROR:", err);
-
-    res.status(500).send("Email Failed ❌");
-  }
-});
 
 app.get("/api/google-reviews", async (req, res) => {
   const placeId = "YOUR_GOOGLE_PLACE_ID";
@@ -90,8 +46,7 @@ app.post("/api/inquiry", async (req, res) => {
     await newInquiry.save();
     console.log("✅ INQUIRY SAVED TO MONGODB");
 
-    /* 2. SEND TO GOOGLE SHEETS (NEW FEATURE) */
-/* 2. SEND TO GOOGLE SHEETS (NEW FEATURE) */
+    /* 2. SEND TO GOOGLE SHEETS (Active CRM) */
     try {
       const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxAR01hf1TR2aXcWI-VA-exm_EI3Yx3z2U9AoSCa4QBvGGjwMWJKqBsL2DPjhpSCx0LoA/exec"; 
       
@@ -112,34 +67,6 @@ app.post("/api/inquiry", async (req, res) => {
       console.log("✅ INQUIRY SENT TO GOOGLE SHEETS");
     } catch (sheetError) {
       console.log("❌ GOOGLE SHEETS ERROR:", sheetError.message);
-    }
-
-    /* 3. EMAIL TEMPLATE */
-    const mailOptions = {
-      from: process.env.EMAIL_USER || "dhwanikaoverseas@gmail.com",
-      to: process.env.EMAIL_USER || "dhwanikaoverseas@gmail.com",
-      subject: "🔥 New Inquiry - Dhwanika Overseas",
-      html: `
-        <div style="font-family: Arial; padding:20px;">
-          <h2 style="color:#0b57d0;">New Inquiry Received 🚀</h2>
-          <p><b>Name:</b> ${firstName} ${lastName || ""}</p>
-          <p><b>Email:</b> ${email}</p>
-          <p><b>Phone:</b> ${phone}</p>
-          <p><b>Service:</b> ${service}</p>
-          <hr />
-          <p style="color:gray;">
-            Dhwanika Overseas Website Inquiry
-          </p>
-        </div>
-      `,
-    };
-
-    /* 4. SEND EMAIL */
-    try {
-      const info = await transporter.sendMail(mailOptions);
-      console.log("📩 EMAIL SENT:", info.response);
-    } catch (mailError) {
-      console.log("❌ EMAIL ERROR:", mailError);
     }
 
     // ✅ ALWAYS SUCCESS RESPONSE IF DB SAVES

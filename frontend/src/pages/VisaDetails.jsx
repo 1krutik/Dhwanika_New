@@ -7,7 +7,6 @@ export default function VisaDetails() {
   const { slug } = useParams();
 
   // 1. ACTUAL REAL-WORLD VISA DATA
-  // 1. ACTUAL REAL-WORLD VISA DATA
   const visaData = [
     {
       country: "Vietnam",
@@ -17,7 +16,7 @@ export default function VisaDetails() {
       fees: "",
       processing: "4 - 5 Working Days",
       docs: "Passport Front & Back, 4x6cm White Background Photo, Return Flight Tickets.",
-      pdfUrl: "/visa-checklists/vietnam.pdf",
+      pdfUrl: "/visa-checklists/vietnam.pdf", 
     },
     {
       country: "Thailand",
@@ -37,7 +36,6 @@ export default function VisaDetails() {
       fees: "",
       processing: "1 - 2 Working Days",
       docs: "Passport Copy, Passport Size Photo, Return Flight Tickets.",
-      pdfUrl: "/visa-checklists/srilanka.pdf",
     },
     {
       country: "Malaysia",
@@ -47,7 +45,6 @@ export default function VisaDetails() {
       fees: "",
       processing: "3 - 5 Working Days",
       docs: "Passport Copy, 35x50mm Matte Photo, Confirmed Return Flight, Hotel Booking.",
-      pdfUrl: "/visa-checklists/malaysia.pdf",
     },
     {
       country: "Indonesia",
@@ -57,7 +54,6 @@ export default function VisaDetails() {
       fees: "",
       processing: "2 - 3 Working Days",
       docs: "Passport Color Copy, Passport Size Photo, Confirmed Return Flight Ticket.",
-      pdfUrl: "/visa-checklists/indonesia.pdf",
     },
     {
       country: "Singapore",
@@ -67,7 +63,6 @@ export default function VisaDetails() {
       fees: "",
       processing: "4 - 5 Working Days",
       docs: "Original Passport, Form 14A, 35x45mm Matte Photo, 6 Months Bank Statement, Flight & Hotel.",
-      pdfUrl: "/visa-checklists/singapore.pdf",
     },
     {
       country: "Dubai (UAE)",
@@ -77,7 +72,6 @@ export default function VisaDetails() {
       fees: "",
       processing: "3 - 4 Working Days",
       docs: "Passport Front & Back Copy, Passport Size Photo, PAN Card Copy.",
-      pdfUrl: "/visa-checklists/dubai.pdf",
     },
     {
       country: "Turkey",
@@ -87,18 +81,15 @@ export default function VisaDetails() {
       fees: "",
       processing: "10 - 15 Working Days",
       docs: "Original Passport, 50x50mm White BG Photo, 6 Months Bank Statement, 3 Years ITR, Employment Proof, Travel Insurance.",
-      pdfUrl: "/visa-checklists/turkey.pdf",
     },
     {
       country: "Egypt",
-      image:
-        "https://images.unsplash.com/photo-1572252009286-268acec5ca0a?q=80&w=1170&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1572252009286-268acec5ca0a?q=80&w=1170&auto=format&fit=crop",
       type: "Tourist Visa",
       valid: "30 Days",
       fees: "",
       processing: "5 - 7 Working Days",
       docs: "Original Passport, 2 White Background Photos, 6 Months Bank Statement, Flight & Hotel Bookings.",
-      pdfUrl: "/visa-checklists/egypt.pdf",
     },
     {
       country: "Kenya",
@@ -108,18 +99,15 @@ export default function VisaDetails() {
       fees: "",
       processing: "2 - 3 Working Days",
       docs: "Passport Copy, Photo, Flight Ticket, Hotel Booking (Yellow Fever Vaccination recommended).",
-      pdfUrl: "/visa-checklists/kenya.pdf",
     },
     {
       country: "Australia",
-      image:
-        "https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?q=80&w=1333&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?q=80&w=1333&auto=format&fit=crop",
       type: "Visitor Visa (Subclass 600)",
       valid: "Up to 1 Year",
       fees: "",
       processing: "15 - 25 Working Days",
       docs: "Notarized Passport Copies, 6 Months Bank Statement, 3 Years ITR, Employment/Business Proof, Travel Plan.",
-      pdfUrl: "/visa-checklists/australia.pdf",
     },
     {
       country: "New Zealand",
@@ -129,18 +117,15 @@ export default function VisaDetails() {
       fees: "",
       processing: "20 - 30 Working Days",
       docs: "Notarized Passport Copies, 6 Months Bank Statement, 3 Years ITR, Employment Proof, Medical/PCC (if requested).",
-      pdfUrl: "/visa-checklists/new zealand.pdf",
     },
     {
       country: "Japan",
-      image:
-        "https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=1192&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=1192&auto=format&fit=crop",
       type: "E-Visa / Sticker",
       valid: "30 Days",
       fees: "",
       processing: "5 - 7 Working Days",
       docs: "Original Passport, 2x2 inch White BG Photo, 6 Months Bank Statement, 3 Years ITR, Flight & Hotel.",
-      pdfUrl: "/visa-checklists/japan.pdf",
     },
     {
       country: "South Korea",
@@ -150,7 +135,6 @@ export default function VisaDetails() {
       fees: "",
       processing: "7 - 10 Working Days",
       docs: "Original Passport, 35x45mm Photo, 6 Months Bank Statement (Attested), 3 Years ITR, Employment Proof, Cover Letter.",
-      pdfUrl: "/visa-checklists/south korea.pdf",
     },
     {
       country: "Germany",
@@ -160,7 +144,6 @@ export default function VisaDetails() {
       fees: "",
       processing: "15 - 20 Working Days",
       docs: "Original Passport, 35x45mm Matte Photo, 6 Months Bank Statement, 3 Years ITR, Employment Proof, Travel Insurance (€30,000 coverage), Flight & Hotel.",
-      pdfUrl: "/visa-checklists/germany.pdf",
     },
     {
       country: "France",
@@ -170,7 +153,6 @@ export default function VisaDetails() {
       fees: "",
       processing: "15 - 20 Working Days",
       docs: "Original Passport, 35x45mm Matte Photo, 6 Months Bank Statement, 3 Years ITR, Employment Proof, Travel Insurance (€30,000 coverage), Flight & Hotel.",
-      pdfUrl: "/visa-checklists/france.pdf",
     },
     {
       country: "Italy",
@@ -180,7 +162,6 @@ export default function VisaDetails() {
       fees: "",
       processing: "15 - 20 Working Days",
       docs: "Original Passport, 35x45mm Matte Photo, 6 Months Bank Statement, 3 Years ITR, Employment Proof, Travel Insurance (€30,000 coverage), Flight & Hotel.",
-      pdfUrl: "/visa-checklists/italy.pdf",
     },
     {
       country: "Switzerland",
@@ -190,7 +171,6 @@ export default function VisaDetails() {
       fees: "",
       processing: "15 - 20 Working Days",
       docs: "Original Passport, 35x45mm Matte Photo, 6 Months Bank Statement, 3 Years ITR, Employment Proof, Travel Insurance (€30,000 coverage), Flight & Hotel.",
-      pdfUrl: "/visa-checklists/switzerland.pdf",
     },
     {
       country: "Canada",
@@ -200,18 +180,15 @@ export default function VisaDetails() {
       fees: "",
       processing: "30 - 45 Working Days",
       docs: "Original Passport, 35x45mm White BG Photo, 6 Months Bank Statement, 3 Years ITR, Employment/Business Proof, Property Papers (Optional).",
-      pdfUrl: "/visa-checklists/canada.pdf",
     },
     {
       country: "USA",
-      image:
-        "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=1170&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=1170&auto=format&fit=crop",
       type: "B1/B2 Tourist Visa",
       valid: "10 Years",
       fees: "",
       processing: "Appointment Based",
       docs: "Original Passport, DS-160 Form, 2x2 inch Photo, 6 Months Bank Statement, 3 Years ITR, Employment Proof (Carried to Interview).",
-      pdfUrl: "/visa-checklists/usa.pdf",
     },
   ];
 
@@ -267,7 +244,7 @@ export default function VisaDetails() {
     phone: "",
     email: "",
   });
-
+  
   const [phoneError, setPhoneError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -275,7 +252,7 @@ export default function VisaDetails() {
     e.preventDefault();
 
     // Phone Validation
-    let cleanNumber = formData.phone.replace(/\D/g, "");
+    let cleanNumber = formData.phone.replace(/\D/g, '');
     if (cleanNumber.length > 10) {
       cleanNumber = cleanNumber.slice(-10);
     }
@@ -283,7 +260,7 @@ export default function VisaDetails() {
 
     if (!isValidPhone) {
       setPhoneError("Please enter a valid 10-digit mobile number.");
-      return;
+      return; 
     }
     setPhoneError("");
 
@@ -297,8 +274,8 @@ export default function VisaDetails() {
     // TRIGGER PDF DOWNLOAD INSTANTLY
     if (visa.pdfUrl) {
       const link = document.createElement("a");
-      link.href = visa.pdfUrl || "#";
-      link.setAttribute("download", visa.pdfUrl.split("/").pop());
+      link.href = visa.pdfUrl || "#"; 
+      link.setAttribute("download", visa.pdfUrl.split('/').pop()); 
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -312,21 +289,17 @@ export default function VisaDetails() {
       },
       body: JSON.stringify({
         firstName: formData.name,
-        lastName: "",
+        lastName: "", 
         email: formData.email,
         phone: cleanNumber,
-        service: `${visa.country} Visa Checklist Download`,
-        agree: true,
+        service: `${visa.country} Visa Checklist Download`, 
+        agree: true
       }),
     }).catch((error) => console.log(error));
 
     // INSTANT SUCCESS FEEDBACK
     setTimeout(() => {
-      alert(
-        visa.pdfUrl
-          ? "🎉 Checklist Downloading! Our team will contact you soon."
-          : "🎉 Inquiry Submitted Successfully!",
-      );
+      alert(visa.pdfUrl ? "🎉 Checklist Downloading! Our team will contact you soon." : "🎉 Inquiry Submitted Successfully!");
       setFormData({
         name: "",
         phone: "",
@@ -343,7 +316,7 @@ export default function VisaDetails() {
   }
 
   const faqs = getVisaFaqs(visa);
-
+  
   return (
     <div className="bg-white">
       {/* HERO */}
@@ -370,9 +343,10 @@ export default function VisaDetails() {
           </p>
         </div>
       </div>
-
+      
       {/* BODY */}
       <div className="max-w-7xl mx-auto px-4 py-10 grid lg:grid-cols-3 gap-10">
+        
         {/* LEFT */}
         <div className="lg:col-span-2">
           <div className="grid md:grid-cols-2 gap-6">
@@ -416,13 +390,10 @@ export default function VisaDetails() {
 
         {/* RIGHT (Sticky Form) */}
         <div className="sticky top-28 bg-white shadow-2xl rounded-3xl p-8 border h-fit">
-          <h2 className="text-3xl font-bold mb-2 text-slate-800">
-            Get Checklist
-          </h2>
+          <h2 className="text-3xl font-bold mb-2 text-slate-800">Get Checklist</h2>
 
           <p className="mb-6 text-sm text-gray-500">
-            Fill the form to download the {visa.country} Visa document checklist
-            & get assistance.
+            Fill the form to download the {visa.country} Visa document checklist & get assistance.
           </p>
 
           <form onSubmit={handleSubmit}>
@@ -444,19 +415,13 @@ export default function VisaDetails() {
               value={formData.phone}
               onChange={(e) => {
                 setFormData({ ...formData, phone: e.target.value });
-                setPhoneError("");
+                setPhoneError(""); 
               }}
               className={`w-full border p-3 rounded-xl focus:outline-none focus:ring-2 ${
-                phoneError
-                  ? "border-red-500 focus:ring-red-500"
-                  : "border-gray-300 focus:ring-blue-500"
+                phoneError ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-blue-500"
               }`}
             />
-            {phoneError && (
-              <p className="text-red-500 text-xs font-semibold mt-1 mb-4">
-                {phoneError}
-              </p>
-            )}
+            {phoneError && <p className="text-red-500 text-xs font-semibold mt-1 mb-4">{phoneError}</p>}
             {!phoneError && <div className="mb-4"></div>}
 
             <input
@@ -473,8 +438,8 @@ export default function VisaDetails() {
               type="submit"
               disabled={loading}
               className={`w-full justify-center font-bold py-3 rounded-xl transition ${
-                loading
-                  ? "bg-slate-400 cursor-not-allowed text-white"
+                loading 
+                  ? "bg-slate-400 cursor-not-allowed text-white" 
                   : "bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/30"
               }`}
             >
@@ -483,7 +448,7 @@ export default function VisaDetails() {
           </form>
         </div>
       </div>
-
+      
       {/* Services Card */}
       <section className="max-w-6xl mx-auto px-4 py-8 md:py-10">
         <div className="rounded-2xl bg-[#f3f3f3] px-4 py-8 md:rounded-[28px] md:px-10 md:py-12">
@@ -536,7 +501,7 @@ export default function VisaDetails() {
           </div>
         </div>
       </section>
-
+      
       {/* Visa Process Image */}
       <div className="container mx-auto px-4 py-4 flex justify-center">
         <img
@@ -579,6 +544,7 @@ export default function VisaDetails() {
           ))}
         </div>
       </section>
+    
     </div>
   );
 }

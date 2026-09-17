@@ -2,16 +2,16 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 const trendingDestinations = [
-  { name: "Bali", image: "/images/Bali.jpg", startingPrice: 45000, tours: "5+ Tours" },
-  { name: "Maldives", image: "/images/maldives.jpg", startingPrice: 85000, tours: "3+ Tours" },
-  { name: "Dubai", image: "/images/dubai.jpg", startingPrice: 55000, tours: "7+ Tours" },
-  { name: "Mauritius", image: "/images/mauritius.jpg", startingPrice: 65000, tours: "4+ Tours" },
-  { name: "Japan", image: "/images/japan.jpg", startingPrice: 120000, tours: "2+ Tours" },
-  { name: "Thailand", image: "/images/thailand.jpg", startingPrice: 25000, tours: "8+ Tours" },
-  { name: "Singapore", image: "/images/singapore.jpg", startingPrice: 48000, tours: "4+ Tours" },
-  { name: "Kerala", image: "/images/ScennicKerala.jpg", startingPrice: 30000, tours: "6+ Tours" },
-  { name: "Azerbaijan", image: "/images/StuningBaku.jpg", startingPrice: 60000, tours: "3+ Tours" },
-  { name: "Georgia", image: "/images/tbilisibatumi.jpg", startingPrice: 55000, tours: "4+ Tours" },
+  { name: "Bali", image: "https://res.cloudinary.com/datpyazp/image/upload/v1789218067/Bali.jpg", startingPrice: 45000, tours: "5+ Tours" },
+  { name: "Maldives", image: "https://res.cloudinary.com/datpyazp/image/upload/v1789218340/Maldives.jpg", startingPrice: 85000, tours: "3+ Tours" },
+  { name: "Dubai", image: "https://res.cloudinary.com/datpyazp/image/upload/v1789218350/Dubai.jpg", startingPrice: 55000, tours: "7+ Tours" },
+  { name: "Mauritius", image: "https://res.cloudinary.com/datpyazp/image/upload/v1789218340/Mauritius.jpg", startingPrice: 65000, tours: "4+ Tours" },
+  { name: "Japan", image: "https://res.cloudinary.com/datpyazp/image/upload/v1789218365/Japan.jpg", startingPrice: 120000, tours: "2+ Tours" },
+  { name: "Thailand", image: "https://res.cloudinary.com/datpyazp/image/upload/v1789218440/thailand.jpg", startingPrice: 25000, tours: "8+ Tours" },
+  { name: "Singapore", image: "https://res.cloudinary.com/datpyazp/image/upload/v1789218355/singapore.jpg", startingPrice: 48000, tours: "4+ Tours" },
+  { name: "Kerala", image: "https://res.cloudinary.com/datpyazp/image/upload/v1789218333/ScennicKerala.jpg", startingPrice: 30000, tours: "6+ Tours" },
+  { name: "Azerbaijan", image: "https://res.cloudinary.com/datpyazp/image/upload/v1789218410/StuningBaku.jpg", startingPrice: 60000, tours: "3+ Tours" },
+  { name: "Georgia", image: "https://res.cloudinary.com/datpyazp/image/upload/v1789218427/tbilisibatumi.jpg", startingPrice: 55000, tours: "4+ Tours" },
 ];
 
 export default function TrendingDestinations() {
